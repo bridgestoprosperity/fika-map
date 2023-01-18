@@ -6,10 +6,10 @@
     <title>Fika Map Prototype</title>
   </head>
 
-  <main class="d-flex flex-nowrap" >
+  <main class="d-flex flex-nowrap">
     <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 75px">
       <a href="/" class="d-flex p-3 link-dark text-decoration-none align-items-center justify-content-center" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
-        <img src="./img/b2plogo.png" alt="icon" width="50px" height="50px">
+        <img src="./img/b2plogo.png" alt="icon" width="50px" height="50px" />
       </a>
       <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
         <li class="nav-item pt-0">
@@ -51,7 +51,30 @@
       </div> -->
     </div>
     <!-- <div class="b-example-divider b-example-vr"></div> -->
-    <div class="col-9 main-content bg-light shadow-lg" style="width: 333px"></div>
+    <div class="col-9 bg-light shadow-lg d-block align-items-start justify-content-center py-2 px-2" style="width: 333px">
+      <!-- <h1 class="text-center">Rwanda</h1> -->
+      <!-- bootstrap large button that is centered in div -->
+      <div>
+        <select class="country-select form-select-lg my-3 mx-3 bg-light" aria-label=".form-select-lg example">
+          <option selected>Rwanda</option>
+          <option value="1">Ethiopia</option>
+          <option value="2">Uganda</option>
+          <option value="3">Zambia</option>
+        </select>
+      </div>
+
+      <div class="btn-group my-3 mx-3" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
+        <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" />
+        <label class="btn btn-outline-primary" for="btnradio2">Radio 2</label>
+
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off" />
+        <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+      </div>
+    </div>
+    <!-- add a bootstrap slider  -->
   </main>
 
   <script type="module" src="./js/main.js"></script>

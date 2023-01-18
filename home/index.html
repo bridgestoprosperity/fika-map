@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Display a map on a webpage</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <link
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="mdc-slider mdc-slider--discrete mdc-slider--tick-marks">
+      <input class="mdc-slider__input" type="range" min="0" max="100" value="50" name="volume" step="10" aria-label="Discrete slider with tick marks demo">
+      <div class="mdc-slider__track">
+        <div class="mdc-slider__track--inactive"></div>
+        <div class="mdc-slider__track--active">
+          <div class="mdc-slider__track--active_fill"></div>
+        </div>
+        <div class="mdc-slider__tick-marks">
+          <div class="mdc-slider__tick-mark--active"></div>
+          <div class="mdc-slider__tick-mark--active"></div>
+          <div class="mdc-slider__tick-mark--active"></div>
+          <div class="mdc-slider__tick-mark--active"></div>
+          <div class="mdc-slider__tick-mark--active"></div>
+          <div class="mdc-slider__tick-mark--active"></div>
+          <div class="mdc-slider__tick-mark--inactive"></div>
+          <div class="mdc-slider__tick-mark--inactive"></div>
+          <div class="mdc-slider__tick-mark--inactive"></div>
+          <div class="mdc-slider__tick-mark--inactive"></div>
+          <div class="mdc-slider__tick-mark--inactive"></div>
+        </div>
+      </div>
+      <div class="mdc-slider__thumb">
+        <div class="mdc-slider__value-indicator-container" aria-hidden="true">
+          <div class="mdc-slider__value-indicator">
+            <span class="mdc-slider__value-indicator-text">
+              50
+            </span>
+          </div>
+        </div>
+        <div class="mdc-slider__thumb-knob"></div>
+      </div>
+    </div>
+      <!-- <div class="row">
+        <div class="col m12">
+          <div class="mdc-select" role="listbox">
+            <div class="mdc-select__surface" tabindex="0">
+              <div class="mdc-select__label">Pick a option</div>
+              <div class="mdc-select__selected-text"></div>
+              <div class="mdc-select__bottom-line"></div>
+            </div>
+            <div class="mdc-select__menu mdc-menu mdc-menu-surface">
+              <ul class="mdc-list">
+                <li class="mdc-list-item" role="option" tabindex="0">Option 1</li>
+                <li class="mdc-list-item" role="option" tabindex="0">Option 2</li>
+                <li class="mdc-list-item" role="option" tabindex="0">Option 3</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col m12">
+          <div class="mdc-form-field">
+            <div class="mdc-radio">
+              <input class="mdc-radio__native-control" type="radio" id="radio-1" name="radios" checked> -->
+    <!-- <div class="container">
+      <div class="right-container"> -->
+        
+        <!-- <button class="mdc-button mdc-button--raised foo-button">
+            <span class="mdc-button__ripple"></span>
+            Hello
+        </button> -->
+      <!-- </div>
+      <div class="left-container">
+        
+      </div> -->
+    </div>
+    <!-- <div id="map"></div> -->
+
+    
+    <script src="./index.js"></script>
+  </body>
+</html>

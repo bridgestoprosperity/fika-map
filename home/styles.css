@@ -1,0 +1,68 @@
+.foo-button {
+  background-color: black;
+  color: white;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+}
+
+.left-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 68px;
+  background-color: gray;
+}
+
+.right-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 68px;
+  width: calc(408px - 68px);
+  background-color: pink;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 408px;
+  width: calc(100% - 408px);
+}
+
+.mdc-slider {
+  width: 100%;
+  margin: 16px 0;
+}
+
+.mdc-select {
+  width: 100%;
+  margin: 16px 0;
+}
+
+.mdc-form-field {
+  margin: 16px 0;
+}
+
+.mdc-radio {
+  display: inline-block;
+  margin-right: 16px;
+}
+
+.mdc-radio__native-control:checked ~ .mdc-radio__background {
+  border-color: #106cc8;
+}
+
+.mdc-radio__native-control:checked ~ .mdc-radio__outer-circle {
+  border-color: #106cc8;
+}
+
+.mdc-radio__native-control:checked ~ .mdc-radio__inner-circle {
+  background-color: #106cc8;
+}

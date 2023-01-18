@@ -1,0 +1,19 @@
+{
+  "name": "scratch2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0"
+  },
+  "dependencies": {
+    "mapbox-gl": "^2.12.0",
+    "material-components-web": "^14.0.0",
+    "material-design-icons-iconfont": "^6.7.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "fikamapproject",
+  "version": "1.0.0",
+  "description": "this project is a test",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard"
+  },
+  "keywords": [
+    "maps"
+  ],
+  "author": "Cameron Kruse",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

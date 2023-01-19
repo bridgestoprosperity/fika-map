@@ -3,3 +3,10 @@
 #MacOS
 .DS_Store
 Icon
+./map/node_modules
+node_modules
+./map/build
+npm-debug.log
+.nyc
+.env
+/.vscode/

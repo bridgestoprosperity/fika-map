@@ -7,7 +7,7 @@
   </head>
 
   <main class="d-flex flex-nowrap">
-    <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 75px">
+    <div class="side-bar d-flex flex-column flex-shrink-0 bg-light" style="width: 75px">
       <a href="/" class="d-flex p-3 link-dark text-decoration-none align-items-center justify-content-center" title="Home" data-bs-toggle="tooltip" data-bs-placement="right">
         <img src="./img/b2plogo.png" alt="icon" width="50px" height="50px" />
       </a>
@@ -31,7 +31,7 @@
           </a>
         </li>
         <li>
-          <a href="#" class="nav-link pt-1 pb-1 border-bottom rounded-0" title="Chart View" data-bs-toggle="tooltip" data-bs-placement="right" style="max-width: 75; padding-left: 0px; padding-right: 0">
+          <a href="#" class="nav-link pt-1 pb-1 rounded-0" title="Chart View" data-bs-toggle="tooltip" data-bs-placement="right" style="max-width: 75; padding-left: 0px; padding-right: 0">
             <i class="h3 bi bi-bar-chart-fill"></i>
             <p class="icon-title">Chart View</p>
           </a>
@@ -50,8 +50,11 @@
         </ul>
       </div> -->
     </div>
+    <!-- add a bootstrap vertical divider -->
+    <span class="border-end border-1"></span>
+
     <!-- <div class="b-example-divider b-example-vr"></div> -->
-    <div class="col-9 bg-light shadow-lg d-block align-items-start justify-content-center py-2 px-2" style="width: 333px">
+    <div class="map-menu col-9 bg-light d-block align-items-start justify-content-center py-2 px-2" style="width: 333px">
       <!-- <h1 class="text-center">Rwanda</h1> -->
       <!-- bootstrap large button that is centered in div -->
       <div>
@@ -62,7 +65,7 @@
           <option value="3">Zambia</option>
         </select>
       </div>
-
+      
       <div class="btn-group my-3 mx-3" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked />
         <label class="btn btn-outline-primary" for="btnradio1">Radio 1</label>
@@ -74,8 +77,11 @@
         <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
       </div>
     </div>
+    <!-- create a div that takes up all room on page not covered by the map-meun -->
+    <div class="col-12 col-md-9 col-xl-10 pl-md-5 bd-content" id="map"></div>
     <!-- add a bootstrap slider  -->
   </main>
 
   <script type="module" src="./js/main.js"></script>
+  <!-- <script type="module" src="./js/map.js"></script> -->
 </html>

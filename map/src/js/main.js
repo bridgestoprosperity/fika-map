@@ -1,10 +1,12 @@
 // Import our custom CSS
 import "../scss/styles.scss";
-
 // Import all of Bootstrap's JS
 import * as bootstrap from "bootstrap";
 // import bootstrap icons
 import "bootstrap-icons/font/bootstrap-icons.css";
+import { testingscratch } from './map.js';
+
+
 
 /* global bootstrap: false */
 
@@ -28,5 +30,8 @@ toggle.forEach((el) => {
   });
 });
 
-console.log(tooltipTriggerList)
-console.log(toggle)
+// console.log(tooltipTriggerList)
+// console.log(toggle)
+
+// Import our custom JS
+

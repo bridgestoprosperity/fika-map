@@ -92,3 +92,24 @@ body {
     align-items: center;
     justify-content: center;
   }
+
+  icon-title.active{
+    color:#fff;
+  }
+  .slider {
+    position: relative;
+    width: 100%;
+  }
+  .slider-tick-marks {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+  }
+  
+  .slider-tick-mark {
+    position: relative;
+    flex: 1;
+    text-align: center;
+  }

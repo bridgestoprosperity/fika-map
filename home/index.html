@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fika Map</title>
+    <link rel="shortcut icon" type="image/ico" href="" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/bootstrap.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- make a bootstrap container that is 400 pixels wide with the id menu that is on the left side of the page and static-->
+    <!-- <div class="card m-2" style="width: 20%; z-index: 2" id="menu">
+      <div class="card-body" id="menu-body" style="height: calc(100vh - 40px); overflow-y: scroll">
+        <h5 class="card-title">Crop Explorer</h5>
+        <p class="card-text">Select a crop below to see where it's grown in the United States</p>
+        <div class="btn-group pb-3 d-flex justify-content-center" role="group" aria-label="Crop Toggle" id="resolution-check">
+          <input type="radio" class="btn-check" name="btnradio" id="field-level" autocomplete="off" checked="" />
+          <label class="btn btn-outline-light p-2" for="field-level">Field Level</label>
+          <input type="radio" class="btn-check" name="btnradio" id="county-level" autocomplete="off" checked="" />
+          <label class="btn btn-outline-light p-2" for="county-level">County Level</label>
+        </div>
+        <div id="crop-buttons"></div>
+      </div>
+    </div> -->
+    <div id="map"></div>
+    <div class="side-bar" id="side-bar"></div>
+    <div class="control-panel card-body" id="control-panel">
+      <!-- <canvas id="click-panel-canvas" width="100%" height="300" ></canvas> -->
+      <!-- <div class="collapse-button"></div> -->
+      <!-- <button class="half-circle-arrow-btn">Button Text</button> -->
+    </div>
+    <div class="click-panel card-body" id="click-panel">
+      <!-- <canvas id="click-panel-canvas"></canvas> -->
+      <canvas class="click-panel-canvas" id="click-panel-canvas" ></canvas>
+      <div class="card-body" id="words-click"></div>
+
+
+    </div>
+    <div class="hover-panel" id="hover-panel"></div>
+
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>

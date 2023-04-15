@@ -45,6 +45,13 @@ body {
   border-radius: 0px 10px 10px 0px;
   border: 3px solid #3b834c;
   box-shadow: 0px 0px 10px #00000053;
+  transition: transform 0.5s ease;
+}
+
+/* add a hide class that moves the panel 350px left */
+.control-panel.hide {
+  transform: translateX(-400px);
+  box-shadow: 0px 0px 0px;
 }
 
 .click-panel {

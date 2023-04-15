@@ -1,6 +1,7 @@
 import { hoverHandler } from "./hoverHandler.js";
 import { stopHoverHandler } from "./hoverHandler.js";
 import { clickHandler } from "./clickHandler.js";
+import * as clickVars from "./clickHandler.js";
 
 let hoverLayers = ["travel-primaryschool"];
 let clickLayers = ["travel-primaryschool"];
@@ -17,6 +18,117 @@ const map = new mapboxgl.Map({
   zoom: 8.2, // starting zoom
   hash: true,
 });
+let radarData = {
+  labels: ["Primary Schools", "Secondary Schools", "Health Centers", "Hospitals", "Markets"],
+  datasets: [
+    {
+      label: "Travel Time With Bridges",
+      data: [],
+      fill: "+1",
+      backgroundColor: "rgba(117, 117, 117, 0.3)",
+      borderColor: "rgb(158, 199, 163)",
+      pointBackgroundColor: "rgb(158, 199, 163)",
+      pointBorderColor: "#fff",
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgb(54, 162, 235)",
+      clip: false,
+    },
+    {
+      label: "Travel Time Without Bridges",
+      data: [],
+      fill: false,
+      backgroundColor: "rgba(206, 97, 96, 0.5)",
+      borderColor: "rgb(206, 97, 96)",
+      pointBackgroundColor: "rgb(206, 97, 96)",
+      pointBorderColor: "#fff",
+      pointHoverBackgroundColor: "#fff",
+      pointHoverBorderColor: "rgb(255, 99, 132)",
+      clip: false,
+    },
+  ],
+};
+let radarConfig = {
+  type: "radar",
+  data: radarData,
+  options: {
+    scale: {
+      r: {
+        min: 0,
+        max: 60,
+      },
+      ticks: {
+        beginAtZero: true,
+        min: 0,
+        max: 60,
+        stepSize: 15,
+      },
+    },
+    elements: {
+      line: {
+        borderWidth: 3,
+      },
+    },
+    interaction: {
+      mode: "index",
+    },
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            let label = context.dataset.label || "";
+            let value1 = context.dataset.data[context.dataIndex];
+            let value = 0;
+            console.log("label is" + context.dataset.label);
+            if (label == "Travel Time With Bridges") {
+              value = Math.round(clickVars.radarData1[context.dataIndex]);
+            } else if (label == "Travel Time Without Bridges") {
+              value = Math.round(clickVars.radarData2[context.dataIndex]);
+            } else {
+              console.log("else");
+              value = context.dataset.data[context.dataIndex];
+            }
+            label += ": " + value + " minutes";
+            return label;
+          },
+        },
+      },
+    },
+  },
+};
+
+let pieData = {
+  labels: ["Men", "Women", "Children", "Other"],
+  datasets: [
+    {
+      label: "Population",
+      data: [],
+      backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#B2BEB5"],
+      hoverOffset: 4,
+    },
+  ],
+};
+let pieConfig = {
+  type: "pie",
+  data: pieData,
+  options: {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+      legend: {
+        position: "top",
+      },
+      title: {
+        display: true,
+        text: "Population",
+      },
+    },
+  },
+};
+
+
+
+export let radarChart = new Chart(document.getElementById("click-panel-canvas"), radarConfig);
+export let pieChart = new Chart(document.getElementById("click-panel-canvas2"), pieConfig);
 
 for (let i = 0; i < hoverLayers.length; i++) {
   map.on("mousemove", hoverLayers[i], function (e) {
@@ -39,4 +151,7 @@ for (let i = 0; i < clickLayers.length; i++) {
   });
 }
 
-// When anywhere else on the map is clicked, the click panel should be hidden. To do this, we add a click event listener to the map object. This event listener will call a function that will hide the click panel.
+document.getElementById("hide-button").addEventListener("click", function () {
+  document.getElementById("control-panel").classList.add("hide");
+});
+

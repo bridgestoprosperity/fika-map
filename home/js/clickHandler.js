@@ -39,27 +39,32 @@ export function clickHandler(layerName, feature) {
   // the hover values will be the same as the actual values.
   // the chart scale will be set from 0, 15, 30, 60
   // console.log(chart);
-  radarData1 = [feature["travel_time"], feature["travel_time"], feature["travel_time"], feature["travel_time"], feature["travel_time"]];
-  radarData2 = [feature["travel_time_all_removed"], feature["travel_time_all_removed"], feature["travel_time_all_removed"], feature["travel_time_all_removed"], feature["travel_time_all_removed"]];
+  console.log(feature)
+  radarData1 = [feature["travel_time_education_primary"], feature["travel_time_education_secondary"], feature["travel_time_health_centers"], feature["travel_time_health_major"], feature["travel_time_markets"]];
+  radarData2 = [feature["travel_time_all_removed_fixed_education_primary"], feature["travel_time_all_removed_fixed_education_secondary"], feature["travel_time_all_removed_optimal_health_centers"], feature["travel_time_all_removed_optimal_health_major"], feature["travel_time_all_removed_fixed_markets"]];
   radarValues1 = [];
   radarValues2 = [];
   for (let i = 0; i < radarData1.length; i++) {
-    if (radarData1[i] > 60) {
-      radarValues1.push(60);
+    if (radarData1[i] > 120) {
+      radarValues1.push(120);
     } else {
       radarValues1.push(radarData1[i]);
     }
-    if (radarData2[i] > 60) {
-      radarValues2.push(60);
+    if (radarData2[i] > 120) {
+      radarValues2.push(120);
     } else {
       radarValues2.push(radarData2[i]);
     }
   }
 
   document.getElementById("words-click").innerHTML = "";
+
   clickPanel.classList.add("show");
-  otherPop = feature["population"] - feature["women_15_49"] - feature["men_15_49"] - feature["kids_5_9"];
-  popData = [Math.round(feature["men_15_49"]), Math.round(feature["population"]), Math.round(feature["kids_5_9"]), Math.round(otherPop)]
+  // otherPop = feature["population"] - feature["women_15_49"] - feature["men_15_49"] - feature["kids_5_9"];
+  popData = [Math.round(feature["kids_0_9"]), Math.round(feature["kids_10_14"]), Math.round(feature["males_15_49"]), Math.round(feature["females_15_49"]), Math.round(feature["people_65_plus"])]
+  console.log(popData);
+
+  // updating charts
   index.radarChart.data.datasets[0].data = radarValues1;
   index.radarChart.data.datasets[1].data = radarValues2;
   index.pieChart.data.datasets[0].data = popData;

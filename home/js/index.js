@@ -2,9 +2,10 @@ import { hoverHandler } from "./hoverHandler.js";
 import { stopHoverHandler } from "./hoverHandler.js";
 import { clickHandler } from "./clickHandler.js";
 import * as clickVars from "./clickHandler.js";
+const {DeckGL, GeoJsonLayer} = deck;
 
-let hoverLayers = ["travel-primaryschool"];
-let clickLayers = ["travel-primaryschool"];
+let hoverLayers = ["villages-travel-time-simple", "villages-travel-time-detailed"];
+let clickLayers = ["villages-travel-time-detailed", "villages-travel-time-simple"];
 let toggleLayers = [];
 let showLayers = [];
 let hideLayers = [];
@@ -18,6 +19,7 @@ const map = new mapboxgl.Map({
   zoom: 8.2, // starting zoom
   hash: true,
 });
+
 let radarData = {
   labels: ["Primary Schools", "Secondary Schools", "Health Centers", "Hospitals", "Markets"],
   datasets: [
@@ -54,13 +56,13 @@ let radarConfig = {
     scale: {
       r: {
         min: 0,
-        max: 60,
+        max: 120,
       },
       ticks: {
         beginAtZero: true,
         min: 0,
-        max: 60,
-        stepSize: 15,
+        max: 120,
+        stepSize: 30,
       },
     },
     elements: {
@@ -97,7 +99,7 @@ let radarConfig = {
 };
 
 let pieData = {
-  labels: ["Men", "Women", "Children", "Other"],
+  labels: ["Children", "Teens", "Adult Men", "Adult Women", "Elderly"],
   datasets: [
     {
       label: "Population",
@@ -155,3 +157,23 @@ document.getElementById("hide-button").addEventListener("click", function () {
   document.getElementById("control-panel").classList.add("hide");
 });
 
+// on mapbox map load
+// map.on("load", function () {
+//   fetch('./assets/data/rwa_travel_time_hex-7.geojson')
+//   .then(response => response.json())
+//   .then(data => {
+//     const deckLayer = new deck.DeckGL({
+//       map: map,
+//       layers: [
+//         new deck.PolygonLayer({
+//           id: 'polygon-layer',
+//           data: data,
+//           getPolygon: d => d.geometry.coordinates,
+//           getFillColor: [255, 0, 0, 100],
+//           getLineColor: [0, 0, 0],
+//           lineWidthMinPixels: 1,
+//         })
+//       ],
+//     });
+//   });
+// });

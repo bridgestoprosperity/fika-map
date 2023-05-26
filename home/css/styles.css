@@ -6,9 +6,10 @@ body {
 }
 #map {
   position: absolute;
+  left: 4%;
   top: 0;
   bottom: 0;
-  width: 100%;
+  width: 96%;
   z-index: 0;
 }
 
@@ -23,7 +24,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 60px;
+  width: 4%;
   height: 100%;
   z-index: 2;
   transition: transform 0.5s ease;
@@ -31,36 +32,44 @@ body {
 }
 
 .control-panel {
-  width: 350px;
-  height: 96%;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  width: 70%;
+  height: fit-content;
+  margin-top: .5%;
+  /* margin-bottom: 1%; */
   position: absolute;
-  left: -400px;
-  transform: translateX(457px);
+  left: 15%;
+  /* transform translatex 15%-65px */
+  /* transform: translateX(15%); */
   z-index: 1;
   transition: transform 0.5s ease;
-  background-color: #f5f5f5f7;
-  opacity: 90%;
-  border-radius: 0px 10px 10px 0px;
-  border: 3px solid #3b834c;
-  box-shadow: 0px 0px 10px #00000053;
-  transition: transform 0.5s ease;
+  background-color: #f5f5f5;
+  opacity: 95%;
+  border-radius: 5px 5px 5px 5px;
+  border: 0.5px solid #cbcbcb;
+  box-shadow: 0px 1px 5px #00000053;
+  /* transition: transform 0.5s ease; */
+  /* align items in control-panel to be vertically centered */
 }
 
-/* add a hide class that moves the panel 350px left */
-.control-panel.hide {
-  transform: translateX(-400px);
-  box-shadow: 0px 0px 0px;
+.control-panel.left {
+  transform: translateX(-15%);
+    /* left: 4.5%; */
+  /* transform: translateX(15%); */
+  /* box-shadow: 0px 0px 0px; */
+}
+
+.control-dropdown {
+  background-color: #9f0404;
+  font-size: 2px;
 }
 
 .click-panel {
   position: absolute;
-  width: 350px;
-  min-height: 200px;
-  max-height: 90vh;
+  width: 25%;
+  min-height: 100%;
+  max-height: 100%;
   height: auto;
-  margin-right: 1%;
+  margin-right: 0px;
   margin-bottom: 200px;
   padding: 10px;
   top: 0px;
@@ -68,12 +77,12 @@ body {
   z-index: 1;
   background-color: #f5f5f5f7;
   opacity: 90%;
-  border-radius: 0px 0px 10px 10px;
-  border: 3px solid #DB7853;
+  border-radius: 0px 0px 0px 0px;
+  /* border: 3px solid #DB7853; */
   /* box-shadow: 0px 0px 10px #00000053; */
   overflow-y: auto;
   transition: transform 0.5s ease;
-  transform: translateY(-100%);
+  transform: translatex(100%);
 }
 
 .click-panel.show {

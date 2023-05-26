@@ -215,26 +215,17 @@ map.on("load", function () {
   clickLayers = ["hex-8-layer"];
   hoverLayers = ["hex-8-layer"];
   let featureID = null;
-  // for (let i = 0; i < hoverLayers.length; i++) {
-  //   map.on("mousemove", hoverLayers[i], function (e) {
-  //     // console.log the feature properties
-  //     map.getCanvas().style.cursor = "pointer";
-  //     if (e.features.length > 0) {
-  //       console.log("hello there")
-  //       if (featureID !== null) {
-  //         map.setFeatureState({ source: "hex-8-source", id: featureID }, { hover: false });
-  //       }
-  //       featureID = e.features[0].id;
-  //       map.setFeatureState({ source: "hex-8-source", id: featureID }, { hover: true });
-  //     }
-
-  //     hoverHandler(hoverLayers[i], e.features[0].properties);
-  //   });
-  //   map.on("mouseleave", hoverLayers[i], function (e) {
-  //     map.getCanvas().style.cursor = "";
-  //     stopHoverHandler(hoverLayers[i]);
-  //   });
-  // }
+  for (let i = 0; i < hoverLayers.length; i++) {
+    map.on("mousemove", hoverLayers[i], function (e) {
+      // console.log the feature properties
+      map.getCanvas().style.cursor = "pointer";
+      hoverHandler(hoverLayers[i], e.features[0].properties);
+    });
+    map.on("mouseleave", hoverLayers[i], function (e) {
+      map.getCanvas().style.cursor = "";
+      stopHoverHandler(hoverLayers[i]);
+    });
+  }
 
   for (let i = 0; i < clickLayers.length; i++) {
     map.on("click", function (e) {

@@ -42,11 +42,12 @@ let dropdownList = [dropdown1, dropdown2, dropdown3, dropdown4, dropdown5];
 let optionList = [d1Options, d2Demographics, d3NA, d4Options, d5Options];
 
 export function updateMenu(menu, options) {
-  // updates passed menu with the passed options
+
   // remove all options from the passed menu
   while (menu.firstChild) {
     menu.removeChild(menu.firstChild);
   }
+  // updates passed menu with the passed options
   for (let i = 0; i < options.length; i++) {
     let o = document.createElement("option");
     o.text = options[i];
@@ -113,7 +114,12 @@ for (let i = 0; i < 3; i++) {
 }
 
 let transSlider = document.getElementById("trans-slider");
-let transLevel = transSlider.value;
+// add event listener to slider and update layer transparency when updated
+transSlider.addEventListener("change", function () {
+  console.log(transSlider.value)
+  map.setPaintProperty("hex-8-layer", "fill-opacity", Number(transSlider.value)/100)
+})
+
 
 let radarData = {
   labels: ["Primary Schools", "Secondary Schools", "Health Centers", "Hospitals", "Markets"],

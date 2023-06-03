@@ -4,23 +4,13 @@ import { clickHandler } from "./clickHandler.js";
 import * as clickVars from "./clickHandler.js";
 import * as styleVars from "./menuOptions.js";
 
-
 const { DeckGL, GeoJsonLayer } = deck;
-
-// let menuOptions = require("./menu_options.json");
-
-// read in menu_options as a json file
-// let menuOptions = require("./menu_options.json");
-
 
 let hoverLayers = ["villages-travel-time-simple", "villages-travel-time-detailed"];
 let clickLayers = ["villages-travel-time-detailed", "villages-travel-time-simple"];
 let toggleLayers = [];
 let showLayers = [];
 let hideLayers = [];
-
-// let menuOptions = assets/menuOptions.json;
-
 
 mapboxgl.accessToken = "pk.eyJ1IjoiaGlnaGVzdHJvYWQiLCJhIjoiY2lzNjlpa3c3MGQ3cDJ6cDFzMXZpZTNmMCJ9.M1X4AOcuj4n3VT01ze0x5Q";
 const map = new mapboxgl.Map({
@@ -31,48 +21,99 @@ const map = new mapboxgl.Map({
   zoom: 8.2, // starting zoom
   hash: true,
 });
-console.log(styleVars.menuOptions);
 
-let selectedValues = [];
+let menuState = [];
+export let styleKey = "";
 let dropdown1 = document.getElementById("dropdown1");
 let dropdown2 = document.getElementById("dropdown2");
 let dropdown3 = document.getElementById("dropdown3");
 let dropdown4 = document.getElementById("dropdown4");
 let dropdown5 = document.getElementById("dropdown5");
-let d1Options = ["Travel Time", "Female Education", "Male Education", "options4", "options5"];
-let d2Options = ["With Bridges", "Without Bridges", "Change", "options9", "options10"];
-let d3Options = ["To Schools", "To Hospitals", "To Markets", "To Primary Schools", "To Secondary Schools", "to Health Centers", "to Health Major"];
+let d1Options = ["Travel Time", "Demographics", "Population"];
+let d2TravelTime = ["With Bridges", "Without Bridges", "Change"];
+let d2Demographics = ["Pregnancies", "Births", "RWI", "Underweight", "Female Education", "Male Education"];
+let d2Population = ["All", "Children 0-9", "Children 5-9", "Children 10-14", "Male 15-49", "Female 15-49", "Adults 65+"];
+let d3Options = ["To Schools", "To Hospitals", "To Markets", "To Primary Schools", "To Secondary Schools", "To Health Centers", "To Hospitals"];
+let d3NA = ["N/A"];
 let d4Options = ["Auto Geography", "Hex", "Village", "Admin 4", "Admin 3", "Admin 2"];
 let d5Options = ["Standard basemap", "Simple basemap", "Satellite map"];
 
-let dropdowns = [dropdown1, dropdown2, dropdown3, dropdown4, dropdown5];
-let options = [d1Options, d2Options, d3Options, d4Options, d5Options];
+let dropdownList = [dropdown1, dropdown2, dropdown3, dropdown4, dropdown5];
+let optionList = [d1Options, d2Demographics, d3NA, d4Options, d5Options];
 
-for (let i = 0; i < dropdowns.length; i++) {
-  for (let j = 0; j < options[i].length; j++) {
-    let option = document.createElement("option");
-    option.text = options[i][j];
-    option.value = options[i][j];
-    dropdowns[i].appendChild(option);
+export function updateMenu(menu, options) {
+  // updates passed menu with the passed options
+  // remove all options from the passed menu
+  while (menu.firstChild) {
+    menu.removeChild(menu.firstChild);
+  }
+  for (let i = 0; i < options.length; i++) {
+    let o = document.createElement("option");
+    o.text = options[i];
+    o.value = options[i];
+    menu.appendChild(o);
+  }
+  // handles disabling menus
+  if (dropdown1.value == "Demographics" || dropdown1.value == "Population") {
+    dropdown3.disabled = true;
+  } else {
+    dropdown3.disabled = false;
   }
 }
-// This creates and updates a list that contains the values of the dropdowns this will be used to upate the map
-for (let i = 0; i < 3; i++) {
-  selectedValues.push(dropdowns[i].value);
+
+// run updateMenu for each item of dropdowns
+for (let i = 0; i < dropdownList.length; i++) {
+  updateMenu(dropdownList[i], optionList[i]);
 }
+
+dropdown1.value = "Demographics";
+dropdown2.value = "Male Education";
+dropdown3.value = "N/A";
+
+export function updateMenuState(ddList) {
+  for (let i = 0; i < 3; i++) {
+    menuState.push(ddList[i].value);
+  }
+}
+updateMenuState(dropdownList);
+updateMenu(dropdown3, d3NA);
+
+// update style and menus
 for (let i = 0; i < 3; i++) {
-  dropdowns[i].addEventListener("change", function () {
-    selectedValues[i] = dropdowns[i].value;
-    console.log(selectedValues);
-    let styleKey = Object.keys(styleVars.menuOptions).find(
-      key => JSON.stringify(styleVars.menuOptions[key]) === JSON.stringify(selectedValues)
-    );
-    let middleVar = styleVars.quantiles[styleKey]["min"] + ((styleVars.quantiles[styleKey]["max"] - styleVars.quantiles[styleKey]["min"]) / 2);
+  dropdownList[i].addEventListener("change", function () {
+    // console.log(optionList[i])
+    if (dropdown1.value == "Demographics") {
+      optionList[1] = d2Demographics;
+      optionList[2] = d3NA;
+    } else if (dropdown1.value == "Population") {
+      optionList[1] = d2Population;
+      optionList[2] = d3NA;
+    } else {
+      optionList[1] = d2TravelTime;
+      optionList[2] = d3Options;
+    }
+    console.log(optionList[1][0])
+    console.log(optionList[2][0])
+    if (i == 0) {
+      updateMenu(dropdownList[1], optionList[1]);
+      updateMenu(dropdownList[2], optionList[2]);
+      dropdown2.value = optionList[1][0]
+      dropdown3.value = optionList[2][0]
+      menuState[1] = dropdown2.value
+      menuState[2] = dropdown3.value
+    }
+    menuState[i] = dropdownList[i].value;
+    styleKey = Object.keys(styleVars.menuOptions).find((key) => JSON.stringify(styleVars.menuOptions[key]) === JSON.stringify(menuState));
+    console.log(menuState)
+    console.log(styleKey)
+    let middleVar = styleVars.quantiles[styleKey]["min"] + (styleVars.quantiles[styleKey]["max"] - styleVars.quantiles[styleKey]["min"]) / 2;
     map.setPaintProperty("hex-8-layer", "fill-color", ["interpolate", ["linear"], ["get", styleKey], styleVars.quantiles[styleKey]["min"], "#12822e", styleVars.quantiles[styleKey]["mean"], "#fff700", styleVars.quantiles[styleKey]["max"], "#f50000"]);
     // "fill-color": ["interpolate", ["linear"], ["get", interestVar], styleVars.quantiles[interestVar]["min"], "#f50000", middleVar, "#fff700", styleVars.quantiles[interestVar]["max"], "#12822e"],
   });
 }
 
+let transSlider = document.getElementById("trans-slider");
+let transLevel = transSlider.value;
 
 let radarData = {
   labels: ["Primary Schools", "Secondary Schools", "Health Centers", "Hospitals", "Markets"],
@@ -190,8 +231,8 @@ export let pieChart = new Chart(document.getElementById("click-panel-canvas2"), 
 // });
 
 let interestVar = "male_educational_attainment_mean";
-console.log(styleVars.quantiles[interestVar]["max"])
-let middleVar = styleVars.quantiles[interestVar]["min"] + ((styleVars.quantiles[interestVar]["max"] - styleVars.quantiles[interestVar]["min"]) / 2);
+// console.log(styleVars.quantiles[interestVar]["max"]);
+let middleVar = styleVars.quantiles[interestVar]["min"] + (styleVars.quantiles[interestVar]["max"] - styleVars.quantiles[interestVar]["min"]) / 2;
 
 // on mapbox map load add home/assets/data/rwa_travel_time_hex-8-rounded.geojson
 map.on("load", function () {
@@ -199,6 +240,7 @@ map.on("load", function () {
   map.addSource("hex-8-source", {
     type: "geojson",
     data: "./assets/data/rwa_travel_time_hex-8.geojson",
+    generateId: true,
   });
   map.addLayer(
     {
@@ -207,23 +249,58 @@ map.on("load", function () {
       source: "hex-8-source",
       paint: {
         "fill-color": ["interpolate", ["linear"], ["get", interestVar], styleVars.quantiles[interestVar]["min"], "#f50000", middleVar, "#fff700", styleVars.quantiles[interestVar]["max"], "#12822e"],
-        'fill-opacity': [ 'case', ['boolean', ['feature-state', 'hover'], false], 1, 0.5 ],
+        "fill-opacity": 0.5,
       },
     },
     "admin-0-boundary-disputed"
   );
+  map.addLayer({
+    id: "hex-8-hover",
+    type: "line",
+    source: "hex-8-source",
+    paint: {
+      "line-color": "#66BEC7",
+      "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.5, 15, 2],
+      "line-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.75, 0],
+    },
+  });
+  map.addLayer(
+    {
+      id: "hex-8-click",
+      type: "fill",
+      source: "hex-8-source",
+      paint: {
+        "fill-color": "#66BEC7",
+        "fill-opacity": ["case", ["boolean", ["feature-state", "click"], false], 0.8, 0],
+      },
+    },
+    "admin-0-boundary-disputed"
+  );
+
   clickLayers = ["hex-8-layer"];
   hoverLayers = ["hex-8-layer"];
-  let featureID = null;
+  let hoveredFeatureID = null;
+  let clickedFeatureID = null;
   for (let i = 0; i < hoverLayers.length; i++) {
     map.on("mousemove", hoverLayers[i], function (e) {
-      // console.log the feature properties
       map.getCanvas().style.cursor = "pointer";
-      hoverHandler(hoverLayers[i], e.features[0].properties);
+      hoverHandler(hoverLayers[i], e.features[0]);
+      if (e.features.length > 0) {
+        if (hoveredFeatureID !== null) {
+          map.setFeatureState({ source: "hex-8-source", id: hoveredFeatureID }, { hover: false });
+        }
+        hoveredFeatureID = e.features[0].id;
+        map.setFeatureState({ source: "hex-8-source", id: hoveredFeatureID }, { hover: true });
+      }
     });
+
     map.on("mouseleave", hoverLayers[i], function (e) {
       map.getCanvas().style.cursor = "";
       stopHoverHandler(hoverLayers[i]);
+      if (hoveredFeatureID !== null) {
+        map.setFeatureState({ source: "hex-8-source", id: hoveredFeatureID }, { hover: false });
+      }
+      hoveredFeatureID = null;
     });
   }
 
@@ -231,36 +308,22 @@ map.on("load", function () {
     map.on("click", function (e) {
       document.getElementById("click-panel").classList.remove("show");
       document.getElementById("control-panel").classList.remove("left");
-      
+      if (clickedFeatureID !== null) {
+        map.setFeatureState({ source: "hex-8-source", id: clickedFeatureID }, { click: false });
+      }
+      clickedFeatureID = null;
     });
     map.on("click", clickLayers[i], function (e) {
       clickHandler(clickLayers[i], e.features[0].properties);
       document.getElementById("control-panel").classList.add("left");
+      // console.log(e.features);
+      if (e.features.length > 0) {
+        if (clickedFeatureID !== null) {
+          map.setFeatureState({ source: "hex-8-source", id: clickedFeatureID }, { click: false });
+        }
+        clickedFeatureID = e.features[0].id;
+        map.setFeatureState({ source: "hex-8-source", id: clickedFeatureID }, { click: true });
+      }
     });
   }
 });
-
-// on mapbox map load
-// map.on("load", function () {
-//   fetch('./assets/data/rwa_travel_time_hex-7.geojson')
-//   .then(response => response.json())
-//   .then(data => {
-//     const deckLayer = new deck.DeckGL({
-//       map: map,
-//       layers: [
-//         new deck.PolygonLayer({
-//           id: 'polygon-layer',
-//           data: data,
-//           getPolygon: d => d.geometry.coordinates,
-//           getFillColor: [255, 0, 0, 100],
-//           getLineColor: [0, 0, 0],
-//           lineWidthMinPixels: 1,
-//         })
-//       ],
-//     });
-//   });
-// });
-//  make a list of all these properties "h3-index": "886ad80001fffff", "row_col": [1334, 1576], "x_y": [30.1711124, -2.157208], "population": 281.249, "kids_0_9": 68.8977, "kids_5_9": 37.4674, "kids_10_14": 35.9179, "males_15_49": 78.837, "females_15_49": 64.4514, "people_65_plus": 8.7487, "pregnancies": 17.4729, "births": 12.3386, "rwi": -0.128, "underweight": 0.0816, "female_educational_attainment_mean": 4.5752, "male_educational_attainment_mean": 4.9117, "time_delta_all_removed_fixed_education_all": 0.0, "time_delta_all_removed_fixed_education_primary": 0.0, "time_delta_all_removed_fixed_education_secondary": 0.0, "time_delta_all_removed_fixed_markets": 0.0, "time_delta_all_removed_optimal_health_all": 0.0, "time_delta_all_removed_optimal_health_centers": 0.0, "time_delta_all_removed_optimal_health_major": 0.0, "time_delta_all_removed_optimal_markets": 0.0, "travel_time_all_removed_fixed_education_all": 66.5, "travel_time_all_removed_fixed_education_primary": 66.5, "travel_time_all_removed_fixed_education_secondary": 161.625, "travel_time_all_removed_fixed_markets": 296.0417, "travel_time_all_removed_optimal_health_all": 115.125, "travel_time_all_removed_optimal_health_centers": 198.9167, "travel_time_all_removed_optimal_health_major": 331.3333, "travel_time_all_removed_optimal_markets": 296.0417, "travel_time_education_all": 66.5, "travel_time_education_primary": 66.5, "travel_time_education_secondary": 161.625, "travel_time_health_all": 115.125, "travel_time_health_centers": 198.9167, "travel_time_health_major": 331.3333, "travel_time_markets": 296.0417
-  
-
-

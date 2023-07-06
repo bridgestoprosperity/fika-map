@@ -16,11 +16,13 @@ mapboxgl.accessToken = "pk.eyJ1IjoiaGlnaGVzdHJvYWQiLCJhIjoiY2lzNjlpa3c3MGQ3cDJ6c
 const map = new mapboxgl.Map({
   container: "map", // container ID
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: "mapbox://styles/highestroad/clg35ltys000m01nhht5my9n3", // style URL
+  style: "mapbox://styles/highestroad/clg35ltys000m01nhht5my9n3", // style URL 
   center: [29.519, -1.956], // starting position [lng, lat]
   zoom: 8.2, // starting zoom
   hash: true,
 });
+const nav = new mapboxgl.NavigationControl();
+map.addControl(nav, 'bottom-left');
 
 let menuState = [];
 export let styleKey = "";
@@ -108,7 +110,8 @@ for (let i = 0; i < 3; i++) {
     console.log(menuState)
     console.log(styleKey)
     let middleVar = styleVars.quantiles[styleKey]["min"] + (styleVars.quantiles[styleKey]["max"] - styleVars.quantiles[styleKey]["min"]) / 2;
-    map.setPaintProperty("hex-8-layer", "fill-color", ["interpolate", ["linear"], ["get", styleKey], styleVars.quantiles[styleKey]["min"], "#12822e", styleVars.quantiles[styleKey]["mean"], "#fff700", styleVars.quantiles[styleKey]["max"], "#f50000"]);
+    console.log(styleVars.quantiles[styleKey]["style"]["fill-color"])
+    map.setPaintProperty("hex-8-layer", "fill-color", styleVars.quantiles[styleKey]["style"]["fill-color"]);
     // "fill-color": ["interpolate", ["linear"], ["get", interestVar], styleVars.quantiles[interestVar]["min"], "#f50000", middleVar, "#fff700", styleVars.quantiles[interestVar]["max"], "#12822e"],
   });
 }
@@ -243,19 +246,23 @@ let middleVar = styleVars.quantiles[interestVar]["min"] + (styleVars.quantiles[i
 // on mapbox map load add home/assets/data/rwa_travel_time_hex-8-rounded.geojson
 map.on("load", function () {
   // add home/assets/data/rwa_travel_time_hex-8-rounded.geojson
+  // make layer rwa-feb032023-8sgj6n not visible
+  map.setLayoutProperty("rwa-feb032023-8sgj6n", "visibility", "none");
+
   map.addSource("hex-8-source", {
     type: "geojson",
     data: "./assets/data/rwa_travel_time_hex-8.geojson",
     generateId: true,
   });
-  map.addLayer(
+  map.addLayer( 
     {
       id: "hex-8-layer",
       type: "fill",
       source: "hex-8-source",
       paint: {
-        "fill-color": ["interpolate", ["linear"], ["get", interestVar], styleVars.quantiles[interestVar]["min"], "#f50000", middleVar, "#fff700", styleVars.quantiles[interestVar]["max"], "#12822e"],
+        "fill-color": styleVars.quantiles[interestVar]["style"]["fill-color"],
         "fill-opacity": 0.5,
+        "fill-outline-color": "rgba(255, 255, 255, .1)",
       },
     },
     "admin-0-boundary-disputed"

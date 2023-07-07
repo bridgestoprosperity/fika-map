@@ -1,12 +1,24 @@
-#Add files and filetypes you do now want added to repo in this document
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-#MacOS
-.DS_Store
-Icon
 node_modules
-./map/build
-npm-debug.log
-.nyc
-.env
-/.vscode/
 dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

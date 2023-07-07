@@ -1,4 +1,8 @@
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
+
 export default defineConfig({
-    base: '/fika-map/'
+  base: '/fika-map/',
+  build: {
+    assetsDir: 'assets',
+  },
 })

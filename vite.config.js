@@ -5,4 +5,9 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
   },
+  resolve: {
+    alias: {
+      '/@js/': '/src/js/',
+    },
+  }
 })

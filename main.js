@@ -1,132 +1,84 @@
 import "bootswatch/dist/flatly/bootstrap.min.css";
 import "./style.css";
-import hoverHandler  from "/assets/hoverHandler.js";
-import stopHoverHandler  from "/assets/hoverHandler.js";
-import clickHandler  from "/assets/clickHandler.js";
-import * as clickVars from "/assets/clickHandler.js";
-import * as styleVars from "/assets/menuOptions.js";
+
+import hoverHandler from "/@js/hoverHandler.js";
+// import stopHoverHandler from "/@js/hoverHandler.js";
+import clickHandler from "/@js/clickHandler.js";
+import * as clickVars from "/@js/clickHandler.js";
+// import * as styleVars from "/@js/menuOptions.js";
+import * as menuManager from "/@js/menu-manager.js";
+import * as mapManager from "/@js/map-manager.js";
 
 import mapboxgl from "mapbox-gl";
 import Chart from "chart.js/auto";
 
-
+// DELETE
 let hoverLayers = ["villages-travel-time-simple", "villages-travel-time-detailed"];
 let clickLayers = ["villages-travel-time-detailed", "villages-travel-time-simple"];
 let toggleLayers = [];
 let showLayers = [];
 let hideLayers = [];
+export let styleKey = "";
+// END DELETE
 
+// initialize map
 mapboxgl.accessToken = "pk.eyJ1IjoiaGlnaGVzdHJvYWQiLCJhIjoiY2lzNjlpa3c3MGQ3cDJ6cDFzMXZpZTNmMCJ9.M1X4AOcuj4n3VT01ze0x5Q";
-const map = new mapboxgl.Map({
+export const map = new mapboxgl.Map({
   container: "map", // container ID
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: "mapbox://styles/highestroad/clg35ltys000m01nhht5my9n3", // style URL 
+  style: "mapbox://styles/highestroad/clg35ltys000m01nhht5my9n3", // style URL
   center: [29.519, -1.956], // starting position [lng, lat]
   zoom: 8.2, // starting zoom
   hash: true,
 });
 const nav = new mapboxgl.NavigationControl();
-map.addControl(nav, 'bottom-left');
+map.addControl(nav, "bottom-left");
 
-let menuState = [];
-export let styleKey = "";
-let dropdown1 = document.getElementById("dropdown1");
-let dropdown2 = document.getElementById("dropdown2");
-let dropdown3 = document.getElementById("dropdown3");
-let dropdown4 = document.getElementById("dropdown4");
-let dropdown5 = document.getElementById("dropdown5");
-let d1Options = ["Travel Time", "Demographics", "Population"];
-let d2TravelTime = ["With Bridges", "Without Bridges", "Change"];
-let d2Demographics = ["Pregnancies", "Births", "RWI", "Underweight", "Female Education", "Male Education"];
-let d2Population = ["All", "Children 0-9", "Children 5-9", "Children 10-14", "Male 15-49", "Female 15-49", "Adults 65+"];
-let d3Options = ["To Schools", "To Hospitals", "To Markets", "To Primary Schools", "To Secondary Schools", "To Health Centers", "To Hospitals"];
-let d3NA = ["N/A"];
-let d4Options = ["Auto Geography", "Hex", "Village", "Admin 4", "Admin 3", "Admin 2"];
-let d5Options = ["Standard basemap", "Simple basemap", "Satellite map"];
-
-let dropdownList = [dropdown1, dropdown2, dropdown3, dropdown4, dropdown5];
-let optionList = [d1Options, d2Demographics, d3NA, d4Options, d5Options];
-
-export function updateMenu(menu, options) {
-
-  // remove all options from the passed menu
-  while (menu.firstChild) {
-    menu.removeChild(menu.firstChild);
-  }
-  // updates passed menu with the passed options
-  for (let i = 0; i < options.length; i++) {
-    let o = document.createElement("option");
-    o.text = options[i];
-    o.value = options[i];
-    menu.appendChild(o);
-  }
-  // handles disabling menus
-  if (dropdown1.value == "Demographics" || dropdown1.value == "Population") {
-    dropdown3.disabled = true;
-  } else {
-    dropdown3.disabled = false;
-  }
+// initialize dropdowns
+export let dropdownList = [];
+for (let i = 1; i <= 5; i++) {
+  let dropdown = document.getElementById("dropdown" + i);
+  dropdownList.push(dropdown);
 }
 
-// run updateMenu for each item of dropdowns
-for (let i = 0; i < dropdownList.length; i++) {
-  updateMenu(dropdownList[i], optionList[i]);
-}
-
+menuManager.updateMenu(menuManager.menuOptions.dropdown1, dropdown1);
 dropdown1.value = "Demographics";
+menuManager.updateMenu(menuManager.menuOptions.dropdown2[dropdown1.value], dropdown2);
 dropdown2.value = "Male Education";
+menuManager.updateMenu(menuManager.menuOptions.dropdown3[dropdown1.value], dropdown3);
 dropdown3.value = "N/A";
+menuManager.updateMenu(menuManager.menuOptions.dropdown4, dropdown4);
+dropdown4.disabled = true;
+menuManager.updateMenu(menuManager.menuOptions.dropdown5, dropdown5);
+dropdown5.disabled = true;
 
-export function updateMenuState(ddList) {
-  for (let i = 0; i < 3; i++) {
-    menuState.push(ddList[i].value);
+function nospaces(str) {
+  return str.replace(/\s/g, "");
+}
+
+export let menuState = {};
+for (let i = 1; i <= 5; i++) {
+  let dropdownId = "dropdown" + i;
+  menuState[dropdownId] = dropdownList[i - 1].value;
+}
+export function updateMenuState() {
+  for (let i = 0; i < 5; i++) {
+    menuState[dropdownList[i].id] = dropdownList[i].value;
   }
 }
-updateMenuState(dropdownList);
-updateMenu(dropdown3, d3NA);
 
-// update style and menus
-for (let i = 0; i < 3; i++) {
-  dropdownList[i].addEventListener("change", function () {
-    // console.log(optionList[i])
-    if (dropdown1.value == "Demographics") {
-      optionList[1] = d2Demographics;
-      optionList[2] = d3NA;
-    } else if (dropdown1.value == "Population") {
-      optionList[1] = d2Population;
-      optionList[2] = d3NA;
-    } else {
-      optionList[1] = d2TravelTime;
-      optionList[2] = d3Options;
+// ToDo upate menu state for each key in Menu State
+
+dropdownList.forEach((dropdown) => {
+  dropdown.addEventListener("change", function () {
+    if (dropdown.id == "dropdown1") {
+      menuManager.updateMenu(menuManager.menuOptions.dropdown2[nospaces(dropdown.value)], dropdown2);
+      menuManager.updateMenu(menuManager.menuOptions.dropdown3[nospaces(dropdown.value)], dropdown3);
     }
-    console.log(optionList[1][0])
-    console.log(optionList[2][0])
-    if (i == 0) {
-      updateMenu(dropdownList[1], optionList[1]);
-      updateMenu(dropdownList[2], optionList[2]);
-      dropdown2.value = optionList[1][0]
-      dropdown3.value = optionList[2][0]
-      menuState[1] = dropdown2.value
-      menuState[2] = dropdown3.value
-    }
-    menuState[i] = dropdownList[i].value;
-    styleKey = Object.keys(styleVars.menuOptions).find((key) => JSON.stringify(styleVars.menuOptions[key]) === JSON.stringify(menuState));
-    console.log(menuState)
-    console.log(styleKey)
-    let middleVar = styleVars.quantiles[styleKey]["min"] + (styleVars.quantiles[styleKey]["max"] - styleVars.quantiles[styleKey]["min"]) / 2;
-    console.log(styleVars.quantiles[styleKey]["style"]["fill-color"])
-    map.setPaintProperty("hex-8-layer", "fill-color", styleVars.quantiles[styleKey]["style"]["fill-color"]);
-    // "fill-color": ["interpolate", ["linear"], ["get", interestVar], styleVars.quantiles[interestVar]["min"], "#f50000", middleVar, "#fff700", styleVars.quantiles[interestVar]["max"], "#12822e"],
+    updateMenuState();
+    mapManager.updateHexStyling(menuState);
   });
-}
-
-let transSlider = document.getElementById("trans-slider");
-// add event listener to slider and update layer transparency when updated
-transSlider.addEventListener("change", function () {
-  console.log(transSlider.value)
-  map.setPaintProperty("hex-8-layer", "fill-opacity", Number(transSlider.value)/100)
-})
-
+});
 
 let radarData = {
   labels: ["Primary Schools", "Secondary Schools", "Health Centers", "Hospitals", "Markets"],
@@ -243,56 +195,13 @@ export let pieChart = new Chart(document.getElementById("click-panel-canvas2"), 
 //   document.getElementById("control-panel").classList.add("left");
 // });
 
-let interestVar = "male_educational_attainment_mean";
+// let interestVar = "male_educational_attainment_mean";
 // console.log(styleVars.quantiles[interestVar]["max"]);
-let middleVar = styleVars.quantiles[interestVar]["min"] + (styleVars.quantiles[interestVar]["max"] - styleVars.quantiles[interestVar]["min"]) / 2;
+// let middleVar = styleVars.quantiles[interestVar]["min"] + (styleVars.quantiles[interestVar]["max"] - styleVars.quantiles[interestVar]["min"]) / 2;
 
 // on mapbox map load add data/data/rwa_travel_time_hex-8-rounded.geojson
 map.on("load", function () {
-  // add /data/rwa_travel_time_hex-8-rounded.geojson
-  // make layer rwa-feb032023-8sgj6n not visible
-  map.setLayoutProperty("rwa-feb032023-8sgj6n", "visibility", "none");
-
-  map.addSource("hex-8-source", {
-    type: "geojson",
-    data: "./rwa_travel_time_hex-8.geojson",
-    generateId: true,
-  });
-  map.addLayer( 
-    {
-      id: "hex-8-layer",
-      type: "fill",
-      source: "hex-8-source",
-      paint: {
-        "fill-color": styleVars.quantiles[interestVar]["style"]["fill-color"],
-        "fill-opacity": 0.5,
-        "fill-outline-color": "rgba(255, 255, 255, .1)",
-      },
-    },
-    "admin-0-boundary-disputed"
-  );
-  map.addLayer({
-    id: "hex-8-hover",
-    type: "line",
-    source: "hex-8-source",
-    paint: {
-      "line-color": "#66BEC7",
-      "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.5, 15, 2],
-      "line-opacity": ["case", ["boolean", ["feature-state", "hover"], false], 0.75, 0],
-    },
-  });
-  map.addLayer(
-    {
-      id: "hex-8-click",
-      type: "fill",
-      source: "hex-8-source",
-      paint: {
-        "fill-color": "#66BEC7",
-        "fill-opacity": ["case", ["boolean", ["feature-state", "click"], false], 0.8, 0],
-      },
-    },
-    "admin-0-boundary-disputed"
-  );
+  mapManager.initializeMap(map);
 
   clickLayers = ["hex-8-layer"];
   hoverLayers = ["hex-8-layer"];

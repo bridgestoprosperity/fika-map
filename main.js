@@ -8,6 +8,7 @@ import * as clickVars from "/@js/clickHandler.js";
 // import * as styleVars from "/@js/menuOptions.js";
 import * as menuManager from "/@js/menu-manager.js";
 import * as mapManager from "/@js/map-manager.js";
+import * as chartBuilder from "/@js/chart-builder.js";
 
 import mapboxgl from "mapbox-gl";
 import Chart from "chart.js/auto";

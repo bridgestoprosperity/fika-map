@@ -1,4 +1,5 @@
 import * as index from "/main.js";
+import { map } from "../../main.js";
 
 // const data = {
 //   labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
@@ -39,7 +40,8 @@ export default function clickHandler(layerName, feature) {
   // the hover values will be the same as the actual values.
   // the chart scale will be set from 0, 15, 30, 60
   // console.log(chart);
-  console.log(feature)
+  // console.log(feature)
+  // console.log(feature["h3-index"])
   radarData1 = [feature["travel_time_education_primary"], feature["travel_time_education_secondary"], feature["travel_time_health_centers"], feature["travel_time_health_major"], feature["travel_time_markets"]];
   radarData2 = [feature["travel_time_all_removed_fixed_education_primary"], feature["travel_time_all_removed_fixed_education_secondary"], feature["travel_time_all_removed_optimal_health_centers"], feature["travel_time_all_removed_optimal_health_major"], feature["travel_time_all_removed_fixed_markets"]];
   radarValues1 = [];
@@ -62,7 +64,7 @@ export default function clickHandler(layerName, feature) {
   clickPanel.classList.add("show");
   // otherPop = feature["population"] - feature["women_15_49"] - feature["men_15_49"] - feature["kids_5_9"];
   popData = [Math.round(feature["kids_0_9"]), Math.round(feature["kids_10_14"]), Math.round(feature["males_15_49"]), Math.round(feature["females_15_49"]), Math.round(feature["people_65_plus"])]
-  console.log(popData);
+  // console.log(popData);
 
   // updating charts
   index.radarChart.data.datasets[0].data = radarValues1;
@@ -75,4 +77,12 @@ export default function clickHandler(layerName, feature) {
       document.getElementById("words-click").innerHTML += key + " -> " + feature[key] + "<br>";
     }
   }
+  // map.on('click', 'hex-8-layer', function (e) {
+    // Get the h3-index value of the clicked feature
+    var h3IndexValue = feature["h3-index"]
+
+    // Update the filter on the 'edu-paths' layer
+    map.setFilter('edu-paths', ['==', 'h3-index', h3IndexValue]);
+    map.setFilter('edu-paths-outline', ['==', 'h3-index', h3IndexValue]);
+  // });
 }

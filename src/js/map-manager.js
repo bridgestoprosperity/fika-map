@@ -1,4 +1,4 @@
-import { map } from '../../main.js';
+import { map } from "../../main.js";
 
 export const palettes = {
   inferno: ["#000004", "#57106e", "#bc3754", "#f98e09", "#fcffa4"],
@@ -50,45 +50,45 @@ export const palettes = {
 };
 
 export const menuOptions = {
-  'h3-index': ['N/A'],
-  row_col: ['N/A'],
-  x_y: ['N/A'],
-  population: ['Population', 'All', 'N/A'],
-  kids_0_9: ['Population', 'Children 0-9', 'N/A'],
-  kids_5_9: ['Population', 'Children 5-9', 'N/A'],
-  kids_10_14: ['Population', 'Children 10-14', 'N/A'],
-  males_15_49: ['Population', 'Male 15-49', 'N/A'],
-  females_15_49: ['Population', 'Female 15-49', 'N/A'],
-  people_65_plus: ['Population', 'Adults 65+', 'N/A'],
-  pregnancies: ['Demographics', 'Pregnancies', 'N/A'],
-  births: ['Demographics', 'Births', 'N/A'],
-  rwi: ['Demographics', 'RWI', 'N/A'],
-  underweight: ['Demographics', 'Underweight', 'N/A'],
-  female_educational_attainment_mean: ['Demographics', 'Female Education', 'N/A'],
-  male_educational_attainment_mean: ['Demographics', 'Male Education', 'N/A'],
-  time_delta_all_removed_fixed_education_all: ['Impact', 'Potential Impact', 'Schools'],
-  time_delta_all_removed_fixed_education_primary: ['Impact', 'Potential Impact', 'Primary Schools'],
-  time_delta_all_removed_fixed_education_secondary: ['Impact', 'Potential Impact', 'Secondary Schools'],
-  time_delta_all_removed_fixed_markets: ['N/A'],
-  time_delta_all_removed_optimal_health_all: ['Impact', 'Potential Impact', 'Healthcare'],
-  time_delta_all_removed_optimal_health_centers: ['Impact', 'Potential Impact', 'Health Centers'],
-  time_delta_all_removed_optimal_health_major: ['Impact', 'Potential Impact', 'Hospitals'],
-  time_delta_all_removed_optimal_markets: ['Impact', 'Potential Impact', 'Markets'],
-  travel_time_all_removed_fixed_education_all: ['Travel Time', 'Without Bridges', 'To Schools'],
-  travel_time_all_removed_fixed_education_primary: ['Travel Time', 'Without Bridges', 'To Primary Schools'],
-  travel_time_all_removed_fixed_education_secondary: ['Travel Time', 'Without Bridges', 'To Secondary Schools'],
-  travel_time_all_removed_fixed_markets: ['N/A'],
-  travel_time_all_removed_optimal_health_all: ['Travel Time', 'Without Bridges', 'To Healthcare'],
-  travel_time_all_removed_optimal_health_centers: ['Travel Time', 'Without Bridges', 'To Health Centers'],
-  travel_time_all_removed_optimal_health_major: ['Travel Time', 'Without Bridges', 'To Hospitals'],
-  travel_time_all_removed_optimal_markets: ['Travel Time', 'Without Bridges', 'To Markets'],
-  travel_time_education_all: ['Travel Time', 'With Bridges', 'To Schools'],
-  travel_time_education_primary: ['Travel Time', 'With Bridges', 'To Primary Schools'],
-  travel_time_education_secondary: ['Travel Time', 'With Bridges', 'To Secondary Schools'],
-  travel_time_health_all: ['Travel Time', 'With Bridges', 'To Healthcare'],
-  travel_time_health_centers: ['Travel Time', 'With Bridges', 'To Health Centers'],
-  travel_time_health_major: ['Travel Time', 'With Bridges', 'To Hospitals'],
-  travel_time_markets: ['Travel Time', 'With Bridges', 'To Markets'],
+  "h3-index": ["N/A"],
+  row_col: ["N/A"],
+  x_y: ["N/A"],
+  population: ["Population", "All", "N/A"],
+  kids_0_9: ["Population", "Children 0-9", "N/A"],
+  kids_5_9: ["Population", "Children 5-9", "N/A"],
+  kids_10_14: ["Population", "Children 10-14", "N/A"],
+  males_15_49: ["Population", "Male 15-49", "N/A"],
+  females_15_49: ["Population", "Female 15-49", "N/A"],
+  people_65_plus: ["Population", "Adults 65+", "N/A"],
+  pregnancies: ["Demographics", "Pregnancies", "N/A"],
+  births: ["Demographics", "Births", "N/A"],
+  rwi: ["Demographics", "RWI", "N/A"],
+  underweight: ["Demographics", "Underweight", "N/A"],
+  female_educational_attainment_mean: ["Demographics", "Female Education", "N/A"],
+  male_educational_attainment_mean: ["Demographics", "Male Education", "N/A"],
+  time_delta_all_removed_fixed_education_all: ["Impact", "Potential Impact", "Schools"],
+  time_delta_all_removed_fixed_education_primary: ["Impact", "Potential Impact", "Primary Schools"],
+  time_delta_all_removed_fixed_education_secondary: ["Impact", "Potential Impact", "Secondary Schools"],
+  time_delta_all_removed_fixed_markets: ["N/A"],
+  time_delta_all_removed_optimal_health_all: ["Impact", "Potential Impact", "Healthcare"],
+  time_delta_all_removed_optimal_health_centers: ["Impact", "Potential Impact", "Health Centers"],
+  time_delta_all_removed_optimal_health_major: ["Impact", "Potential Impact", "Hospitals"],
+  time_delta_all_removed_optimal_markets: ["Impact", "Potential Impact", "Markets"],
+  travel_time_all_removed_fixed_education_all: ["Travel Time", "Without Bridges", "To Schools"],
+  travel_time_all_removed_fixed_education_primary: ["Travel Time", "Without Bridges", "To Primary Schools"],
+  travel_time_all_removed_fixed_education_secondary: ["Travel Time", "Without Bridges", "To Secondary Schools"],
+  travel_time_all_removed_fixed_markets: ["N/A"],
+  travel_time_all_removed_optimal_health_all: ["Travel Time", "Without Bridges", "To Healthcare"],
+  travel_time_all_removed_optimal_health_centers: ["Travel Time", "Without Bridges", "To Health Centers"],
+  travel_time_all_removed_optimal_health_major: ["Travel Time", "Without Bridges", "To Hospitals"],
+  travel_time_all_removed_optimal_markets: ["Travel Time", "Without Bridges", "To Markets"],
+  travel_time_education_all: ["Travel Time", "With Bridges", "To Schools"],
+  travel_time_education_primary: ["Travel Time", "With Bridges", "To Primary Schools"],
+  travel_time_education_secondary: ["Travel Time", "With Bridges", "To Secondary Schools"],
+  travel_time_health_all: ["Travel Time", "With Bridges", "To Healthcare"],
+  travel_time_health_centers: ["Travel Time", "With Bridges", "To Health Centers"],
+  travel_time_health_major: ["Travel Time", "With Bridges", "To Hospitals"],
+  travel_time_markets: ["Travel Time", "With Bridges", "To Markets"],
 };
 
 export const quantiles = {
@@ -630,8 +630,6 @@ export const mapStyles = {
   },
 };
 
-
-
 export let transSlider = document.getElementById("trans-slider");
 // add event listener to slider and update layer transparency when updated
 transSlider.addEventListener("change", function () {
@@ -639,8 +637,8 @@ transSlider.addEventListener("change", function () {
   map.setPaintProperty("hex-8-layer", "fill-opacity", Number(transSlider.value) / 100);
 });
 
-export function initializeMap(map){
-    // add /data/rwa_travel_time_hex-8-rounded.geojson
+export function initializeMap(map) {
+  // add /data/rwa_travel_time_hex-8-rounded.geojson
   // make layer rwa-feb032023-8sgj6n not visible
   // map.setLayoutProperty("rwa-feb032023-8sgj6n", "visibility", "none");
 
@@ -648,6 +646,10 @@ export function initializeMap(map){
     type: "geojson",
     data: "./rwa_travel_time_hex-8.geojson",
     generateId: true,
+  });
+  map.addSource("edu-paths-source", {
+    type: "geojson",
+    data: "./all-edu-paths.geojson",
   });
   map.addLayer(
     {
@@ -684,8 +686,35 @@ export function initializeMap(map){
     },
     "admin-0-boundary-disputed"
   );
-  
+  map.addLayer(
+    {
+      id: "edu-paths-outline",
+      type: "line",
+      source: "edu-paths-source",
+      paint: {
+        "line-color": "#ffffff",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1, 15, 6],
+      },
+      filter: ["all", ["==", ["id"], 0]],
+    },
+    "admin-0-boundary-disputed"
+  );
+  map.addLayer(
+    {
+      id: "edu-paths",
+      type: "line",
+      source: "edu-paths-source",
+      paint: {
+        "line-color": "#E2A04A",
+        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.5, 15, 2],
+      },
+      filter: ["all", ["==", ["id"], 0]],
+    },
+    "admin-0-boundary-disputed"
+  );
 }
+
+
 
 function StyleKey(value) {
   return Object.keys(menuOptions).find((key) => menuOptions[key] === value);
@@ -701,8 +730,8 @@ function getKeyByValue(value) {
 }
 
 export function updateHexStyling(currentMenuState) {
-  console.log(currentMenuState)
+  console.log(currentMenuState);
   let styleKey = Object.keys(menuOptions).find((key) => JSON.stringify(menuOptions[key]) === JSON.stringify([currentMenuState.dropdown1, currentMenuState.dropdown2, currentMenuState.dropdown3]));
-  console.log(styleKey)
+  console.log(styleKey);
   map.setPaintProperty("hex-8-layer", "fill-color", mapStyles[styleKey]["style"]["fill-color"]);
 }

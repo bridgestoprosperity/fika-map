@@ -647,10 +647,6 @@ export function initializeMap(map) {
     data: "./rwa_travel_time_hex-8.geojson",
     generateId: true,
   });
-  map.addSource("edu-paths-source", {
-    type: "geojson",
-    data: "./all-edu-paths.geojson",
-  });
   map.addLayer(
     {
       id: "hex-8-layer",
@@ -683,32 +679,6 @@ export function initializeMap(map) {
         "fill-color": "#66BEC7",
         "fill-opacity": ["case", ["boolean", ["feature-state", "click"], false], 0.8, 0],
       },
-    },
-    "admin-0-boundary-disputed"
-  );
-  map.addLayer(
-    {
-      id: "edu-paths-outline",
-      type: "line",
-      source: "edu-paths-source",
-      paint: {
-        "line-color": "#ffffff",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 1, 15, 6],
-      },
-      filter: ["all", ["==", ["id"], 0]],
-    },
-    "admin-0-boundary-disputed"
-  );
-  map.addLayer(
-    {
-      id: "edu-paths",
-      type: "line",
-      source: "edu-paths-source",
-      paint: {
-        "line-color": "#E2A04A",
-        "line-width": ["interpolate", ["linear"], ["zoom"], 3, 0.5, 15, 2],
-      },
-      filter: ["all", ["==", ["id"], 0]],
     },
     "admin-0-boundary-disputed"
   );

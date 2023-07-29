@@ -3,7 +3,7 @@ import "./style.css";
 
 
 import hoverHandler from "/@js/hoverHandler.js";
-// import stopHoverHandler from "/@js/hoverHandler.js";
+import stopHoverHandler from "/@js/hoverHandler.js";
 import clickHandler from "/@js/clickHandler.js";
 import * as clickVars from "/@js/clickHandler.js";
 // import * as styleVars from "/@js/menuOptions.js";
@@ -52,7 +52,7 @@ dropdown3.value = "N/A";
 menuManager.updateMenu(menuManager.menuOptions.dropdown4, dropdown4);
 dropdown4.disabled = true;
 menuManager.updateMenu(menuManager.menuOptions.dropdown5, dropdown5);
-dropdown5.disabled = true;
+dropdown5.disabled = false;
 
 function nospaces(str) {
   return str.replace(/\s/g, "");
@@ -76,6 +76,9 @@ dropdownList.forEach((dropdown) => {
     if (dropdown.id == "dropdown1") {
       menuManager.updateMenu(menuManager.menuOptions.dropdown2[nospaces(dropdown.value)], dropdown2);
       menuManager.updateMenu(menuManager.menuOptions.dropdown3[nospaces(dropdown.value)], dropdown3);
+    }
+    if (dropdown.id == "dropdown5") {
+      menuManager.updateBaselayer(dropdown5.value);
     }
     updateMenuState();
     mapManager.updateHexStyling(menuState);
@@ -204,31 +207,20 @@ export let pieChart = new Chart(document.getElementById("click-panel-canvas2"), 
 // on mapbox map load add data/data/rwa_travel_time_hex-8-rounded.geojson
 map.on("load", function () {
   mapManager.initializeMap(map);
-
-  clickLayers = ["hex-8-layer"];
-  hoverLayers = ["hex-8-layer"];
-  let hoveredFeatureID = null;
   let clickedFeatureID = null;
+  clickLayers = ["hex-8-layer"];
+  hoverLayers = ["hex-8-layer", "bridge-point", "health-point", "edu-point"];
+
   for (let i = 0; i < hoverLayers.length; i++) {
     map.on("mousemove", hoverLayers[i], function (e) {
       map.getCanvas().style.cursor = "pointer";
       hoverHandler(hoverLayers[i], e.features[0]);
-      if (e.features.length > 0) {
-        if (hoveredFeatureID !== null) {
-          map.setFeatureState({ source: "hex-8-source", id: hoveredFeatureID }, { hover: false });
-        }
-        hoveredFeatureID = e.features[0].id;
-        map.setFeatureState({ source: "hex-8-source", id: hoveredFeatureID }, { hover: true });
-      }
+      
     });
 
     map.on("mouseleave", hoverLayers[i], function (e) {
       map.getCanvas().style.cursor = "";
       stopHoverHandler(hoverLayers[i]);
-      if (hoveredFeatureID !== null) {
-        map.setFeatureState({ source: "hex-8-source", id: hoveredFeatureID }, { hover: false });
-      }
-      hoveredFeatureID = null;
     });
   }
 

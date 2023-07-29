@@ -1,3 +1,4 @@
+import { map } from "../../main.js";
 
 export let menuOptions = {
   dropdown1: ["Demographics", "Population", "Impact", "Travel Time"],
@@ -14,25 +15,34 @@ export let menuOptions = {
     TravelTime: ["To Schools", "To Markets", "To Primary Schools", "To Secondary Schools", "To Health Centers", "To Hospitals"],
   },
   dropdown4: ["Auto Geography", "Hex", "Village", "Admin 4", "Admin 3", "Admin 2"],
-  dropdown5: ["Standard basemap", "Simple basemap", "Satellite map"],
+  dropdown5: ["Standard basemap", "Satellite map"],
 };
 
 export function updateMenu(choices, menu) {
-    while (menu.firstChild) {
-      menu.removeChild(menu.firstChild);
-    }
-    for (let i = 0; i < choices.length; i++) {
-      let o = document.createElement("option");
-      o.text = choices[i];
-      o.value = choices[i];
-      menu.appendChild(o);
-      if (choices[i] == "N/A") {
-        menu.disabled = true;
-      } else {
-        menu.disabled = false;
-      }
+  while (menu.firstChild) {
+    menu.removeChild(menu.firstChild);
+  }
+  for (let i = 0; i < choices.length; i++) {
+    let o = document.createElement("option");
+    o.text = choices[i];
+    o.value = choices[i];
+    menu.appendChild(o);
+    if (choices[i] == "N/A") {
+      menu.disabled = true;
+    } else {
+      menu.disabled = false;
     }
   }
+}
+export function updateBaselayer(selection) {
+  console.log(selection);
+  if (selection == "Standard basemap") {
+    map.setLayoutProperty("satellite-base", 'visibility', 'none');
+  }
+  else {
+    map.setLayoutProperty("satellite-base", 'visibility', 'visible');
+  }
+}
 
 //   The get syntax binds an object property to a function that will be called when that property is looked up. It can also be used in classes.
 //   const obj = {

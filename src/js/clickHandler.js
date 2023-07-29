@@ -35,6 +35,8 @@ let popData = [];
 // const ctx = clickPanelCanvas.getContext('2d');
 // let chart = null;
 
+let pathLayers = ["ps-paths", "ss-paths", "hp-paths", "hc-paths", "hos-paths", "sdu-paths", "ps-paths-outline", "ss-paths-outline", "hp-paths-outline", "hc-paths-outline", "hos-paths-outline", "sdu-paths-outline"];
+
 export default function clickHandler(layerName, feature) {
   // need to do something here where the values are converted to graph values which max out at 60.
   // the hover values will be the same as the actual values.
@@ -43,7 +45,13 @@ export default function clickHandler(layerName, feature) {
   // console.log(feature)
   // console.log(feature["h3-index"])
   radarData1 = [feature["travel_time_education_primary"], feature["travel_time_education_secondary"], feature["travel_time_health_centers"], feature["travel_time_health_major"], feature["travel_time_markets"]];
-  radarData2 = [feature["travel_time_all_removed_fixed_education_primary"], feature["travel_time_all_removed_fixed_education_secondary"], feature["travel_time_all_removed_optimal_health_centers"], feature["travel_time_all_removed_optimal_health_major"], feature["travel_time_all_removed_fixed_markets"]];
+  radarData2 = [
+    feature["travel_time_all_removed_fixed_education_primary"],
+    feature["travel_time_all_removed_fixed_education_secondary"],
+    feature["travel_time_all_removed_optimal_health_centers"],
+    feature["travel_time_all_removed_optimal_health_major"],
+    feature["travel_time_all_removed_fixed_markets"],
+  ];
   radarValues1 = [];
   radarValues2 = [];
   for (let i = 0; i < radarData1.length; i++) {
@@ -63,7 +71,7 @@ export default function clickHandler(layerName, feature) {
 
   clickPanel.classList.add("show");
   // otherPop = feature["population"] - feature["women_15_49"] - feature["men_15_49"] - feature["kids_5_9"];
-  popData = [Math.round(feature["kids_0_9"]), Math.round(feature["kids_10_14"]), Math.round(feature["males_15_49"]), Math.round(feature["females_15_49"]), Math.round(feature["people_65_plus"])]
+  popData = [Math.round(feature["kids_0_9"]), Math.round(feature["kids_10_14"]), Math.round(feature["males_15_49"]), Math.round(feature["females_15_49"]), Math.round(feature["people_65_plus"])];
   // console.log(popData);
 
   // updating charts
@@ -78,11 +86,12 @@ export default function clickHandler(layerName, feature) {
     }
   }
   // map.on('click', 'hex-8-layer', function (e) {
-    // Get the h3-index value of the clicked feature
-    var h3IndexValue = feature["h3-index"]
+  // Get the h3-index value of the clicked feature
+  var h3IndexValue = feature["h3-index"];
 
-    // Update the filter on the 'edu-paths' layer
-    map.setFilter('edu-paths', ['==', 'h3-index', h3IndexValue]);
-    map.setFilter('edu-paths-outline', ['==', 'h3-index', h3IndexValue]);
-  // });
+  // Update the filter on the 'edu-paths' layer
+  // for every layer in the pathLayers array, set the filter to the h3IndexValue
+  for (let i = 0; i < pathLayers.length; i++) {
+    map.setFilter(pathLayers[i], ["==", "h3-index", h3IndexValue]);
+  }
 }

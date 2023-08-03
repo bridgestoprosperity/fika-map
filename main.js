@@ -1,7 +1,6 @@
 import "bootswatch/dist/flatly/bootstrap.min.css";
 import "./style.css";
 
-
 import hoverHandler from "/@js/hoverHandler.js";
 import stopHoverHandler from "/@js/hoverHandler.js";
 import clickHandler from "/@js/clickHandler.js";
@@ -9,7 +8,7 @@ import * as clickVars from "/@js/clickHandler.js";
 // import * as styleVars from "/@js/menuOptions.js";
 import * as menuManager from "/@js/menu-manager.js";
 import * as mapManager from "/@js/map-manager.js";
-import * as chartBuilder from "/@js/chart-builder.js";
+// import * as chartBuilder from "/@js/chart-builder.js";
 
 import mapboxgl from "mapbox-gl";
 import Chart from "chart.js/auto";
@@ -208,19 +207,27 @@ export let pieChart = new Chart(document.getElementById("click-panel-canvas2"), 
 map.on("load", function () {
   mapManager.initializeMap(map);
   let clickedFeatureID = null;
+  let hoverFeatureID = null;
   clickLayers = ["hex-8-layer"];
   hoverLayers = ["hex-8-layer", "bridge-point", "health-point", "edu-point"];
 
+  // Hover Section:
+
+
   for (let i = 0; i < hoverLayers.length; i++) {
     map.on("mousemove", hoverLayers[i], function (e) {
-      map.getCanvas().style.cursor = "pointer";
-      hoverHandler(hoverLayers[i], e.features[0]);
-      
+      if (e.features[0]["id"]) {
+        hoverFeatureID = e.features[0]["id"];
+        map.getCanvas().style.cursor = "pointer";
+        hoverHandler(hoverLayers[i], e.features[0]);
+      }
+      // console.log(e.features);
     });
-
+  }
+  for (let i = 0; i < hoverLayers.length; i++) {
     map.on("mouseleave", hoverLayers[i], function (e) {
-      map.getCanvas().style.cursor = "";
       stopHoverHandler(hoverLayers[i]);
+      map.getCanvas().style.cursor = "";
     });
   }
 

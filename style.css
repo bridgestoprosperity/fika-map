@@ -14,6 +14,7 @@ body {
 }
 
 .mapboxgl-popup {
+  font-family: 'Kumbh Sans', sans-serif;
   max-width: 800px;
   font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: black;
@@ -21,6 +22,7 @@ body {
 }
 
 .side-bar {
+  font-family: 'Kumbh Sans', sans-serif;
   position: absolute;
   top: 0;
   left: 0;
@@ -32,6 +34,7 @@ body {
 }
 
 .control-panel {
+  font-family: 'Kumbh Sans', sans-serif;
   width: 70%;
   height: fit-content;
   margin-top: .5%;
@@ -52,6 +55,7 @@ body {
 }
 
 .control-panel.left {
+  font-family: 'Kumbh Sans', sans-serif;
   transform: translateX(-15%);
     /* left: 4.5%; */
   /* transform: translateX(15%); */
@@ -59,11 +63,13 @@ body {
 }
 
 .control-dropdown {
+  font-family: 'Kumbh Sans', sans-serif;
   background-color: #9f0404;
   font-size: 2px;
 }
 
 .click-panel {
+  font-family: 'Kumbh Sans', sans-serif;
   position: absolute;
   width: 25%;
   min-height: 100%;
@@ -94,9 +100,11 @@ body {
 } */
 
 .hover-panel {
+  font-family: 'Inconsolata', monospace;
+  font-size: 14px;
   position: fixed;
   bottom: -3px;
-  left: 500px;
+  left: 50%;
   width: 400px;
   height: 0;
   background-color: #f5f5f5f7;
@@ -108,6 +116,7 @@ body {
   border-radius: 10px 10px 0px 0px;
   border: 3px solid #151342;
   box-shadow: 0px 0px 10px #00000053;
+  transform: translateX(-50%);
 }
 
 .hover-panel.show {

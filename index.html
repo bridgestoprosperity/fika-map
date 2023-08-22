@@ -42,18 +42,18 @@
       <div class="col-md-6 ">
         <!-- Right half -->
         <div class="d-flex">
-          <select class="form-select me-2" name="dropdown4" id="dropdown4" disabled="">
-            <!-- Dropdown 4 options -->
-          </select>
-          <select class="form-select me-2" name="dropdown5" id="dropdown5" disabled="">
-            <!-- Dropdown 5 options -->
-          </select>
-          <input type="range" class="form-range me-2" name="slider" min="0" max="100" step="5" id="trans-slider">
+          <div class="flex-fill">
+            <select class="form-select me-2" name="dropdown4" id="dropdown4" disabled=""></select>
+          </div>
+          <div class="flex-fill px-2">
+            <div class="geocoder" id="geocoder"></div>
+          </div>
+          <div class="flex-fill px-1" style="text-align: center;">
+            <input type="range" style="" class="form-range" name="slider" min="0" max="100" step="5" id="trans-slider">
+            <label class="" for="trans-slider" style="font-size: 0.7em; display: block; margin-top: -10px; font-style: italic; color: #686868">Transparency</label>
+          </div>
         </div>
       </div>
-
-
-
     </div>
   </div>
   </div>

@@ -3,19 +3,18 @@ import { map } from "../../main.js";
 export let menuOptions = {
   dropdown1: ["Demographics", "Population", "Impact", "Travel Time"],
   dropdown2: {
-    Demographics: ["Pregnancies", "Births", "RWI", "Underweight", "Female Education", "Male Education"],
-    Population: ["All", "Children 0-9", "Children 5-9", "Children 10-14", "Male 15-49", "Female 15-49", "Adults 65+"],
+    Demographics: ["Pregnancies", "Births", "Relative Wealth Index", "Underweight", "Female Education", "Male Education"],
+    Population: ["All", "Children 0-4", "Children 5-9", "Children 0-9", "Youth 10-14", "People 15-49", "People 50-64", "People 65+", "Female 0-4", "Female 5-9", "Female 0-9", "Female 10-14", "Female 15-49", "Female 50-64", "Female 65+", "Male 0-4", "Male 5-9", "Male 0-9", "Male 10-14", "Male 15-49", "Male 50-64", "Male 65+"],
     Impact: ["Potential Impact", "Current Impact"],
-    TravelTime: ["With Bridges", "Without Bridges"],
+    TravelTime: ["Without Bridges", "With Constructed Bridges", "With All Bridges"],
   },
   dropdown3: {
     Demographics: ["N/A"],
     Population: ["N/A"],
-    Impact: ["Schools", "Markets", "Primary Schools", "Secondary Schools", "Health Centers", "Hospitals"],
-    TravelTime: ["To Schools", "To Markets", "To Primary Schools", "To Secondary Schools", "To Health Centers", "To Hospitals"],
+    Impact: ["School", "Healthcare", "Market", "Primary School", "Secondary School", "Health Post", "Health Center", "Major Hospital"],
+    TravelTime: ["To School", "To Healthcare", "To Market","To Primary School", "To Secondary School", "To Health Post", "To Health Center", "To Hospital"],
   },
-  dropdown4: ["Auto Geography", "Hex", "Village", "Admin 4", "Admin 3", "Admin 2"],
-  dropdown5: ["Standard basemap", "Satellite map"],
+  dropdown4: ["Standard map", "Satellite"],
 };
 
 export function updateMenu(choices, menu) {

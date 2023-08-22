@@ -1,6 +1,6 @@
 import { map } from "../../main.js";
 import { menuState } from "../../main.js";
-import { menuOptions } from "./map-manager.js";
+import { dataMap } from "./dataMap.js";
 
 
 let pointLayers = ["bridge-point", "health-point", "edu-point"];
@@ -63,7 +63,7 @@ function toTitleCase(str) {
 }
 
 export default function hoverHandler(layerName, feature) {
-  let styleKey = Object.keys(menuOptions).find((key) => JSON.stringify(menuOptions[key]) === JSON.stringify([menuState.dropdown1, menuState.dropdown2, menuState.dropdown3]));
+  let styleKey = Object.keys(dataMap).find((key) => JSON.stringify(dataMap[key][0]) === JSON.stringify([menuState.dropdown1, menuState.dropdown2, menuState.dropdown3]));
   resetFilters();
   if (feature) {
     document.getElementById("hover-panel").classList.add("show");
@@ -74,8 +74,14 @@ export default function hoverHandler(layerName, feature) {
     }
     hexFeatureID = feature.id;
     map.setFeatureState({ source: "hex-8-source", id: hexFeatureID }, { hover: true });
-    document.getElementById("hover-text").innerHTML = "<strong>Geographic Area</strong> </br>Population: " + feature.properties.population + "</br>Wealth Index: " + feature.properties.rwi + "</br>" + hoverMenuLanguage[styleKey][0] + ": "+ feature.properties[styleKey] + " " + hoverMenuLanguage[styleKey][1];
+    if (styleKey == "female_educational_attainment_mean" || styleKey == "male_educational_attainment_mean" || styleKey == "rwi") {
+      document.getElementById("hover-text").innerHTML = "<strong>Geographic Area</strong> </br>Population: " + feature.properties.population + "</br>Wealth Index: " + (feature.properties.rwi).toFixed(3) + "</br>" + dataMap[styleKey][1][0] + ": "+ (feature.properties[styleKey]).toFixed(1) + " " + dataMap[styleKey][1][1];
 
+    }
+    else {
+      document.getElementById("hover-text").innerHTML = "<strong>Geographic Area</strong> </br>Population: " + feature.properties.population + "</br>Wealth Index: " + (feature.properties.rwi).toFixed(3) + "</br>" + dataMap[styleKey][1][0] + ": "+ (feature.properties[styleKey]).toFixed(0) + " " + dataMap[styleKey][1][1];
+
+    }
     document.getElementById("hover-icon").src = "/assets/geo-hex.svg";
 
   } else if (layerName === "bridge-point" && feature) {
@@ -96,7 +102,7 @@ export default function hoverHandler(layerName, feature) {
 export function stopHoverHandler(layerName) {
   document.getElementById("hover-panel").classList.remove("show");
   console.log("stopHoverHandler running");
-  // FIGURE THIS OUT v
+  // FIGURE THIS OUT 
   if (layerName === "hex-8-layer") {
     map.setFeatureState({ source: "hex-8-source", id: hexFeatureID }, { hover: false });
     hexFeatureID = null;

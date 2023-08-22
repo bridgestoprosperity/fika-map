@@ -11,6 +11,8 @@ import * as mapManager from "/@js/map-manager.js";
 // import * as chartBuilder from "/@js/chart-builder.js";
 
 import mapboxgl from "mapbox-gl";
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import Chart from "chart.js/auto";
 
 // DELETE
@@ -37,7 +39,7 @@ map.addControl(nav, "bottom-left");
 
 // initialize dropdowns
 export let dropdownList = [];
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 4; i++) {
   let dropdown = document.getElementById("dropdown" + i);
   dropdownList.push(dropdown);
 }
@@ -49,21 +51,19 @@ dropdown2.value = "Male Education";
 menuManager.updateMenu(menuManager.menuOptions.dropdown3[dropdown1.value], dropdown3);
 dropdown3.value = "N/A";
 menuManager.updateMenu(menuManager.menuOptions.dropdown4, dropdown4);
-dropdown4.disabled = true;
-menuManager.updateMenu(menuManager.menuOptions.dropdown5, dropdown5);
-dropdown5.disabled = false;
+dropdown4.disabled = false;
 
 function nospaces(str) {
   return str.replace(/\s/g, "");
 }
 
 export let menuState = {};
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= 4; i++) {
   let dropdownId = "dropdown" + i;
   menuState[dropdownId] = dropdownList[i - 1].value;
 }
 export function updateMenuState() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 4; i++) {
     menuState[dropdownList[i].id] = dropdownList[i].value;
   }
 }
@@ -76,8 +76,8 @@ dropdownList.forEach((dropdown) => {
       menuManager.updateMenu(menuManager.menuOptions.dropdown2[nospaces(dropdown.value)], dropdown2);
       menuManager.updateMenu(menuManager.menuOptions.dropdown3[nospaces(dropdown.value)], dropdown3);
     }
-    if (dropdown.id == "dropdown5") {
-      menuManager.updateBaselayer(dropdown5.value);
+    if (dropdown.id == "dropdown4") {
+      menuManager.updateBaselayer(dropdown4.value);
     }
     updateMenuState();
     mapManager.updateHexStyling(menuState);
@@ -206,6 +206,13 @@ export let pieChart = new Chart(document.getElementById("click-panel-canvas2"), 
 // on mapbox map load add data/data/rwa_travel_time_hex-8-rounded.geojson
 map.on("load", function () {
   mapManager.initializeMap(map);
+  const geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl,
+    bbox: [28.8560, -2.8400, 30.8954, -1.0546]
+    });
+  document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+
   let clickedFeatureID = null;
   let hoverFeatureID = null;
   clickLayers = ["hex-8-layer"];
@@ -221,7 +228,6 @@ map.on("load", function () {
         map.getCanvas().style.cursor = "pointer";
         hoverHandler(hoverLayers[i], e.features[0]);
       }
-      // console.log(e.features);
     });
   }
   for (let i = 0; i < hoverLayers.length; i++) {

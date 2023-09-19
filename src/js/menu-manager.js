@@ -11,7 +11,7 @@ export let menuOptions = {
   dropdown3: {
     Demographics: ["N/A"],
     Population: ["N/A"],
-    Impact: ["School", "Healthcare", "Market", "Primary School", "Secondary School", "Health Post", "Health Center", "Major Hospital"],
+    Impact: ["All", "School", "Healthcare", "Market", "Primary School", "Secondary School", "Health Post", "Health Center", "Major Hospital"],
     TravelTime: ["To School", "To Healthcare", "To Market","To Primary School", "To Secondary School", "To Health Post", "To Health Center", "To Hospital"],
   },
   dropdown4: ["Standard map", "Satellite"],

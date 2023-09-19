@@ -12,7 +12,9 @@ export function initializeMap(map) {
 
   map.addSource("hex-8-source", {
     type: "geojson",
-    data: "./rwa_travel_time_hex-8.geojson",
+    data: "https://fikamap-web-app.s3.us-west-1.amazonaws.com/data/rwa_travel_time_hex-8.geojson",
+    // use this for local testing
+    // data: "./data-prep/unsynced-data/rwanda/rwa_travel_time_hex-8.geojson",
     generateId: true,
   });
   map.addLayer(
@@ -73,4 +75,5 @@ export function updateHexStyling(currentMenuState) {
   console.log(mapStyles[styleKey]);
 
   map.setPaintProperty("hex-8-layer", "fill-color", mapStyles[styleKey]["fill-color"]);
+  
 }

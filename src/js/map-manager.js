@@ -12,9 +12,10 @@ export function initializeMap(map) {
 
   map.addSource("hex-8-source", {
     type: "geojson",
-    data: "https://fikamap-web-app.s3.us-west-1.amazonaws.com/data/rwa_travel_time_hex-8.geojson",
+    // data: "https://fikamap-web-app.s3.us-west-1.amazonaws.com/data/rwa_travel_time_hex-8-mini.geojson",
+    data: "/rwa_travel_time_hex-8-mini.geojson",
     // use this for local testing
-    // data: "./data-prep/unsynced-data/rwanda/rwa_travel_time_hex-8.geojson",
+    // data: "./data-prep/unsynced-data/rwanda/rwa_travel_time_hex-8-mini.geojson",
     generateId: true,
   });
   map.addLayer(

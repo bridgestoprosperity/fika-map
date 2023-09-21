@@ -1,4 +1,17 @@
-// TODO add hoverMenuLanguage from hover handler to dataMap
+export function impactCalc(impactNumber) {
+  if (impactNumber < 2) {
+    return "Low";
+  } else if (impactNumber >= 2 && impactNumber < 4) {
+    return "Medium";
+  } else if (impactNumber >= 4 && impactNumber < 8) {
+    return "High";
+  } else if (impactNumber >= 8) {
+    return "Highest";
+  } else {
+    return "N/A";
+  }
+}
+
 export const dataMap = {
   key: ["Menu Options", "hover panel text", "color scheme"],
   "h3-index": [["N/A"], ["H3 Index", ""], "rainbow"],
@@ -1295,9 +1308,10 @@ export const dataMap = {
       style_stops_maxmin: [10, 60, 120, 180, 1758],
     },
   ],
+  // beginning of impact layers
   all_education_potential_impact: [
     ["Impact", "Potential Impact", "School"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1316,7 +1330,7 @@ export const dataMap = {
   ],
   all_education_current_impact: [
     ["Impact", "Current Impact", "School"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1334,7 +1348,7 @@ export const dataMap = {
     },
   ],
   all_health_potential_impact: [
-    ["Impact", "Potential Impact", "Healthcare"], ["Time Difference", "minutes"], "impactScheme",
+    ["Impact", "Potential Impact", "Healthcare"], ["Potential Impact", ""], "impactScheme",
     {
       max: 8.0,
       min: 0.0,
@@ -1352,7 +1366,7 @@ export const dataMap = {
   ],
   all_health_current_impact: [
     ["Impact", "Current Impact", "Healthcare"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 4.0,
@@ -1371,7 +1385,7 @@ export const dataMap = {
   ],
   health_centers_potential_impact: [
     ["Impact", "Potential Impact", "Health Center"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1390,7 +1404,7 @@ export const dataMap = {
   ],
   health_centers_current_impact: [
     ["Impact", "Current Impact", "Health Center"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 4.0,
@@ -1409,7 +1423,7 @@ export const dataMap = {
   ],
   health_posts_potential_impact: [
     ["Impact", "Potential Impact", "Health Post"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1428,7 +1442,7 @@ export const dataMap = {
   ],
   health_posts_current_impact: [
     ["Impact", "Current Impact", "Health Post"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 4.0,
@@ -1447,7 +1461,7 @@ export const dataMap = {
   ],
   major_hospitals_potential_impact: [
     ["Impact", "Potential Impact", "Hospital"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 4.0,
@@ -1466,7 +1480,7 @@ export const dataMap = {
   ],
   major_hospitals_current_impact: [
     ["Impact", "Current Impact", "Hospital"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 4.0,
@@ -1485,7 +1499,7 @@ export const dataMap = {
   ],
   primary_schools_potential_impact: [
     ["Impact", "Potential Impact", "Primary School"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1504,7 +1518,7 @@ export const dataMap = {
   ],
   primary_schools_current_impact: [
     ["Impact", "Current Impact", "Primary School"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1523,7 +1537,7 @@ export const dataMap = {
   ],
   secondary_schools_potential_impact: [
     ["Impact", "Potential Impact", "Secondary School"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1542,7 +1556,7 @@ export const dataMap = {
   ],
   secondary_schools_current_impact: [
     ["Impact", "Current Impact", "Secondary School"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1561,7 +1575,7 @@ export const dataMap = {
   ],
   semi_dense_urban_potential_impact: [
     ["Impact", "Potential Impact", "Market"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 4.0,
@@ -1580,7 +1594,7 @@ export const dataMap = {
   ],
   semi_dense_urban_current_impact: [
     ["Impact", "Current Impact", "Market"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 4.0,
@@ -1599,7 +1613,7 @@ export const dataMap = {
   ],
   total_potential_impact: [
     ["Impact", "Potential Impact", "All"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 22.0,
@@ -1619,7 +1633,7 @@ export const dataMap = {
   ],
   total_current_impact: [
     ["Impact", "Current Impact", "All"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 18.0,
@@ -1638,7 +1652,7 @@ export const dataMap = {
   ],
   total_school_current_impact: [
     ["Impact", "Current Impact", "School"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 12.0,
@@ -1657,7 +1671,7 @@ export const dataMap = {
   ],
   total_school_potential_impact: [
     ["Impact", "Potential Impact", "School"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 16.0,
@@ -1676,7 +1690,7 @@ export const dataMap = {
   ],
   total_health_current_impact: [
     ["Impact", "Current Impact", "Healthcare"],
-    ["Time Difference", "minutes"],
+    ["Current Impact", ""],
     "impactScheme",
     {
       max: 8.0,
@@ -1695,7 +1709,7 @@ export const dataMap = {
   ],
   total_health_potential_impact: [
     ["Impact", "Potential Impact", "Healthcare"],
-    ["Time Difference", "minutes"],
+    ["Potential Impact", ""],
     "impactScheme",
     {
       max: 10.0,

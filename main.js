@@ -9,6 +9,7 @@ import * as clickVars from "/@js/clickHandler.js";
 import * as menuManager from "/@js/menu-manager.js";
 import * as mapManager from "/@js/map-manager.js";
 // import * as chartBuilder from "/@js/chart-builder.js";
+import { initializeCharts } from "/@js/click-chart-builder.js";
 
 import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -84,126 +85,10 @@ dropdownList.forEach((dropdown) => {
   });
 });
 
-let radarData = {
-  labels: ["Primary Schools", "Secondary Schools", "Health Centers", "Hospitals", "Markets"],
-  datasets: [
-    {
-      label: "Travel Time With Bridges",
-      data: [],
-      fill: "+1",
-      backgroundColor: "rgba(117, 117, 117, 0.3)",
-      borderColor: "rgb(158, 199, 163)",
-      pointBackgroundColor: "rgb(158, 199, 163)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgb(54, 162, 235)",
-      clip: false,
-    },
-    {
-      label: "Travel Time Without Bridges",
-      data: [],
-      fill: false,
-      backgroundColor: "rgba(206, 97, 96, 0.5)",
-      borderColor: "rgb(206, 97, 96)",
-      pointBackgroundColor: "rgb(206, 97, 96)",
-      pointBorderColor: "#fff",
-      pointHoverBackgroundColor: "#fff",
-      pointHoverBorderColor: "rgb(255, 99, 132)",
-      clip: false,
-    },
-  ],
-};
+//  Charts Initialized as 
+initializeCharts();
 
-let radarConfig = {
-  type: "radar",
-  data: radarData,
-  options: {
-    scale: {
-      r: {
-        min: 0,
-        max: 120,
-      },
-      ticks: {
-        beginAtZero: true,
-        min: 0,
-        max: 120,
-        stepSize: 30,
-      },
-    },
-    elements: {
-      line: {
-        borderWidth: 3,
-      },
-    },
-    interaction: {
-      mode: "index",
-    },
-    plugins: {
-      tooltip: {
-        callbacks: {
-          label: function (context) {
-            let label = context.dataset.label || "";
-            let value1 = context.dataset.data[context.dataIndex];
-            let value = 0;
-            console.log("label is" + context.dataset.label);
-            if (label == "Travel Time With Bridges") {
-              value = Math.round(clickVars.radarData1[context.dataIndex]);
-            } else if (label == "Travel Time Without Bridges") {
-              value = Math.round(clickVars.radarData2[context.dataIndex]);
-            } else {
-              console.log("else");
-              value = context.dataset.data[context.dataIndex];
-            }
-            label += ": " + value + " minutes";
-            return label;
-          },
-        },
-      },
-    },
-  },
-};
-
-let pieData = {
-  labels: ["Children", "Teens", "Adult Men", "Adult Women", "Elderly"],
-  datasets: [
-    {
-      label: "Population",
-      data: [],
-      backgroundColor: ["#36A2EB", "#FF6384", "#FFCE56", "#B2BEB5"],
-      hoverOffset: 4,
-    },
-  ],
-};
-let pieConfig = {
-  type: "pie",
-  data: pieData,
-  options: {
-    responsive: true,
-    maintainAspectRatio: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Population",
-      },
-    },
-  },
-};
-
-export let radarChart = new Chart(document.getElementById("click-panel-canvas"), radarConfig);
-export let pieChart = new Chart(document.getElementById("click-panel-canvas2"), pieConfig);
-
-// document.getElementById("hide-button").addEventListener("click", function () {
-//   document.getElementById("control-panel").classList.add("left");
-// });
-
-// let interestVar = "male_educational_attainment_mean";
-// console.log(styleVars.quantiles[interestVar]["max"]);
-// let middleVar = styleVars.quantiles[interestVar]["min"] + (styleVars.quantiles[interestVar]["max"] - styleVars.quantiles[interestVar]["min"]) / 2;
-
-// on mapbox map load add data/data/rwa_travel_time_hex-8-rounded.geojson
+// Map on Load Section
 map.on("load", function () {
   mapManager.initializeMap(map);
   const geocoder = new MapboxGeocoder({
@@ -219,7 +104,6 @@ map.on("load", function () {
   hoverLayers = ["hex-8-layer", "bridge-point", "health-point", "edu-point"];
 
   // Hover Section:
-
 
   for (let i = 0; i < hoverLayers.length; i++) {
     map.on("mousemove", hoverLayers[i], function (e) {

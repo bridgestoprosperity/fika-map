@@ -1,8 +1,10 @@
-import { BoxPlotChart } from '@sgratzl/chartjs-chart-boxplot';
+// import { BoxPlotChart } from "@sgratzl/chartjs-chart-boxplot";
+import * as clickVars from "/@js/clickHandler.js";
+
 const radarDiv = document.getElementById("radar-chart");
-const boxDiv = document.getElementById("box-plot");
+const barDiv = document.getElementById("bar-chart");
 const pieDiv = document.getElementById("pie-chart");
-export let radarChart, boxPlot, pieChart;
+export let radarChart, barChart, pieChart;
 export function initializeCharts() {
   console.log("initializing charts");
   let radarData = {
@@ -61,6 +63,10 @@ export function initializeCharts() {
       },
       // aspectRatio: 1.2,
       plugins: {
+        title: {
+          display: true,
+          text: "Travel Time to Destinations",
+        },
         tooltip: {
           callbacks: {
             label: function (context) {
@@ -80,6 +86,7 @@ export function initializeCharts() {
               return label;
             },
           },
+          displayColors: false,
         },
       },
     },
@@ -89,7 +96,7 @@ export function initializeCharts() {
     // labels: ["Female", "Male",],
     datasets: [
       {
-        label: ["Female 65+", "Female 50-64", "Female 15-49", "Female 10-14", "Female 5-9", "Female 0-4", "Male 0-4", "Male 5-9", "Male 10-14", "Male 15-49", "Male 50-64", "Male 65+",],
+        label: ["Female 65+", "Female 50-64", "Female 15-49", "Female 10-14", "Female 5-9", "Female 0-4", "Male 0-4", "Male 5-9", "Male 10-14", "Male 15-49", "Male 50-64", "Male 65+"],
         // color order oldest -> youngest women, youngest -> oldest men
         backgroundColor: ["#330C33", "#4D124D", "#661766", "#801D80", "#992399", "#B329B3", "#29B3B3", "#239999", "#1D8080", "#176666", "#124D4D", "#0C3333"],
         borderWidth: 1,
@@ -130,13 +137,13 @@ export function initializeCharts() {
           callbacks: {
             label: function (context) {
               // Determine the level and label based on the dataset index
-              console.log(context)
+              console.log(context);
               let level = context.datasetIndex;
-              console.log(pieData.datasets[level]['label'])
-              console.log(level)
-              let label = pieData.datasets[context.datasetIndex]['label'][context.dataIndex]
+              console.log(pieData.datasets[level]["label"]);
+              console.log(level);
+              let label = pieData.datasets[context.datasetIndex]["label"][context.dataIndex];
               let label_value = context.dataset.data[context.dataIndex];
-              return label+": "+label_value;
+              return label + ": " + label_value;
             },
           },
         },
@@ -144,104 +151,100 @@ export function initializeCharts() {
     },
   };
 
-  function randomValues(count, min, max) {
-    const delta = max - min;
-    return Array.from({length: count}).map(() => Math.random() * delta + min);
-  }
-  
-  let boxData = {
-    // define label tree
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-    datasets: [{
-      label: 'Dataset 1',
-      backgroundColor: 'rgba(255,0,0,0.5)',
-      borderColor: 'red',
-      borderWidth: 1,
-      outlierColor: '#999999',
-      padding: 10,
-      itemRadius: 0,
-      data: [
-        randomValues(100, 0, 100),
-        randomValues(100, 0, 20),
-        randomValues(100, 20, 70),
-        randomValues(100, 60, 100),
-        randomValues(40, 50, 100),
-        randomValues(100, 60, 120),
-        randomValues(100, 80, 100)
-      ]
-    }, {
-      label: 'Dataset 2',
-      backgroundColor:  'rgba(0,0,255,0.5)',
-      borderColor: 'blue',
-      borderWidth: 1,
-      outlierColor: '#999999',
-      padding: 10,
-      itemRadius: 0,
-      data: [
-        randomValues(100, 60, 100),
-        randomValues(100, 0, 100),
-        randomValues(100, 0, 20),
-        randomValues(100, 20, 70),
-        randomValues(40, 60, 120),
-        randomValues(100, 20, 100),
-        randomValues(100, 80, 100)
-      ]
-    }]
-  };
-  let boxConfig = {
-    type: 'boxplot',
-    data: boxData,
-    options: {
-      responsive: true,
-      legend: {
-        position: 'top',
+  const barData = {
+    labels: ["Primary school", "Secondary school", "Health center", "Hospital", "Market"],
+    datasets: [
+      {
+        // This should be the first bar piece for all travel times
+        label: "",
+        data: [],
+        backgroundColor: "#47474750",
       },
-      title: {
-        display: true,
-        text: 'Chart.js Box Plot Chart'
-      }
-    }
-  }
+      {
+        // This should be the actual travel time
+        label: "Travel Time",
+        data: [1, 1, 1, 1, 1, 1],
+        backgroundColor: "#ed0000",
+      },
+      {
+        // remainder to 100
+        label: "",
+        data: [],
+        backgroundColor: "#47474750",
+      },
+    ],
+  };
+
+  const barConfig = {
+    type: "bar",
+    data: barData,
+    options: {
+      indexAxis: "y",
+      plugins: {
+        legend: {
+          display: false,
+        },
+        title: {
+          display: true,
+          text: "Travel Time Distribution (without bridges)",
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              let value = context.chart.data.datasets[0].data[context.dataIndex];
+              return value + "th percentile";
+            },
+          },
+          displayColors: false,
+        },
+      },
+      responsive: true,
+      scales: {
+        x: {
+          beginAtZero: true,
+          stacked: true,
+          padding: 0,
+          min: 0, // Set the minimum value to 0
+          max: 100, // Set the maximum value to 100
+          ticks: {
+            stepSize: 50,
+            callback: function (value, index, values) {
+              // Define custom labels for x-axis
+              var customLabels = ["Slower", "50th percentile", "Faster"];
+              return customLabels[index];
+            },
+          },
+        },
+        y: {
+          stacked: true,
+          padding: 0,
+        },
+      },
+      aspect: 1,
+      maintainAspectRatio: true, // Disable aspect ratio to control height
+      // height: "100px", // Adjust the height as needed
+    },
+  };
 
   radarChart = new Chart(radarDiv, radarConfig);
-  // boxPlot = new BoxPlotChart(boxDiv, boxConfig);
-  
+  barChart = new Chart(barDiv, barConfig);
+
   pieChart = new Chart(pieDiv, pieConfig);
 }
 
-export function updateCharts(radarData1, radarData2, popData1) {
+export function updateCharts(radarData1, radarData2, popData1, barData1, barData2) {
   console.log("updating charts");
   radarChart.data.datasets[0].data = radarData1;
   radarChart.data.datasets[1].data = radarData2;
   pieChart.data.datasets[0].data = popData1[2];
   pieChart.data.datasets[1].data = popData1[1];
   pieChart.data.datasets[2].data = popData1[0];
+  barChart.data.datasets[0].data = barData1;
+  barChart.data.datasets[2].data = barData2;
   radarChart.update();
   pieChart.update();
+  barChart.update();
 }
-
-// const ctx = document.getElementById("myChart");
-
-// new Chart(ctx, {
-//   type: "bar",
-//   data: {
-//     labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-//     datasets: [
-//       {
-//         label: "# of Votes",
-//         data: [12, 19, 3, 5, 2, 3],
-//         borderWidth: 1,
-//       },
-//     ],
-//   },
-//   options: {
-//     scales: {
-//       y: {
-//         beginAtZero: true,
-//       },
-//     },
-//   },
-// });
 
 function updateChartData(chart, newData) {
   chart.data.datasets[0].data = newData;

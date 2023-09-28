@@ -1,12 +1,16 @@
 import * as index from "/main.js";
 import { map } from "../../main.js";
 import { updateCharts } from "./click-chart-builder.js";
+import { dataMap } from "./dataMap.js";
 
 const clickPanel = document.getElementById("click-panel");
 export let radarValues1 = [];
 export let radarValues2 = [];
 export let radarData1 = [];
 export let radarData2 = [];
+export let travelTimeDist = [];
+export let travelTime1 = [];
+export let travelTime2 = [];
 let otherPop = 0;
 let popData = [];
 
@@ -21,9 +25,26 @@ export default function clickHandler(layerName, feature) {
   // need to do something here where the values are converted to graph values which max out at 60.
   // the hover values will be the same as the actual values.
   // the chart scale will be set from 0, 15, 30, 60
-  // console.log(chart);
-  // console.log(feature)
-  // console.log(feature["h3-index"])
+  radarClick(feature)
+  popClick(feature)
+  barClick(feature)
+  clickPanel.classList.add("show");
+
+  updateCharts(radarValues1, radarValues2, popData, travelTime1, travelTime2);
+
+  document.getElementById("words-click").innerHTML = "";
+  for (var key in feature) {
+    if (feature.hasOwnProperty(key)) {
+      document.getElementById("words-click").innerHTML += key + " -> " + feature[key] + "<br>";
+    }
+  }
+  // for every layer in the pathLayers array, set the filter to the h3IndexValue
+  for (let i = 0; i < pathLayers.length; i++) {
+    map.setFilter(pathLayers[i], ["==", "h3-index", feature["h3-index"]]);
+  }
+}
+
+function radarClick(feature) {
   radarData1 = [feature["travel_time_primary_schools_fixed"], feature["travel_time_secondary_schools_fixed"], feature["travel_time_health_centers_optimal"], feature["travel_time_major_hospitals_optimal"], feature["travel_time_semi_dense_urban_optimal"]];
   radarData2 = [feature["travel_time_no_sites_primary_schools_fixed"], feature["travel_time_no_sites_secondary_schools_fixed"], feature["travel_time_no_sites_health_centers_optimal"], feature["travel_time_no_sites_major_hospitals_optimal"], feature["travel_time_no_sites_semi_dense_urban_optimal"]];
   radarValues1 = [];
@@ -40,14 +61,8 @@ export default function clickHandler(layerName, feature) {
       radarValues2.push(radarData2[i]);
     }
   }
-
-  clickPanel.classList.add("show");
-  // otherPop = feature["population"] - feature["women_15_49"] - feature["men_15_49"] - feature["kids_5_9"];
-  popData = [
-    [100, 20],
-    [Math.round(feature["kids_0_9"]), Math.round(feature["kids_10_14"]), Math.round(feature["males_15_49"]), Math.round(feature["females_15_49"]), Math.round(feature["people_65_plus"])],
-  ];
-  popData = [[420], [210, 210], [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30]];
+}
+function popClick(feature){
   popData = [
     [feature["population"]],
     [
@@ -69,23 +84,63 @@ export default function clickHandler(layerName, feature) {
       Math.round(feature["males_65_plus"])
     ],
   ];
-  // console.log(popData);
+}
+// function toPercentile(travelTime, category){
+//   let quant = 0;
+//   categoryQuantiles = dataMap[category][3]["quantiles"]
+//   // determine which quantile the travel time is in
+//   for (let i = 0; i < categoryQuantiles.length; i++) {
+//     if (travelTime <= categoryQuantiles[i]) {
+//       quant = i;
+//     }
+//   }
+//   categoryQuantiles[quant] - categoryQuantiles[quant-1]
+// }
 
-  // updating charts
-  updateCharts(radarValues1, radarValues2, popData);
-
-  document.getElementById("words-click").innerHTML = "";
-  for (var key in feature) {
-    if (feature.hasOwnProperty(key)) {
-      document.getElementById("words-click").innerHTML += key + " -> " + feature[key] + "<br>";
-    }
+function calculatePercentile(travelTime, category) {
+  let categoryQuantiles = dataMap[category][3]["quantiles"]
+  if (travelTime <= categoryQuantiles[0]) {
+      return 0; // If travelTime is less than or equal to the lowest quantile, it's at 0th percentile.
+  } else if (travelTime >= categoryQuantiles[categoryQuantiles.length - 1]) {
+      return 100; // If travelTime is greater than or equal to the highest quantile, it's at 100th percentile.
+  } else {
+      for (let i = 1; i < categoryQuantiles.length; i++) {
+          if (travelTime <= categoryQuantiles[i]) {
+              const lowerQuantile = categoryQuantiles[i - 1];
+              const upperQuantile = categoryQuantiles[i];
+              const percentile = ((travelTime - lowerQuantile) / (upperQuantile - lowerQuantile)) * 10 + (i - 1) * 10;
+              return Math.round(100-percentile);
+          }
+      }
   }
-  // map.on('click', 'hex-8-layer', function (e) {
-  // Get the h3-index value of the clicked feature
-  var h3IndexValue = feature["h3-index"];
+}
 
-  // for every layer in the pathLayers array, set the filter to the h3IndexValue
-  for (let i = 0; i < pathLayers.length; i++) {
-    map.setFilter(pathLayers[i], ["==", "h3-index", h3IndexValue]);
-  }
+function barClick(feature){
+  travelTimeDist = [
+    calculatePercentile(feature["travel_time_no_sites_primary_schools_fixed"], "travel_time_no_sites_primary_schools_fixed"),
+    calculatePercentile(feature["travel_time_no_sites_secondary_schools_fixed"], "travel_time_no_sites_secondary_schools_fixed"),
+    calculatePercentile(feature["travel_time_no_sites_health_centers_optimal"], "travel_time_no_sites_health_centers_optimal"),
+    calculatePercentile(feature["travel_time_no_sites_health_posts_optimal"], "travel_time_no_sites_health_posts_optimal"),
+    calculatePercentile(feature["travel_time_no_sites_major_hospitals_optimal"], "travel_time_no_sites_major_hospitals_optimal"),
+    calculatePercentile(feature["travel_time_no_sites_semi_dense_urban_optimal"], "travel_time_no_sites_semi_dense_urban_optimal"),
+  ];
+  travelTime1 = [
+    travelTimeDist[0]-1,
+    travelTimeDist[1]-1,
+    travelTimeDist[2]-1,
+    travelTimeDist[3]-1,
+    travelTimeDist[4]-1,
+    travelTimeDist[5]-1,
+
+  ];
+  travelTime2 = [
+    100 - travelTimeDist[0],
+    100 - travelTimeDist[1],
+    100 - travelTimeDist[2],
+    100 - travelTimeDist[3],
+    100 - travelTimeDist[4],
+    100 - travelTimeDist[5],
+  ]
+  return(travelTime1, travelTime2)
+
 }

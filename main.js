@@ -4,12 +4,13 @@ import "./style.css";
 import hoverHandler from "/@js/hoverHandler.js";
 import stopHoverHandler from "/@js/hoverHandler.js";
 import clickHandler from "/@js/clickHandler.js";
-import * as clickVars from "/@js/clickHandler.js";
 // import * as styleVars from "/@js/menuOptions.js";
 import * as menuManager from "/@js/menu-manager.js";
 import * as mapManager from "/@js/map-manager.js";
 // import * as chartBuilder from "/@js/chart-builder.js";
 import { initializeCharts } from "/@js/click-chart-builder.js";
+import sidebarHandler from "/@js/sidebarHandler.js";
+
 
 import mapboxgl from "mapbox-gl";
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -143,4 +144,27 @@ map.on("load", function () {
       }
     });
   }
+});
+
+// handling button clicks
+
+
+let sidebarButtons = ["info-button", "feedback-button", "bridge-need-button", "bug-button"];
+for (let i = 0; i < sidebarButtons.length; i++) {
+  document.getElementById(sidebarButtons[i]).addEventListener("click", function () {
+    console.log(sidebarButtons[i]);
+    sidebarHandler(sidebarButtons[i]);
+
+  });
+}
+
+document.getElementById("close-button").addEventListener("click", function () {
+  document.getElementById("click-panel").classList.remove("show");
+  document.getElementById("control-panel").classList.remove("left");
+});
+
+document.getElementById("close-modal-button").addEventListener("click", function () {
+  var modal = document.getElementById('info-modal');
+  modal.style.display = 'none';
+  document.body.classList.remove('modal-open');
 });

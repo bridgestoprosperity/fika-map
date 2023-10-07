@@ -40,6 +40,7 @@ export function initializeCharts() {
   let radarConfig = {
     type: "radar",
     data: radarData,
+    
     options: {
       scale: {
         r: {
@@ -66,6 +67,10 @@ export function initializeCharts() {
         title: {
           display: true,
           text: "Travel Time to Destinations",
+          font:{
+            size: 16,
+            // family: "Inconsolata",
+          }
         },
         tooltip: {
           callbacks: {
@@ -122,6 +127,12 @@ export function initializeCharts() {
   let pieConfig = {
     type: "pie",
     data: pieData,
+    labels:{
+      font:{
+        // size: 16,
+        family: "Inconsolata",
+      }
+    },
     options: {
       responsive: true,
       maintainAspectRatio: true,
@@ -132,6 +143,10 @@ export function initializeCharts() {
         title: {
           display: true,
           text: "Population Demographics",
+          font:{
+            size: 16,
+            // family: "Inconsolata",
+          }
         },
         tooltip: {
           callbacks: {
@@ -187,6 +202,10 @@ export function initializeCharts() {
         title: {
           display: true,
           text: "Travel Time Distribution (without bridges)",
+          font:{
+            size: 16,
+            // family: "Inconsolata",
+          }
         },
         tooltip: {
           callbacks: {

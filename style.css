@@ -114,6 +114,10 @@ body {
   height: 100px;
 }
 
+.bi:hover {
+  color: #97BDB9; /* Change the color to red when hovered */
+}
+
 .click-panel-canvas {
   position:relative;
   display: table;
@@ -134,4 +138,12 @@ body {
 input[type="range"]::-webkit-slider-runnable-track {
     background-color: #bfbfbf; /* Change this to your desired color */
     height: 4px; /* Change the height of the track if needed */
+  }
+  .info-modal{
+    /* make this 80 screenwidth and height and centered vertically and horizontally*/
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;    
   }

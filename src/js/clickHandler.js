@@ -21,6 +21,18 @@ let popData = [];
 
 let pathLayers = ["ps-paths", "ss-paths", "hp-paths", "hc-paths", "hos-paths", "sdu-paths", "ps-paths-outline", "ss-paths-outline", "hp-paths-outline", "hc-paths-outline", "hos-paths-outline", "sdu-paths-outline"];
 
+function roundToThree(value) {
+  if (Number.isFinite(value)) {
+    var decimalCount = (value.toString().split('.')[1] || '').length;
+    
+    if (decimalCount > 3) {
+      return parseFloat(value.toFixed(3));
+    }
+  }
+  
+  return value;
+}
+
 export default function clickHandler(layerName, feature) {
   // need to do something here where the values are converted to graph values which max out at 60.
   // the hover values will be the same as the actual values.
@@ -32,10 +44,17 @@ export default function clickHandler(layerName, feature) {
 
   updateCharts(radarValues1, radarValues2, popData, travelTime1, travelTime2);
 
-  document.getElementById("words-click").innerHTML = "";
+  document.getElementById("all-data-table").innerHTML = "";
   for (var key in feature) {
     if (feature.hasOwnProperty(key)) {
-      document.getElementById("words-click").innerHTML += key + " -> " + feature[key] + "<br>";
+      document.getElementById("all-data-table").innerHTML += "<tr><td>"+key+"</td> <td>"+roundToThree(feature[key])+"</td></tr>"
+
+    
+      
+      
+      
+      // key + " -> " + feature[key] + "<br>";
+
     }
   }
   // for every layer in the pathLayers array, set the filter to the h3IndexValue

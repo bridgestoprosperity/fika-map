@@ -31,10 +31,17 @@ mapboxgl.accessToken = "pk.eyJ1IjoiaGlnaGVzdHJvYWQiLCJhIjoiY2lzNjlpa3c3MGQ3cDJ6c
 export const map = new mapboxgl.Map({
   container: "map", // container ID
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: "mapbox://styles/highestroad/clg35ltys000m01nhht5my9n3", // style URL
+  style: "mapbox://styles/highestroad/clg35ltys000m01nhht5my9n3",
+  // style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
   center: [29.519, -1.956], // starting position [lng, lat]
   zoom: 8.2, // starting zoom
   hash: true,
+  // set bounds to rwanda
+  maxBounds: [
+    [26.8560, -4.8400], // Southwest coordinates
+    [32.8954, 1.0546] // Northeast coordinates
+  ],
+  minZoom: 7.1,
 });
 const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, "bottom-left");
@@ -45,19 +52,20 @@ for (let i = 1; i <= 4; i++) {
   let dropdown = document.getElementById("dropdown" + i);
   dropdownList.push(dropdown);
 }
-
-menuManager.updateMenu(menuManager.menuOptions.dropdown1, dropdown1);
-dropdown1.value = "Demographics";
-menuManager.updateMenu(menuManager.menuOptions.dropdown2[dropdown1.value], dropdown2);
-dropdown2.value = "Male Education";
-menuManager.updateMenu(menuManager.menuOptions.dropdown3[dropdown1.value], dropdown3);
-dropdown3.value = "N/A";
-menuManager.updateMenu(menuManager.menuOptions.dropdown4, dropdown4);
-dropdown4.disabled = false;
-
 function nospaces(str) {
   return str.replace(/\s/g, "");
 }
+
+menuManager.updateMenu(menuManager.menuOptions.dropdown1, dropdown1);
+dropdown1.value = "Travel Time";
+menuManager.updateMenu(menuManager.menuOptions.dropdown2[nospaces(dropdown1.value)], dropdown2);
+dropdown2.value = "With All Bridges";
+menuManager.updateMenu(menuManager.menuOptions.dropdown3[nospaces(dropdown1.value)], dropdown3);
+dropdown3.value = "To School";
+menuManager.updateMenu(menuManager.menuOptions.dropdown4, dropdown4);
+dropdown4.disabled = false;
+
+
 
 export let menuState = {};
 for (let i = 1; i <= 4; i++) {

@@ -24,7 +24,7 @@ export function initializeMap(map) {
       type: "fill",
       source: "hex-8-source",
       paint: {
-        "fill-color": mapStyles.male_educational_attainment_mean["fill-color"],
+        "fill-color": mapStyles.travel_time_all_education_facilities_fixed["fill-color"],
         "fill-opacity": 0.5,
         "fill-outline-color": "rgba(255, 255, 255, .1)",
       },

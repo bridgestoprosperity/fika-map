@@ -7,48 +7,6 @@ import { impactCalc } from "./dataMap.js";
 let pointLayers = ["bridge-point", "health-point", "edu-point"];
 let hexFeatureID = null;
 
-// export const hoverMenuLanguage = {
-//   "h3-index": ["H3 Index", ""],
-//   row_col: ["Row/Col", ""],
-//   x_y: ["X/Y", ""],
-//   population: ["Population", "people"],
-//   kids_0_9: ["Children 0-9", "people"],
-//   kids_5_9: ["Children 5-9", "people"],
-//   kids_10_14: ["Children 10-14", "people"],
-//   males_15_49: ["Males 15-49", "people"],
-//   females_15_49: ["Females 15-49", "people"],
-//   people_65_plus: ["Adults 65+", "people"],
-//   pregnancies: ["Pregnancies", ""],
-//   births: ["Births", ""],
-//   rwi: ["Relative Wealth Index", ""],
-//   underweight: ["Underweight", ""],
-//   female_educational_attainment_mean: ["Avg. Female Education", "years"],
-//   male_educational_attainment_mean: ["Avg. Male Education", "years"],
-//   time_delta_all_removed_fixed_education_all: ["Bridges Reduce Time", "minutes"],
-//   time_delta_all_removed_fixed_education_primary: ["Bridges Reduce Time by", "minutes"],
-//   time_delta_all_removed_fixed_education_secondary: ["Bridges Reduce Time by", "minutes"],
-//   time_delta_all_removed_fixed_markets: ["Bridges Reduce Time by", "minutes"],
-//   time_delta_all_removed_optimal_health_all: ["Bridges Reduce Time by", "minutes"],
-//   time_delta_all_removed_optimal_health_centers: ["Bridges Reduce Time by", "minutes"],
-//   time_delta_all_removed_optimal_health_major:["Bridges Reduce Time by", "minutes"],
-//   time_delta_all_removed_optimal_markets: ["Bridges Reduce Time by", "minutes"],
-//   travel_time_all_removed_fixed_education_all: ["Travel Time to any School", "minutes"],
-//   travel_time_all_removed_fixed_education_primary: ["Travel Time to Primary School", "minutes"],
-//   travel_time_all_removed_fixed_education_secondary: ["Travel Time to Secondary School", "minutes"],
-//   travel_time_all_removed_fixed_markets: ["Travel Time to Market", "minutes"],
-//   travel_time_all_removed_optimal_health_all: ["Travel Time to any Healthcare", "minutes"],
-//   travel_time_all_removed_optimal_health_centers: ["Travel Time to Health Center", "minutes"],
-//   travel_time_all_removed_optimal_health_major: ["Travel Time to Hospital", "minutes"],
-//   travel_time_all_removed_optimal_markets: ["Travel Time to Market", "minutes"],
-//   travel_time_education_all: ["Travel Time to any School", "minutes"],
-//   travel_time_education_primary: ["Travel Time to Primary School", "minutes"],
-//   travel_time_education_secondary: ["Travel Time to Secondary School", "minutes"],
-//   travel_time_health_all: ["Travel Time to any Healthcare", "minutes"],
-//   travel_time_health_centers: ["Travel Time to Health Center", "minutes"],
-//   travel_time_health_major: ["Travel Time to Hospital", "minutes"],
-//   travel_time_markets: ["Travel Time to Market", "minutes"],
-// };
-
 
 function resetFilters() {
   map.setFilter("hover-bridge", ["==", ["id"], 0]);

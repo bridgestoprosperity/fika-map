@@ -1,4 +1,5 @@
 // import { BoxPlotChart } from "@sgratzl/chartjs-chart-boxplot";
+import { Chart } from "chart.js";
 import * as clickVars from "/@js/clickHandler.js";
 
 const radarDiv = document.getElementById("radar-chart");
@@ -6,6 +7,7 @@ const barDiv = document.getElementById("bar-chart");
 const pieDiv = document.getElementById("pie-chart");
 export let radarChart, barChart, pieChart;
 export function initializeCharts() {
+  Chart.defaults.font.family = "Inconsolata";
   console.log("initializing charts");
   let radarData = {
     labels: ["Primary School", ["Secondary", "School"], ["Health", "Center"], "Hospital", "Market"],

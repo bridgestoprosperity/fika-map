@@ -157,7 +157,7 @@ map.on("load", function () {
 // handling button clicks
 
 
-let sidebarButtons = ["info-button", "feedback-button", "bridge-need-button", "bug-button"];
+let sidebarButtons = ["info-button", "feedback-button", "bridge-need-button", "bug-button", "controls-button", "control-panel-close"];
 for (let i = 0; i < sidebarButtons.length; i++) {
   document.getElementById(sidebarButtons[i]).addEventListener("click", function () {
     console.log(sidebarButtons[i]);

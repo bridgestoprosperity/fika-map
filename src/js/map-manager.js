@@ -72,9 +72,12 @@ export function updateHexStyling(currentMenuState) {
   console.log(currentMenuState);
   console.log(JSON.stringify([currentMenuState.dropdown1, currentMenuState.dropdown2, currentMenuState.dropdown3]))
   let styleKey = Object.keys(dataMap).find((key) => JSON.stringify(dataMap[key][0]) === JSON.stringify([currentMenuState.dropdown1, currentMenuState.dropdown2, currentMenuState.dropdown3]));
-  console.log(styleKey);
-  console.log(mapStyles[styleKey]);
+  let legendColor = palettes[dataMap[styleKey][2]];
+  let legend = document.querySelector('.legend-colors');
 
   map.setPaintProperty("hex-8-layer", "fill-color", mapStyles[styleKey]["fill-color"]);
-  
+  legend.style.background = "linear-gradient(to right, " + legendColor + ")";
+  document.getElementById("legend-type").innerHTML = dataMap[styleKey][1][0];
+  document.getElementById("left-legend-label").innerHTML = dataMap[styleKey][4][0];
+  document.getElementById("right-legend-label").innerHTML = dataMap[styleKey][4][1];
 }

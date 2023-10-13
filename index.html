@@ -21,80 +21,140 @@
 </head>
 
 <body>
-  
+
   <div id="map"></div>
-  
+
   <div class="side-bar p-0 m-0" id="side-bar">
     <a href="https://fikamap.com/" target="_blank">
       <img src="/b2plogo.png" class="mx-auto d-block m-2" width="85%" alt="B2P Logo">
     </a>
     <!-- Add a button with <i class="bi bi-info-circle"></i> icon -->
     <div class="d-flex flex-column align-items-center m-0 p-0">
-      <div class="m-0 pt-3 pb-1">
+      <div class="m-0 pt-3 pb-1 px-0">
+        <button class="btn m-0 py-0" id="controls-button" style="font-size: 30px; line-height: 20px;">
+          <div class="bg-secondary px-1 pt-2 pb-0 rounded-2" id="show-controls">
+            <i class="bi bi-sliders m-0 p-0"></i>
+            <p class="text-muted p-0 m-0" style="text-align: center; font-size: x-small;">Controls</p>
+          </div>
+        </button>
+      </div>
+      <div class="m-0 py-1">
         <button class="btn m-0 py-0" id="info-button" style="font-size: 30px; line-height: 20px;">
           <i class="bi bi-info-circle m-0 p-0"></i>
           <p class="text-muted p-0 m-0" style="text-align: center; font-size: x-small;">Info</p>
         </button>
-        <hr class="my-0 mx-1">
       </div>
       <div class="m-0 py-1">
         <button class="btn m-0 py-0" id="feedback-button" style="font-size: 30px; line-height: 20px;">
           <i class="bi bi-chat-right-text m-0 p-0"></i>
           <p class="text-muted p-0 m-0" style="text-align: center; font-size: x-small;">Feedback</p>
         </button>
-        <hr class="my-0 mx-3">
       </div>
       <div class="m-0 py-1">
         <button class="btn m-0 py-0" id="bridge-need-button" style="font-size: 30px;">
           <i class="bi bi-flag m-0 p-0"></i>
           <p class="text-muted p-0 m-0" style="text-align: center; font-size: x-small;">Report Bridge Need</p>
         </button>
-        <hr class="my-0 mx-1">
       </div>
       <div class="m-0 py-1">
         <button class="btn m-0 py-0" id="bug-button" style="font-size: 30px;">
           <i class="bi bi-bug m-0 p-0"></i>
           <p class="text-muted p-0 m-0" style="text-align: center; font-size: x-small;">Report Bug</p>
         </button>
-        <hr class="my-0 mx-1">
       </div>
     </div>
   </div>
 
-  <div class="control-panel card-body py-1 px-2" id="control-panel">
-    <div class="row">
-      <div class="col-md-6">
-        <!-- Left half -->
-        <div class="d-flex">
-          <select class="form-select me-2" name="dropdown1" id="dropdown1">
-            <!-- Dropdown 1 options -->
-          </select>
-          <select class="form-select me-2" name="dropdown2" id="dropdown2">
-            <!-- Dropdown 2 options -->
-          </select>
-          <select class="form-select me-4" name="dropdown3" id="dropdown3">
-            <!-- Dropdown 3 options -->
-          </select>
-          <div class="vr mx-0"></div>
+  <div class="control-panel card-body py-1 px-2 rounded-right" id="control-panel">
+    <div class="d-flex align-items-center">
+      <div class="mx-auto mt-2 mb-2">
+        <h5 class="text-center click-panel-title">Control Panel</h5>
+      </div>
+      <button class="btn p-0 mx-1" id="control-panel-close">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+    </div>
+    <div class="control-group">
+      <label class="text-muted p-0 m-0" style=" font-size: small;" for="dropdown1">Data Overlay Category</label>
+      <select class="form-select mb-2" name="dropdown1" id="dropdown1">
+        <!-- Dropdown 1 options -->
+      </select>
+      <label class="text-muted p-0 m-0" style=" font-size: small;" for="dropdown2">Data Overlay Details</label>
+      <select class="form-select mb-2" name="dropdown2" id="dropdown2">
+        <!-- Dropdown 2 options -->
+      </select>
+      <label class="text-muted p-0 m-0" style=" font-size: small;" for="dropdown3">Destination Type</label>
+      <select class="form-select mb-2" name="dropdown3" id="dropdown3">
+        <!-- Dropdown 3 options -->
+      </select>
+      <label class="text-muted p-0 m-0" style=" font-size: small;" for="dropdown4">Map Type</label>
+
+      <select class="form-select mb-2" name="dropdown4" id="dropdown4" disabled=""></select>
+      <!-- horizontal line -->
+      <hr class="mt-1 mb-2">
+      <label class="text-muted p-0 m-0" style=" font-size: small;" for="trans-slider"> Data Overlay Transparency</label>
+      <input type="range" class="form-range" name="slider" min="0" max="100" step="5" id="trans-slider">
+      <label class="text-muted p-0 m-0" style=" font-size: small;" for="geocoder">Search for Location</label>
+      <div class="geocoder my-2" id="geocoder"></div>
+      <!-- <label class="text-muted p-0 m-0 bi-info-circle fst-italic" style=" font-size: small;" for="" > To get started click on a hexagon</label> -->
+      <hr class="mt-1 mb-2">
+      <!-- create two bootstrap columns -->
+      <label class="fw-bold p-0 m-0 align-items-center text-center" style="font-size: small;" for="legend" id="legend-type">Travel Time</label>
+
+      <div class="legend-colors p-2 mt-0 align-items-center" id="legend">
+
+      </div>
+      <div class="row align-items-center mb-2">
+        <div class="col-6 d-flex flex-column align-items-beginning fst-italic" id="left-legend-label">
+          <label class="text-muted p-0 m-0 fs legend-labels" for="">Longer</label>
+        </div>
+        <div class="col-6 d-flex flex-column align-items-end fst-italic" id="right-legend-label">
+          <label class="text-muted p-0 m-0 legend-labels" for="">Shorter</label>
         </div>
       </div>
-      <div class="col-md-6 ">
-        <div class="d-flex">
-          <div class="flex-fill">
-            <select class="form-select me-2" name="dropdown4" id="dropdown4" disabled=""></select>
-          </div>
-          <div class="flex-fill px-2">
-            <div class="geocoder" id="geocoder"></div>
-          </div>
-          <div class="flex-fill px-1" style="text-align: center;">
-            <input type="range" style="" class="form-range" name="slider" min="0" max="100" step="5" id="trans-slider">
-            <label class="" for="trans-slider"
-              style="font-size: 0.7em; display: block; margin-top: -10px; font-style: italic; color: #686868">Transparency</label>
-          </div>
+      <div class="row align-items-center">
+        <div class="col-6 d-flex justify-content-beginning p-0 px-2">
+          <img class="p-0 mx-1" src="/assets/edu-primary-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Primary School</label>
+        </div>
+        <div class="col-6 d-flex justify-content-beginning">
+          <img class="p-0 mx-1" src="/assets/health-post-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Health Post</label>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-6 d-flex justify-content-beginning p-0 px-2">
+          <img class="p-0 mx-1" src="/assets/edu-secondary-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Secondary School</label>
+        </div>
+        <div class="col-6 d-flex justify-content-beginning">
+          <img class="p-0 mx-1" src="/assets/health-center-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Health Center</label>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-6 d-flex justify-content-beginning p-0 px-2">
+          <img class="p-0 mx-1" src="/assets/edu-uni-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">University</label>
+        </div>
+        <div class="col-6 d-flex justify-content-beginning">
+          <img class="p-0 mx-1" src="/assets/health-hospital-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Hospital</label>
+        </div>
+      </div>
+      <div class="row align-items-center">
+        <div class="col-6 d-flex justify-content-beginning p-0 px-2">
+          <img class="p-0 mx-1" src="/assets/bridge-constructed-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Constructed Bridge</label>
+        </div>
+        <div class="col-6 d-flex justify-content-beginning">
+          <img class="p-0 mx-1" src="/assets/bridge-identified-circle.svg" alt="Icon" width="16" height="16"> 
+          <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Identified Site</label>
         </div>
       </div>
     </div>
-  </div>
+
   </div>
   <div class="click-panel card-body px-0 pt-0" id="click-panel">
     <div class="container-fluid px-1" style="background-color: #E9E9E9;">
@@ -110,7 +170,7 @@
     <div class="summary-text" id="summary-text"></div>
     <canvas class="click-panel-canvas" id="radar-chart"></canvas>
     <hr class="mt-1  mb-0 mx-4">
-    <canvas class="click-panel-canvas" id="bar-chart"></canvas>
+    <canvas class="click-panel-canvas px-1" id="bar-chart"></canvas>
     <hr class="mt-1  mb-0 mx-4">
     <canvas class="click-panel-canvas" id="pie-chart"></canvas>
     <hr class="mt-1  mb-0 mx-4">
@@ -118,7 +178,8 @@
       <div class="accordion-item " style="background-color: transparent;">
         <h1 class="accordion-header" id="all-data-heading">
           <button class="accordion-button collapsed p-2" type="button" data-bs-toggle="collapse"
-            data-bs-target="#all-data-collapse" aria-expanded="false" aria-controls="all-data-collapse" style="font-family: Inconsolata; font-weight: 600;">
+            data-bs-target="#all-data-collapse" aria-expanded="false" aria-controls="all-data-collapse"
+            style="font-family: Inconsolata; font-weight: 600;">
             All Data
           </button>
         </h1>
@@ -159,10 +220,15 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Fika Map is a tool that portrays where trail bridges are needed to reduce rural poverty and what impact trail bridges could have on surrounding communities. The data this tool displays is based on rigorous research and modeling; <a href="https://fikamap.com/" target="_blank">we provide more info on these models here</a>.</p>
-          <p> You can learn <a href="https://www.bridgestoprosperity.org/" target="_blank"> more about Bridges to Prosperity here.</a></p>
-          <p>If you want to learn more about how to use this tool, <a href="https://www.youtube.com/watch?v=iqLxJg1XC1w&ab_channel=BridgestoProsperity" target="_blank">we put together a video tutorial here</a>.</p>
-
+          <p>Fika Map is a tool that portrays where trail bridges are needed to reduce rural poverty and what impact
+            trail bridges could have on surrounding communities. The data this tool displays is based on rigorous
+            research and modeling; <a href="https://fikamap.com/" target="_blank">we provide more info on these models
+              here</a>.</p>
+          <p> You can learn <a href="https://www.bridgestoprosperity.org/" target="_blank"> more about Bridges to
+              Prosperity here.</a></p>
+          <p>If you want to learn more about how to use this tool, <a
+              href="https://www.youtube.com/watch?v=iqLxJg1XC1w&ab_channel=BridgestoProsperity" target="_blank">we put
+              together a video tutorial here</a>.</p>
         </div>
       </div>
     </div>

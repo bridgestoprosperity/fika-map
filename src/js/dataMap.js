@@ -13,7 +13,7 @@ export function impactCalc(impactNumber) {
 }
 
 export const dataMap = {
-  key: ["Menu Options", "hover panel text", "color scheme"],
+  key: ["Menu Options", "hover panel text", "color scheme", "percentiles", "legend labels"],
   "h3-index": [["N/A"], ["H3 Index", ""], "rainbow"],
   row_col: [["N/A"], ["Row/Col", ""], "rainbow"],
   female_educational_attainment_mean: [
@@ -34,6 +34,7 @@ export const dataMap = {
       style_stops_98: [3.999912, 4.670699059963226, 5.341486096382141, 6.012273132801056, 6.68306],
       style_stops_maxmin: [3.4551, 4.756050109863281, 6.057000160217285, 7.357950210571289, 8.6589],
     },
+    ["Less Educated", "More Educated"],
   ],
   females_0_4: [
     ["Population", "Female 0-4", "N/A"],
@@ -53,7 +54,9 @@ export const dataMap = {
       style_stops_98: [2.0, 35.25, 68.5, 101.75, 135.0],
       style_stops_maxmin: [0, 293.5, 587.0, 880.5, 1174],
     },
+    ["More People", "Less People"],
   ],
+
   females_0_9: [
     ["Population", "Female 0-9", "N/A"],
     ["Population", "females"],
@@ -72,6 +75,7 @@ export const dataMap = {
       style_stops_98: [5.0, 75.5, 146.0, 216.5, 287.0],
       style_stops_maxmin: [0, 586.75, 1173.5, 1760.25, 2347],
     },
+    ["More People", "Less People"],
   ],
   females_10_14: [
     ["Population", "Female 10-14", "N/A"],
@@ -91,6 +95,7 @@ export const dataMap = {
       style_stops_98: [2.0, 37.75, 73.5, 109.25, 145.0],
       style_stops_maxmin: [0, 271.75, 543.5, 815.25, 1087],
     },
+    ["More People", "Less People"],
   ],
   females_15_49: [
     ["Population", "Female 15-49", "N/A"],
@@ -110,6 +115,7 @@ export const dataMap = {
       style_stops_98: [10.0, 153.3149999999996, 296.6299999999992, 439.9449999999988, 583.2599999999984],
       style_stops_maxmin: [0, 1309.0, 2618.0, 3927.0, 5236],
     },
+    ["More People", "Less People"],
   ],
   females_50_64: [
     ["Population", "Female 50-64", "N/A"],
@@ -129,6 +135,7 @@ export const dataMap = {
       style_stops_98: [1.0, 21.0, 41.0, 61.0, 81.0],
       style_stops_maxmin: [0, 121.75, 243.5, 365.25, 487],
     },
+    ["More People", "Less People"],
   ],
   females_5_9: [
     ["Population", "Female 5-9", "N/A"],
@@ -148,6 +155,7 @@ export const dataMap = {
       style_stops_98: [2.0, 39.25, 76.5, 113.75, 151.0],
       style_stops_maxmin: [0, 293.25, 586.5, 879.75, 1173],
     },
+    ["More People", "Less People"],
   ],
   females_65_plus: [
     ["Population", "Female 65+", "N/A"],
@@ -167,6 +175,7 @@ export const dataMap = {
       style_stops_98: [0.0, 8.25, 16.5, 24.75, 33.0],
       style_stops_maxmin: [0, 45.25, 90.5, 135.75, 181],
     },
+    ["More People", "Less People"],
   ],
   male_educational_attainment_mean: [
     ["Demographics", "Male Education", "N/A"],
@@ -186,6 +195,7 @@ export const dataMap = {
       style_stops_98: [4.444456, 5.0959800481796265, 5.747503995895386, 6.399027943611145, 7.050552],
       style_stops_maxmin: [4.0105, 5.249399900436401, 6.48829984664917, 7.7271997928619385, 8.9661],
     },
+    ["Less Educated", "More Educated"],
   ],
   males_0_4: [
     ["Population", "Male 0-4", "N/A"],
@@ -205,6 +215,7 @@ export const dataMap = {
       style_stops_98: [2.0, 36.0, 70.0, 104.0, 138.0],
       style_stops_maxmin: [0, 309.75, 619.5, 929.25, 1239],
     },
+    ["More People", "Less People"],
   ],
   males_0_9: [
     ["Population", "Male 0-9", "N/A"],
@@ -224,6 +235,7 @@ export const dataMap = {
       style_stops_98: [5.0, 77.0, 149.0, 221.0, 293.0],
       style_stops_maxmin: [0, 603.25, 1206.5, 1809.75, 2413],
     },
+    ["More People", "Less People"],
   ],
   males_10_14: [
     ["Population", "Male 10-14", "N/A"],
@@ -243,6 +255,7 @@ export const dataMap = {
       style_stops_98: [2.0, 38.25, 74.5, 110.75, 147.0],
       style_stops_maxmin: [0, 246.75, 493.5, 740.25, 987],
     },
+    ["More People", "Less People"],
   ],
   males_15_49: [
     ["Population", "Male 15-49", "N/A"],
@@ -262,6 +275,7 @@ export const dataMap = {
       style_stops_98: [9.0, 160.3149999999996, 311.6299999999992, 462.9449999999988, 614.2599999999984],
       style_stops_maxmin: [0, 1924.0, 3848.0, 5772.0, 7696],
     },
+    ["More People", "Less People"],
   ],
   males_50_64: [
     ["Population", "Male 50-64", "N/A"],
@@ -281,6 +295,7 @@ export const dataMap = {
       style_stops_98: [1.0, 22.0, 43.0, 64.0, 85.0],
       style_stops_maxmin: [0, 156.5, 313.0, 469.5, 626],
     },
+    ["More People", "Less People"],
   ],
   males_5_9: [
     ["Population", "Male 5-9", "N/A"],
@@ -300,6 +315,7 @@ export const dataMap = {
       style_stops_98: [2.0, 40.0, 78.0, 116.0, 154.0],
       style_stops_maxmin: [0, 293.25, 586.5, 879.75, 1173],
     },
+    ["More People", "Less People"],
   ],
   males_65_plus: [
     ["Population", "Male 65+", "N/A"],
@@ -319,6 +335,7 @@ export const dataMap = {
       style_stops_98: [0.0, 6.25, 12.5, 18.75, 25.0],
       style_stops_maxmin: [0, 29.0, 58.0, 87.0, 116],
     },
+    ["More People", "Less People"],
   ],
   pop_0_4: [
     ["Population", "Children 0-4", "N/A"],
@@ -338,6 +355,7 @@ export const dataMap = {
       style_stops_98: [4.0, 71.3149999999996, 138.6299999999992, 205.9449999999988, 273.2599999999984],
       style_stops_maxmin: [0, 603.5, 1207.0, 1810.5, 2414],
     },
+    ["More People", "Less People"],
   ],
   pop_0_9: [
     ["Population", "Children 0-9", "N/A"],
@@ -357,6 +375,7 @@ export const dataMap = {
       style_stops_98: [10.0, 152.75, 295.5, 438.25, 581.0],
       style_stops_maxmin: [0, 1190.25, 2380.5, 3570.75, 4761],
     },
+    ["More People", "Less People"],
   ],
   pop_10_14: [
     ["Population", "Youth 10-14", "N/A"],
@@ -376,6 +395,7 @@ export const dataMap = {
       style_stops_98: [5.0, 77.0, 149.0, 221.0, 293.0],
       style_stops_maxmin: [0, 518.5, 1037.0, 1555.5, 2074],
     },
+    ["More People", "Less People"],
   ],
   pop_15_49: [
     ["Population", "People 15-49", "N/A"],
@@ -395,6 +415,7 @@ export const dataMap = {
       style_stops_98: [19.0, 309.75, 600.5, 891.25, 1182.0],
       style_stops_maxmin: [0, 3233.25, 6466.5, 9699.75, 12933],
     },
+    ["More People", "Less People"],
   ],
   pop_50_64: [
     ["Population", "People 50-64", "N/A"],
@@ -414,6 +435,7 @@ export const dataMap = {
       style_stops_98: [3.0, 43.25, 83.5, 123.75, 164.0],
       style_stops_maxmin: [0, 250.0, 500.0, 750.0, 1000],
     },
+    ["More People", "Less People"],
   ],
   pop_5_9: [
     ["Population", "Children 5-9", "N/A"],
@@ -433,6 +455,7 @@ export const dataMap = {
       style_stops_98: [5.0, 79.75, 154.5, 229.25, 304.0],
       style_stops_maxmin: [0, 586.75, 1173.5, 1760.25, 2347],
     },
+    ["More People", "Less People"],
   ],
   pop_65_plus: [
     ["Population", "People 65+", "N/A"],
@@ -452,6 +475,7 @@ export const dataMap = {
       style_stops_98: [1.0, 15.0, 29.0, 43.0, 57.0],
       style_stops_maxmin: [0, 73.75, 147.5, 221.25, 295],
     },
+    ["More People", "Less People"],
   ],
   population: [
     ["Population", "All", "N/A"],
@@ -471,6 +495,7 @@ export const dataMap = {
       style_stops_98: [39.0, 599.7599999999984, 1160.5199999999968, 1721.2799999999952, 2282.0399999999936],
       style_stops_maxmin: [0, 4953.25, 9906.5, 14859.75, 19813],
     },
+    ["More People", "Less People"],
   ],
   pregnancies: [
     ["Demographics", "Pregnancies", "N/A"],
@@ -490,6 +515,7 @@ export const dataMap = {
       style_stops_98: [1.0, 18.0, 35.0, 52.0, 69.0],
       style_stops_maxmin: [0, 367.5, 735.0, 1102.5, 1470],
     },
+    ["More Pregnancies", "Less Pregnancies"],
   ],
   births: [
     ["Demographics", "Births", "N/A"],
@@ -509,6 +535,7 @@ export const dataMap = {
       style_stops_98: [1.0, 12.75, 24.5, 36.25, 48.0],
       style_stops_maxmin: [0, 259.5, 519.0, 778.5, 1038],
     },
+    ["More Births", "Less Births"],
   ],
   rwi: [
     ["Demographics", "Relative Wealth Index", "N/A"],
@@ -528,6 +555,7 @@ export const dataMap = {
       style_stops_98: [-0.3014, -0.027037501335144043, 0.24732500314712524, 0.5216875076293945, 0.79605],
       style_stops_maxmin: [-0.6764, -0.05027502775192261, 0.5758499503135681, 1.2019749283790588, 1.8281],
     },
+    ["Less Wealthy", "More Wealthy"]
   ],
   underweight: [
     ["Demographics", "Underweight", "N/A"],
@@ -547,6 +575,7 @@ export const dataMap = {
       style_stops_98: [0.0609, 0.07463749963790178, 0.08837500028312206, 0.10211250092834234, 0.11585],
       style_stops_maxmin: [0.047, 0.09030000120401382, 0.13360000401735306, 0.1769000068306923, 0.2202],
     },
+    ["More Underweight", "Less Underweight"]
   ],
   // time_delta_constructed_sites_all_education_facilities_fixed: [
   //   ["Impact", "Current Impact", "School"],
@@ -870,6 +899,7 @@ export const dataMap = {
       style_stops_98: [11.0, 30, 46, 60, 280.2599999999984],
       style_stops_maxmin: [5, 428.75, 852.5, 1276.25, 1700],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_all_health_facilities_optimal: [
     ["Travel Time", "With All Bridges", "To Healthcare"],
@@ -889,6 +919,7 @@ export const dataMap = {
       style_stops_98: [15.0, 45, 90, 135, 247.0],
       style_stops_maxmin: [7, 420.0, 833.0, 1246.0, 1659],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_all_education_facilities_fixed: [
     ["Travel Time", "With Constructed Bridges", "To School"],
@@ -908,6 +939,7 @@ export const dataMap = {
       style_stops_98: [11.0, 30, 46, 60, 295.2599999999984],
       style_stops_maxmin: [5, 30, 46, 60, 1700],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_all_health_facilities_optimal: [
     ["Travel Time", "With Constructed Bridges", "To Healthcare"],
@@ -927,6 +959,7 @@ export const dataMap = {
       style_stops_98: [15.0, 45, 90, 135, 247.0],
       style_stops_maxmin: [7, 45, 90, 135, 1659],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_health_centers_optimal: [
     ["Travel Time", "With Constructed Bridges", "To Health Center"],
@@ -946,6 +979,7 @@ export const dataMap = {
       style_stops_98: [19.0, 45, 90, 135, 376.0],
       style_stops_maxmin: [7, 45, 90, 135, 1775],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_health_posts_optimal: [
     ["Travel Time", "With Constructed Bridges", "To Health Post"],
@@ -965,6 +999,7 @@ export const dataMap = {
       style_stops_98: [19.0, 45, 90, 135, 342.0],
       style_stops_maxmin: [7, 45, 90, 135, 1659],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_major_hospitals_optimal: [
     ["Travel Time", "With Constructed Bridges", "To Hospital"],
@@ -984,6 +1019,7 @@ export const dataMap = {
       style_stops_98: [60.0, 286.8149999999996, 513.6299999999992, 740.4449999999988, 967.2599999999984],
       style_stops_maxmin: [10, 451.0, 892.0, 1333.0, 1774],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_primary_schools_fixed: [
     ["Travel Time", "With Constructed Bridges", "To Primary School"],
@@ -1003,6 +1039,7 @@ export const dataMap = {
       style_stops_98: [12.863636363636363, 84.44439393939373, 156.02515151515112, 227.60590909090848, 299.1866666666659],
       style_stops_maxmin: [5.133333333333334, 428.94090909090903, 852.7484848484847, 1276.5560606060606, 1700.3636363636363],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_secondary_schools_fixed: [
     ["Travel Time", "With Constructed Bridges", "To Secondary School"],
@@ -1022,6 +1059,7 @@ export const dataMap = {
       style_stops_98: [14.24649202047576, 110.71889931838703, 207.1913066162983, 303.6637139142096, 400.1361212121209],
       style_stops_maxmin: [5.133333333333334, 435.28749999999997, 865.4416666666666, 1295.5958333333333, 1725.75],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_constructed_sites_semi_dense_urban_optimal: [
     ["Travel Time", "With Constructed Bridges", "To Market"],
@@ -1041,6 +1079,7 @@ export const dataMap = {
       style_stops_98: [27.0, 273.0, 519.0, 765.0, 1011.0],
       style_stops_maxmin: [10, 447.0, 884.0, 1321.0, 1758],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_health_centers_optimal: [
     ["Travel Time", "With All Bridges", "To Health Center"],
@@ -1060,6 +1099,7 @@ export const dataMap = {
       style_stops_98: [19.0, 30, 46, 60, 376.0],
       style_stops_maxmin: [7, 30, 46, 60, 1775],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_health_posts_optimal: [
     ["Travel Time", "With All Bridges", "To Health Post"],
@@ -1079,6 +1119,7 @@ export const dataMap = {
       style_stops_98: [19.0, 30, 46, 60, 338.0],
       style_stops_maxmin: [7, 30, 46, 60, 1659],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_major_hospitals_optimal: [
     ["Travel Time", "With All Bridges", "To Hospital"],
@@ -1098,6 +1139,7 @@ export const dataMap = {
       style_stops_98: [59.0, 60, 120, 180, 954.2599999999984],
       style_stops_maxmin: [10, 60, 120, 180, 1774],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_all_education_facilities_fixed: [
     ["Travel Time", "Without Bridges", "To School"],
@@ -1117,6 +1159,7 @@ export const dataMap = {
       style_stops_98: [11.0, 30, 45, 60, 299.0],
       style_stops_maxmin: [5, 30, 45, 60, 1700],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_all_health_facilities_optimal: [
     ["Travel Time", "Without Bridges", "To Healthcare"],
@@ -1136,6 +1179,7 @@ export const dataMap = {
       style_stops_98: [15.0, 45, 90, 135, 247.0],
       style_stops_maxmin: [7, 45, 90, 135, 1659],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_health_centers_optimal: [
     ["Travel Time", "Without Bridges", "To Health Center"],
@@ -1155,6 +1199,7 @@ export const dataMap = {
       style_stops_98: [19.0, 45, 90, 135, 376.0],
       style_stops_maxmin: [7, 45, 90, 135, 1775],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_health_posts_optimal: [
     ["Travel Time", "Without Bridges", "To Health Post"],
@@ -1174,6 +1219,7 @@ export const dataMap = {
       style_stops_98: [19.0, 45, 90, 135, 262.0, 343.0],
       style_stops_maxmin: [7, 45, 90, 135, 1659],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_major_hospitals_optimal: [
     ["Travel Time", "Without Bridges", "To Hospital"],
@@ -1193,6 +1239,7 @@ export const dataMap = {
       style_stops_98: [60.0, 60, 120, 180, 967.2599999999984],
       style_stops_maxmin: [10, 60, 120, 180, 1774],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_primary_schools_fixed: [
     ["Travel Time", "Without Bridges", "To Primary School"],
@@ -1212,6 +1259,7 @@ export const dataMap = {
       style_stops_98: [12.864895104895105, 30, 45, 60, 301.51599999999945],
       style_stops_maxmin: [5.133333333333334, 30, 45, 60, 1700.3636363636363],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_secondary_schools_fixed: [
     ["Travel Time", "Without Bridges", "To Secondary School"],
@@ -1231,6 +1279,7 @@ export const dataMap = {
       style_stops_98: [14.24649202047576, 30, 45, 60, 404.03360139860104],
       style_stops_maxmin: [5.133333333333334, 30, 45, 60, 1725.75],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_no_sites_semi_dense_urban_optimal: [
     ["Travel Time", "Without Bridges", "To Market"],
@@ -1250,6 +1299,7 @@ export const dataMap = {
       style_stops_98: [27.0, 60, 120, 180, 1012.0],
       style_stops_maxmin: [10, 60, 120, 180, 1758],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_primary_schools_fixed: [
     ["Travel Time", "With All Bridges", "To Primary School"],
@@ -1269,6 +1319,7 @@ export const dataMap = {
       style_stops_98: [12.767935916542474, 30, 45, 60, 284.9642105263155],
       style_stops_maxmin: [5.133333333333334, 30, 45, 60, 1700.3636363636363],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_secondary_schools_fixed: [
     ["Travel Time", "With All Bridges", "To Secondary School"],
@@ -1288,6 +1339,7 @@ export const dataMap = {
       style_stops_98: [14.202546583850932, 30, 45, 60, 385.59878787878796],
       style_stops_maxmin: [5.133333333333334, 30, 45, 60, 1725.75],
     },
+    ["Longer", "Shorter"],
   ],
   travel_time_semi_dense_urban_optimal: [
     ["Travel Time", "With All Bridges", "To Market"],
@@ -1307,6 +1359,7 @@ export const dataMap = {
       style_stops_98: [27.0, 60, 120, 180, 1007.2599999999984],
       style_stops_maxmin: [10, 60, 120, 180, 1758],
     },
+    ["Longer", "Shorter"],
   ],
   // beginning of impact layers
   all_education_potential_impact: [
@@ -1327,6 +1380,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.5, 1.0, 1.5, 2.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   all_education_current_impact: [
     ["Impact", "Current Impact", "School"],
@@ -1346,6 +1400,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   all_health_potential_impact: [
     ["Impact", "Potential Impact", "Healthcare"], ["Potential Impact", ""], "impactScheme",
@@ -1363,6 +1418,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.5, 1.0, 1.5, 2.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   all_health_current_impact: [
     ["Impact", "Current Impact", "Healthcare"],
@@ -1382,6 +1438,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   health_centers_potential_impact: [
     ["Impact", "Potential Impact", "Health Center"],
@@ -1401,6 +1458,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.5, 1.0, 1.5, 2.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   health_centers_current_impact: [
     ["Impact", "Current Impact", "Health Center"],
@@ -1420,6 +1478,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   health_posts_potential_impact: [
     ["Impact", "Potential Impact", "Health Post"],
@@ -1439,6 +1498,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.5, 1.0, 1.5, 2.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   health_posts_current_impact: [
     ["Impact", "Current Impact", "Health Post"],
@@ -1458,6 +1518,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   major_hospitals_potential_impact: [
     ["Impact", "Potential Impact", "Hospital"],
@@ -1477,6 +1538,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   major_hospitals_current_impact: [
     ["Impact", "Current Impact", "Hospital"],
@@ -1496,6 +1558,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   primary_schools_potential_impact: [
     ["Impact", "Potential Impact", "Primary School"],
@@ -1515,6 +1578,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.5, 1.0, 1.5, 2.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   primary_schools_current_impact: [
     ["Impact", "Current Impact", "Primary School"],
@@ -1534,6 +1598,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   secondary_schools_potential_impact: [
     ["Impact", "Potential Impact", "Secondary School"],
@@ -1553,6 +1618,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   secondary_schools_current_impact: [
     ["Impact", "Current Impact", "Secondary School"],
@@ -1572,6 +1638,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   semi_dense_urban_potential_impact: [
     ["Impact", "Potential Impact", "Market"],
@@ -1591,6 +1658,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   semi_dense_urban_current_impact: [
     ["Impact", "Current Impact", "Market"],
@@ -1610,6 +1678,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2.0, 4.0, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   total_potential_impact: [
     ["Impact", "Potential Impact", "All"],
@@ -1628,8 +1697,8 @@ export const dataMap = {
       style_stops_99: [0.0, 1.5, 3.0, 4.5, 6.0],
       style_stops_98: [0.0, 1.0, 2.0, 3.0, 4.0],
       style_stops_maxmin: [0.0, 0.1, 2, 4, 8.0],
-
     },
+    ["Less Impact", "More Impact"],
   ],
   total_current_impact: [
     ["Impact", "Current Impact", "All"],
@@ -1649,6 +1718,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2, 4, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   total_school_current_impact: [
     ["Impact", "Current Impact", "School"],
@@ -1668,6 +1738,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2, 4, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   total_school_potential_impact: [
     ["Impact", "Potential Impact", "School"],
@@ -1687,6 +1758,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.5, 1.0, 1.5, 2.0],
       style_stops_maxmin: [0.0, 0.1, 2, 4, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   total_health_current_impact: [
     ["Impact", "Current Impact", "Healthcare"],
@@ -1706,6 +1778,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.0, 0.0, 0.0, 0.0],
       style_stops_maxmin: [0.0, 0.1, 2, 4, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
   total_health_potential_impact: [
     ["Impact", "Potential Impact", "Healthcare"],
@@ -1725,6 +1798,7 @@ export const dataMap = {
       style_stops_98: [0.0, 0.5, 1.0, 1.5, 2.0],
       style_stops_maxmin: [0.0, 0.1, 2, 4, 8.0],
     },
+    ["Less Impact", "More Impact"],
   ],
 };
 

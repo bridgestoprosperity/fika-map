@@ -46,10 +46,11 @@ export default function hoverHandler(layerName, feature) {
 
     }
     document.getElementById("hover-icon").src = "/assets/geo-hex.svg";
-
+    
   } else if (layerName === "bridge-point" && feature) {
     map.setFilter("hover-bridge", ["==", ["id"], feature["id"]]);
-    document.getElementById("hover-text").innerHTML = "<strong>Bridge Site</strong> </br>Status: " + feature.properties.stage_public + " Site </br>Region: " + feature.properties.level_2_government + "</br>Population Served: " + feature.properties.individuals_directly_served;
+    console.log(feature.properties.opportunity_name)
+    document.getElementById("hover-text").innerHTML = "<strong>Bridge Site </strong>" + feature.properties.opportunity_name.split('-')[2].trim()+"</br>Status: " + feature.properties.stage_public + " Site </br>Region: " + feature.properties.level_2_government + "</br>Population Served: " + feature.properties.individuals_directly_served;
     document.getElementById("hover-icon").src = "/assets/bridge-hex.svg";
   } else if (layerName === "health-point" && feature) {
     map.setFilter("hover-health", ["==", ["id"], feature["id"]]);

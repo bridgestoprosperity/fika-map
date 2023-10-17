@@ -2,6 +2,7 @@ import * as index from "/main.js";
 import { map } from "../../main.js";
 import { updateCharts } from "./click-chart-builder.js";
 import { dataMap } from "./dataMap.js";
+import { impactCalc } from "./dataMap.js";
 
 const clickPanel = document.getElementById("click-panel");
 export let radarValues1 = [];
@@ -40,21 +41,16 @@ export default function clickHandler(layerName, feature) {
   radarClick(feature)
   popClick(feature)
   barClick(feature)
+  let populationImpact = impactGenerator(feature)
   clickPanel.classList.add("show");
+  document.getElementById("summary-text").innerHTML = `This area has a population of <span class="impact-style">${feature.population}</span> and an relative wealth index of <span class="impact-style">${Math.round(feature.rwi * 100) / 100}</span>. Trail bridges currently have a <span class="impact-style">${populationImpact[1][1]}</span> impact and a <span class="impact-style">${populationImpact[1][0]}</span> potential impact`;
 
   updateCharts(radarValues1, radarValues2, popData, travelTime1, travelTime2);
-
+  // updating the raw data table
   document.getElementById("all-data-table").innerHTML = "";
   for (var key in feature) {
     if (feature.hasOwnProperty(key)) {
       document.getElementById("all-data-table").innerHTML += "<tr><td>"+key+"</td> <td>"+roundToThree(feature[key])+"</td></tr>"
-
-    
-      
-      
-      
-      // key + " -> " + feature[key] + "<br>";
-
     }
   }
   // for every layer in the pathLayers array, set the filter to the h3IndexValue
@@ -104,17 +100,23 @@ function popClick(feature){
     ],
   ];
 }
-// function toPercentile(travelTime, category){
-//   let quant = 0;
-//   categoryQuantiles = dataMap[category][3]["quantiles"]
-//   // determine which quantile the travel time is in
-//   for (let i = 0; i < categoryQuantiles.length; i++) {
-//     if (travelTime <= categoryQuantiles[i]) {
-//       quant = i;
-//     }
-//   }
-//   categoryQuantiles[quant] - categoryQuantiles[quant-1]
-// }
+function impactGenerator(feature) {
+  const impactKeys = [
+    'total_potential_impact', 'total_current_impact',
+    'total_health_potential_impact', 'total_health_current_impact',
+    'total_school_potential_impact', 'total_school_current_impact',
+    'semi_dense_urban_potential_impact', 'semi_dense_urban_current_impact',
+    'secondary_schools_potential_impact', 'secondary_schools_current_impact',
+    'primary_schools_potential_impact', 'primary_schools_current_impact',
+    'major_hospitals_potential_impact', 'major_hospitals_current_impact',
+    'health_posts_potential_impact', 'health_posts_current_impact',
+    'health_centers_potential_impact', 'health_centers_current_impact'
+  ];
+
+  const impactValues = impactKeys.map(key => feature[key]);
+  const impactRating = impactValues.map(impactCalc);
+  return [impactValues, impactRating];
+}
 
 function calculatePercentile(travelTime, category) {
   let categoryQuantiles = dataMap[category][3]["quantiles"]

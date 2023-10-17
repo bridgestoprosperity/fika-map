@@ -1,11 +1,14 @@
 // import { BoxPlotChart } from "@sgratzl/chartjs-chart-boxplot";
 import { Chart } from "chart.js";
 import * as clickVars from "/@js/clickHandler.js";
+import { MatrixController, MatrixElement } from 'chartjs-chart-matrix';
+Chart.register(MatrixController, MatrixElement);
 
 const radarDiv = document.getElementById("radar-chart");
 const barDiv = document.getElementById("bar-chart");
 const pieDiv = document.getElementById("pie-chart");
-export let radarChart, barChart, pieChart;
+const matrixDiv = document.getElementById("matrix-chart");
+export let radarChart, barChart, pieChart, matrixChart;
 export function initializeCharts() {
   Chart.defaults.font.family = "Inconsolata";
   console.log("initializing charts");
@@ -246,10 +249,39 @@ export function initializeCharts() {
       // height: "100px", // Adjust the height as needed
     },
   };
-
+  // const matrixConfig = {
+  //   type: 'matrix',
+  //   data: {
+  //     datasets: [{
+  //       label: 'Basic matrix',
+  //       data: [{x: 1, y: 1}, {x: 2, y: 1}, {x: 3, y: 1}, {x: 4, y: 1}, {x: 1, y: 2}, {x: 2, y: 2}, {x: 3, y: 2}, {x: 4, y: 2}],
+  //       borderWidth: 1,
+  //       borderColor: 'rgba(0,0,0,0)',
+  //       backgroundColor: 'rgba(200,200,0,0.3)',
+  //       width: ({chart}) => (chart.chartArea || {}).width / 2 - 1,
+  //       height: ({chart}) => (chart.chartArea || {}).height / 8 - 1,
+  //     }],
+  //   },
+  //   options: {
+  //     scales: {
+  //       x: {
+  //         display: false,
+  //         min: 0.5,
+  //         max: 5,
+  //         offset: false
+  //       },
+  //       y: {
+  //         display: false,
+  //         min: 0.5,
+  //         max: 2.5
+  //       }
+  //     }
+  //   }
+  // };
+  
+  // matrixChart = new Chart(matrixDiv, matrixConfig)
   radarChart = new Chart(radarDiv, radarConfig);
   barChart = new Chart(barDiv, barConfig);
-
   pieChart = new Chart(pieDiv, pieConfig);
 }
 

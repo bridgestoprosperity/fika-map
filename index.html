@@ -22,7 +22,8 @@
 
 <body>
 
-  <div id="map"></div>
+  <div id="map">
+  </div>
 
   <div class="side-bar p-0 m-0" id="side-bar">
     <a href="https://fikamap.com/" target="_blank">
@@ -64,6 +65,12 @@
       </div>
     </div>
   </div>
+  <div class="attributions">
+    <a href="http://www.ziamehrabi.com/index.html" target="_blank">
+      <img src="/assets/bpl-logo.png" class="logo" alt="Better Planet Lab">
+    </a>
+  </div>
+
 
   <div class="control-panel card-body py-1 px-2 rounded-right" id="control-panel">
     <div class="d-flex align-items-center">
@@ -100,7 +107,8 @@
       <!-- <label class="text-muted p-0 m-0 bi-info-circle fst-italic" style=" font-size: small;" for="" > To get started click on a hexagon</label> -->
       <hr class="mt-1 mb-2">
       <!-- create two bootstrap columns -->
-      <label class="fw-bold p-0 m-0 align-items-center text-center" style="font-size: small;" for="legend" id="legend-type">Travel Time</label>
+      <label class="fw-bold p-0 m-0 align-items-center text-center" style="font-size: small;" for="legend"
+        id="legend-type">Travel Time</label>
 
       <div class="legend-colors p-2 mt-0 align-items-center" id="legend">
 
@@ -115,41 +123,44 @@
       </div>
       <div class="row align-items-center">
         <div class="col-6 d-flex justify-content-beginning p-0 px-2">
-          <img class="p-0 mx-1" src="/assets/edu-primary-circle.svg" alt="Icon" width="16" height="16"> 
-          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Primary School</label>
+          <img class="p-0 mx-1" src="/assets/edu-primary-circle.svg" alt="Icon" width="16" height="16">
+          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Primary
+            School</label>
         </div>
         <div class="col-6 d-flex justify-content-beginning">
-          <img class="p-0 mx-1" src="/assets/health-post-circle.svg" alt="Icon" width="16" height="16"> 
+          <img class="p-0 mx-1" src="/assets/health-post-circle.svg" alt="Icon" width="16" height="16">
           <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Health Post</label>
         </div>
       </div>
       <div class="row align-items-center">
         <div class="col-6 d-flex justify-content-beginning p-0 px-2">
-          <img class="p-0 mx-1" src="/assets/edu-secondary-circle.svg" alt="Icon" width="16" height="16"> 
-          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Secondary School</label>
+          <img class="p-0 mx-1" src="/assets/edu-secondary-circle.svg" alt="Icon" width="16" height="16">
+          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Secondary
+            School</label>
         </div>
         <div class="col-6 d-flex justify-content-beginning">
-          <img class="p-0 mx-1" src="/assets/health-center-circle.svg" alt="Icon" width="16" height="16"> 
+          <img class="p-0 mx-1" src="/assets/health-center-circle.svg" alt="Icon" width="16" height="16">
           <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Health Center</label>
         </div>
       </div>
       <div class="row align-items-center">
         <div class="col-6 d-flex justify-content-beginning p-0 px-2">
-          <img class="p-0 mx-1" src="/assets/edu-uni-circle.svg" alt="Icon" width="16" height="16"> 
+          <img class="p-0 mx-1" src="/assets/edu-uni-circle.svg" alt="Icon" width="16" height="16">
           <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">University</label>
         </div>
         <div class="col-6 d-flex justify-content-beginning">
-          <img class="p-0 mx-1" src="/assets/health-hospital-circle.svg" alt="Icon" width="16" height="16"> 
+          <img class="p-0 mx-1" src="/assets/health-hospital-circle.svg" alt="Icon" width="16" height="16">
           <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Hospital</label>
         </div>
       </div>
       <div class="row align-items-center">
         <div class="col-6 d-flex justify-content-beginning p-0 px-2">
-          <img class="p-0 mx-1" src="/assets/bridge-constructed-circle.svg" alt="Icon" width="16" height="16"> 
-          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Constructed Bridge</label>
+          <img class="p-0 mx-1" src="/assets/bridge-constructed-circle.svg" alt="Icon" width="16" height="16">
+          <label class="text-muted  pl-0 pr-0 py-0  ml-0 mr-0 my-0" style=" font-size: small;" for="">Constructed
+            Bridge</label>
         </div>
         <div class="col-6 d-flex justify-content-beginning">
-          <img class="p-0 mx-1" src="/assets/bridge-identified-circle.svg" alt="Icon" width="16" height="16"> 
+          <img class="p-0 mx-1" src="/assets/bridge-identified-circle.svg" alt="Icon" width="16" height="16">
           <label class="text-muted p-0 m-0" style=" font-size: small;" for="">Identified Site</label>
         </div>
       </div>
@@ -214,27 +225,55 @@
     </div>
   </div>
   <div class="modal info-modal" id="info-modal">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"> Welcome to Fika Map</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal-button">
-            <span aria-hidden="true"></span>
-          </button>
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Welcome to Fika Map</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal-button">
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Fika Map is a tool that portrays where trail bridges are needed to reduce rural poverty and what impact
+                    trail bridges could have on surrounding communities. The data this tool displays is based on rigorous
+                    research and modeling; <a href="https://fikamap.com/" target="_blank">we provide more info on these models
+                    here</a>.</p>
+                <p> You can learn <a href="https://www.bridgestoprosperity.org/" target="_blank"> more about Bridges to
+                    Prosperity here.</a></p>
+                <p>If you want to learn more about how to use this tool, <a
+                        href="https://www.youtube.com/watch?v=iqLxJg1XC1w&ab_channel=BridgestoProsperity" target="_blank">we put
+                    together a video tutorial here</a>.</p>
+            </div>
+            <!-- horizontal line -->
+            <hr class="mt-1 mb-2">
+            <h5 class="px-2"> Supported by:</h5>
+            <div class="pt-1 pb-1 mx-4" style="display: flex; align-items: center; flex-wrap: wrap;">
+              
+                <a href="http://www.ziamehrabi.com/index.html" target="_blank">
+                    <img src="/assets/bpl-logo.png" class="logo" alt="Better Planet Lab">
+                </a>
+                <a href="https://helmsleytrust.org/" target="_blank">
+                    <img src="/assets/helmsley-logo.png" class="logo" alt="Helmsley Charitable Trust">
+                </a>
+                <!-- add mapbox logo -->
+                <a href="https://www.mapbox.com/" target="_blank">
+                    <img src="/assets/mapbox-logo-black.png" class="logo" alt="Mapbox Logo">
+                </a>
+                <a href="https://www.colorado.edu/center/mortenson/" target="_blank">
+                    <img src="/assets/mc-logo.png" class="logo" alt="Mortenson Center">
+                </a>
+                <a href="https://www.autodesk.com/sustainability/corporate-philanthropy" target="_blank">
+                    <img src="/assets/autodesk-logo.png" class="logo" alt="Autodesk">
+                </a>
+                <a href="https://www.cisco.com/c/en/us/about/csr/technology-for-good.html" target="_blank">
+                    <img src="/assets/cisco-logo.png" class="logo" alt="Cisco">
+                </a>
+            </div>
         </div>
-        <div class="modal-body">
-          <p>Fika Map is a tool that portrays where trail bridges are needed to reduce rural poverty and what impact
-            trail bridges could have on surrounding communities. The data this tool displays is based on rigorous
-            research and modeling; <a href="https://fikamap.com/" target="_blank">we provide more info on these models
-              here</a>.</p>
-          <p> You can learn <a href="https://www.bridgestoprosperity.org/" target="_blank"> more about Bridges to
-              Prosperity here.</a></p>
-          <p>If you want to learn more about how to use this tool, <a
-              href="https://www.youtube.com/watch?v=iqLxJg1XC1w&ab_channel=BridgestoProsperity" target="_blank">we put
-              together a video tutorial here</a>.</p>
-        </div>
-      </div>
     </div>
+</div>
+
+
   </div>
   <script type="module" src="/main.js"></script>
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>

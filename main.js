@@ -27,22 +27,21 @@ export let styleKey = "";
 // END DELETE
 
 // initialize map
-mapboxgl.accessToken = "pk.eyJ1IjoiaGlnaGVzdHJvYWQiLCJhIjoiY2lzNjlpa3c3MGQ3cDJ6cDFzMXZpZTNmMCJ9.M1X4AOcuj4n3VT01ze0x5Q";
+mapboxgl.accessToken = "pk.eyJ1IjoiYnJpZGdlc3RvcHJvc3Blcml0eSIsImEiOiJjbG51aHV6MDEwZDI1Mmx0MzhqcHFvb3BuIn0.wgSlMp8cyuIYVMvj_p-Ojg";
 export const map = new mapboxgl.Map({
-  container: "map", // container ID
-  // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  style: "mapbox://styles/highestroad/clg35ltys000m01nhht5my9n3",
-  // style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
-  center: [29.519, -1.956], // starting position [lng, lat]
-  zoom: 8.2, // starting zoom
+  container: "map", 
+  style: "mapbox://styles/bridgestoprosperity/clnw3iksu001901ps9viw4huv",
+  center: [29.519, -1.956],
+  zoom: 8.2,
   hash: true,
-  // set bounds to rwanda
   maxBounds: [
     [26.8560, -4.8400], // Southwest coordinates
     [32.8954, 1.0546] // Northeast coordinates
   ],
   minZoom: 7.1,
+  attributionControl: false,
 });
+map.addControl(new mapboxgl.AttributionControl(), 'bottom-right');
 const nav = new mapboxgl.NavigationControl();
 map.addControl(nav, "bottom-left");
 

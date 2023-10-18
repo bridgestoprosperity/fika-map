@@ -14,9 +14,8 @@ export function initializeMap(map) {
     type: "geojson",
     // data: "https://fikamap-web-app.s3.us-west-1.amazonaws.com/data/rwa_travel_time_hex-8-mini.geojson",
     data: "/rwa_travel_time_hex-8-mini.geojson",
-    // use this for local testing
-    // data: "./data-prep/unsynced-data/rwanda/rwa_travel_time_hex-8-mini.geojson",
     generateId: true,
+    attribution: '<a href="https://www.bridgestoprosperity.org" target="_blank">© Bridges to Prosperity</a>',
   });
   map.addLayer(
     {
@@ -70,10 +69,10 @@ function getKeyByValue(value) {
 
 export function updateHexStyling(currentMenuState) {
   console.log(currentMenuState);
-  console.log(JSON.stringify([currentMenuState.dropdown1, currentMenuState.dropdown2, currentMenuState.dropdown3]))
+  console.log(JSON.stringify([currentMenuState.dropdown1, currentMenuState.dropdown2, currentMenuState.dropdown3]));
   let styleKey = Object.keys(dataMap).find((key) => JSON.stringify(dataMap[key][0]) === JSON.stringify([currentMenuState.dropdown1, currentMenuState.dropdown2, currentMenuState.dropdown3]));
   let legendColor = palettes[dataMap[styleKey][2]];
-  let legend = document.querySelector('.legend-colors');
+  let legend = document.querySelector(".legend-colors");
 
   map.setPaintProperty("hex-8-layer", "fill-color", mapStyles[styleKey]["fill-color"]);
   legend.style.background = "linear-gradient(to right, " + legendColor + ")";

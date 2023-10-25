@@ -1,0 +1,4465 @@
+{
+    "key": [
+        "Menu Options",
+        "hover panel text",
+        "color scheme",
+        "percentiles",
+        "legend labels"
+    ],
+    "h3-index": [
+        [
+            "N/A"
+        ],
+        [
+            "H3 Index",
+            ""
+        ],
+        "rainbow"
+    ],
+    "row_col": [
+        [
+            "N/A"
+        ],
+        [
+            "Row/Col",
+            ""
+        ],
+        "rainbow"
+    ],
+    "female_educational_attainment_mean": [
+        [
+            "Demographics",
+            "Female Education",
+            "N/A"
+        ],
+        [
+            "Avg. Female Education",
+            "years"
+        ],
+        "rdylgn",
+        {
+            "max": 8.7257,
+            "min": 3.3976,
+            "mean": 4.6791,
+            "median": 4.5781,
+            "98_percentile": 6.6929,
+            "99_percentile": 7.2846,
+            "2_percentile": 3.7639,
+            "1_percentile": 3.7098,
+            "quantiles": [
+                3.3976,
+                4.0175,
+                4.2098,
+                4.3351,
+                4.46,
+                4.5781,
+                4.6959,
+                4.8412,
+                5.0483,
+                5.339,
+                8.7257
+            ],
+            "style_stops_99": [
+                3.7098,
+                4.6035,
+                5.4972,
+                6.3909,
+                7.2846
+            ],
+            "style_stops_98": [
+                3.7639,
+                4.4962,
+                5.2284,
+                5.9606,
+                6.6929
+            ],
+            "style_stops_maxmin": [
+                3.3976,
+                4.7296,
+                6.0617,
+                7.3937,
+                8.7257
+            ]
+        },
+        [
+            "Less Educated",
+            "More Educated"
+        ]
+    ],
+    "females_0_4": [
+        [
+            "Population",
+            "Female 0-4",
+            "N/A"
+        ],
+        [
+            "Population",
+            "females"
+        ],
+        "magma",
+        {
+            "max": 1197,
+            "min": 0,
+            "mean": 30.4083,
+            "median": 22.0,
+            "98_percentile": 126.0,
+            "99_percentile": 188.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                2.0,
+                7.0,
+                12.0,
+                17.0,
+                22.0,
+                27.0,
+                33.0,
+                42.0,
+                59.0,
+                1197.0
+            ],
+            "style_stops_99": [
+                0.0,
+                47.0,
+                94.0,
+                141.0,
+                188.0
+            ],
+            "style_stops_98": [
+                0.0,
+                31.5,
+                63.0,
+                94.5,
+                126.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                299.25,
+                598.5,
+                897.75,
+                1197
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "females_0_9": [
+        [
+            "Population",
+            "Female 0-9",
+            "N/A"
+        ],
+        [
+            "Population",
+            "females"
+        ],
+        "magma",
+        {
+            "max": 2393,
+            "min": 0,
+            "mean": 65.5417,
+            "median": 48.0,
+            "98_percentile": 267.0,
+            "99_percentile": 401.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                4.0,
+                15.0,
+                27.0,
+                38.0,
+                48.0,
+                60.0,
+                73.0,
+                91.0,
+                128.0,
+                2393.0
+            ],
+            "style_stops_99": [
+                0.0,
+                100.25,
+                200.5,
+                300.75,
+                401.0
+            ],
+            "style_stops_98": [
+                0.0,
+                66.75,
+                133.5,
+                200.25,
+                267.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                598.25,
+                1196.5,
+                1794.75,
+                2393
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "females_10_14": [
+        [
+            "Population",
+            "Female 10-14",
+            "N/A"
+        ],
+        [
+            "Population",
+            "females"
+        ],
+        "magma",
+        {
+            "max": 1036,
+            "min": 0,
+            "mean": 33.0875,
+            "median": 25.0,
+            "98_percentile": 136.0,
+            "99_percentile": 199.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                2.0,
+                7.0,
+                14.0,
+                19.0,
+                25.0,
+                30.0,
+                37.0,
+                46.0,
+                66.0,
+                1036.0
+            ],
+            "style_stops_99": [
+                0.0,
+                49.75,
+                99.5,
+                149.25,
+                199.0
+            ],
+            "style_stops_98": [
+                0.0,
+                34.0,
+                68.0,
+                102.0,
+                136.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                259.0,
+                518.0,
+                777.0,
+                1036
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "females_15_49": [
+        [
+            "Population",
+            "Female 15-49",
+            "N/A"
+        ],
+        [
+            "Population",
+            "females"
+        ],
+        "magma",
+        {
+            "max": 5235,
+            "min": 0,
+            "mean": 132.7819,
+            "median": 98.0,
+            "98_percentile": 546.34,
+            "99_percentile": 814.34,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                7.0,
+                28.0,
+                54.0,
+                77.0,
+                98.0,
+                120.0,
+                147.0,
+                182.0,
+                256.0,
+                5235.0
+            ],
+            "style_stops_99": [
+                0.0,
+                203.585,
+                407.17,
+                610.755,
+                814.34
+            ],
+            "style_stops_98": [
+                0.0,
+                136.585,
+                273.17,
+                409.755,
+                546.34
+            ],
+            "style_stops_maxmin": [
+                0,
+                1308.75,
+                2617.5,
+                3926.25,
+                5235
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "females_50_64": [
+        [
+            "Population",
+            "Female 50-64",
+            "N/A"
+        ],
+        [
+            "Population",
+            "females"
+        ],
+        "magma",
+        {
+            "max": 465,
+            "min": 0,
+            "mean": 19.3277,
+            "median": 15.0,
+            "98_percentile": 77.0,
+            "99_percentile": 103.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                1.0,
+                4.0,
+                8.0,
+                12.0,
+                15.0,
+                18.0,
+                23.0,
+                28.0,
+                39.0,
+                465.0
+            ],
+            "style_stops_99": [
+                0.0,
+                25.75,
+                51.5,
+                77.25,
+                103.0
+            ],
+            "style_stops_98": [
+                0.0,
+                19.25,
+                38.5,
+                57.75,
+                77.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                116.25,
+                232.5,
+                348.75,
+                465
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "females_5_9": [
+        [
+            "Population",
+            "Female 5-9",
+            "N/A"
+        ],
+        [
+            "Population",
+            "females"
+        ],
+        "magma",
+        {
+            "max": 1196,
+            "min": 0,
+            "mean": 35.1386,
+            "median": 26.0,
+            "98_percentile": 141.0,
+            "99_percentile": 208.17,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                2.0,
+                8.0,
+                15.0,
+                21.0,
+                26.0,
+                32.0,
+                39.0,
+                49.0,
+                69.0,
+                1196.0
+            ],
+            "style_stops_99": [
+                0.0,
+                52.0425,
+                104.085,
+                156.1275,
+                208.17
+            ],
+            "style_stops_98": [
+                0.0,
+                35.25,
+                70.5,
+                105.75,
+                141.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                299.0,
+                598.0,
+                897.0,
+                1196
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "females_65_plus": [
+        [
+            "Population",
+            "Female 65+",
+            "N/A"
+        ],
+        [
+            "Population",
+            "females"
+        ],
+        "magma",
+        {
+            "max": 173,
+            "min": 0,
+            "mean": 7.9233,
+            "median": 6.0,
+            "98_percentile": 32.0,
+            "99_percentile": 43.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                2.0,
+                3.0,
+                5.0,
+                6.0,
+                8.0,
+                9.0,
+                12.0,
+                16.0,
+                173.0
+            ],
+            "style_stops_99": [
+                0.0,
+                10.75,
+                21.5,
+                32.25,
+                43.0
+            ],
+            "style_stops_98": [
+                0.0,
+                8.0,
+                16.0,
+                24.0,
+                32.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                43.25,
+                86.5,
+                129.75,
+                173
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "male_educational_attainment_mean": [
+        [
+            "Demographics",
+            "Male Education",
+            "N/A"
+        ],
+        [
+            "Avg. Male Education",
+            "years"
+        ],
+        "rdylgn",
+        {
+            "max": 8.9666,
+            "min": 3.996,
+            "mean": 4.9646,
+            "median": 4.8625,
+            "98_percentile": 6.7373,
+            "99_percentile": 7.4282,
+            "2_percentile": 4.2076,
+            "1_percentile": 4.1404,
+            "quantiles": [
+                3.996,
+                4.4969,
+                4.6391,
+                4.7356,
+                4.8029,
+                4.8625,
+                4.9453,
+                5.0489,
+                5.1841,
+                5.4081,
+                8.9666
+            ],
+            "style_stops_99": [
+                4.1404,
+                4.9624,
+                5.7843,
+                6.6063,
+                7.4282
+            ],
+            "style_stops_98": [
+                4.2076,
+                4.84,
+                5.4725,
+                6.1049,
+                6.7373
+            ],
+            "style_stops_maxmin": [
+                3.996,
+                5.2387,
+                6.4813,
+                7.724,
+                8.9666
+            ]
+        },
+        [
+            "Less Educated",
+            "More Educated"
+        ]
+    ],
+    "males_0_4": [
+        [
+            "Population",
+            "Male 0-4",
+            "N/A"
+        ],
+        [
+            "Population",
+            "males"
+        ],
+        "magma",
+        {
+            "max": 1263,
+            "min": 0,
+            "mean": 31.0368,
+            "median": 23.0,
+            "98_percentile": 130.0,
+            "99_percentile": 192.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                2.0,
+                7.0,
+                13.0,
+                18.0,
+                23.0,
+                28.0,
+                34.0,
+                43.0,
+                61.0,
+                1263.0
+            ],
+            "style_stops_99": [
+                0.0,
+                48.0,
+                96.0,
+                144.0,
+                192.0
+            ],
+            "style_stops_98": [
+                0.0,
+                32.5,
+                65.0,
+                97.5,
+                130.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                315.75,
+                631.5,
+                947.25,
+                1263
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "males_0_9": [
+        [
+            "Population",
+            "Male 0-9",
+            "N/A"
+        ],
+        [
+            "Population",
+            "males"
+        ],
+        "magma",
+        {
+            "max": 2461,
+            "min": 0,
+            "mean": 66.7882,
+            "median": 49.0,
+            "98_percentile": 273.0,
+            "99_percentile": 406.17,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                4.0,
+                15.0,
+                28.0,
+                39.0,
+                49.0,
+                61.0,
+                74.0,
+                93.0,
+                131.0,
+                2461.0
+            ],
+            "style_stops_99": [
+                0.0,
+                101.5425,
+                203.085,
+                304.6275,
+                406.17
+            ],
+            "style_stops_98": [
+                0.0,
+                68.25,
+                136.5,
+                204.75,
+                273.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                615.25,
+                1230.5,
+                1845.75,
+                2461
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "males_10_14": [
+        [
+            "Population",
+            "Male 10-14",
+            "N/A"
+        ],
+        [
+            "Population",
+            "males"
+        ],
+        "magma",
+        {
+            "max": 940,
+            "min": 0,
+            "mean": 33.6403,
+            "median": 25.0,
+            "98_percentile": 139.0,
+            "99_percentile": 199.17,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                2.0,
+                8.0,
+                14.0,
+                20.0,
+                25.0,
+                31.0,
+                38.0,
+                48.0,
+                67.0,
+                940.0
+            ],
+            "style_stops_99": [
+                0.0,
+                49.7925,
+                99.585,
+                149.3775,
+                199.17
+            ],
+            "style_stops_98": [
+                0.0,
+                34.75,
+                69.5,
+                104.25,
+                139.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                235.0,
+                470.0,
+                705.0,
+                940
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "males_15_49": [
+        [
+            "Population",
+            "Male 15-49",
+            "N/A"
+        ],
+        [
+            "Population",
+            "males"
+        ],
+        "magma",
+        {
+            "max": 7694,
+            "min": 0,
+            "mean": 131.972,
+            "median": 90.0,
+            "98_percentile": 568.34,
+            "99_percentile": 938.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                7.0,
+                28.0,
+                51.0,
+                72.0,
+                90.0,
+                110.0,
+                133.0,
+                168.0,
+                242.0,
+                7694.0
+            ],
+            "style_stops_99": [
+                0.0,
+                234.5,
+                469.0,
+                703.5,
+                938.0
+            ],
+            "style_stops_98": [
+                0.0,
+                142.085,
+                284.17,
+                426.255,
+                568.34
+            ],
+            "style_stops_maxmin": [
+                0,
+                1923.5,
+                3847.0,
+                5770.5,
+                7694
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "males_50_64": [
+        [
+            "Population",
+            "Male 50-64",
+            "N/A"
+        ],
+        [
+            "Population",
+            "males"
+        ],
+        "magma",
+        {
+            "max": 596,
+            "min": 0,
+            "mean": 18.7629,
+            "median": 14.0,
+            "98_percentile": 81.0,
+            "99_percentile": 119.17,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                1.0,
+                4.0,
+                8.0,
+                11.0,
+                14.0,
+                17.0,
+                20.0,
+                26.0,
+                37.0,
+                596.0
+            ],
+            "style_stops_99": [
+                0.0,
+                29.7925,
+                59.585,
+                89.3775,
+                119.17
+            ],
+            "style_stops_98": [
+                0.0,
+                20.25,
+                40.5,
+                60.75,
+                81.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                149.0,
+                298.0,
+                447.0,
+                596
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "males_5_9": [
+        [
+            "Population",
+            "Male 5-9",
+            "N/A"
+        ],
+        [
+            "Population",
+            "males"
+        ],
+        "magma",
+        {
+            "max": 1198,
+            "min": 0,
+            "mean": 35.7589,
+            "median": 27.0,
+            "98_percentile": 145.0,
+            "99_percentile": 215.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                2.0,
+                8.0,
+                15.0,
+                21.0,
+                27.0,
+                33.0,
+                40.0,
+                50.0,
+                71.0,
+                1198.0
+            ],
+            "style_stops_99": [
+                0.0,
+                53.75,
+                107.5,
+                161.25,
+                215.0
+            ],
+            "style_stops_98": [
+                0.0,
+                36.25,
+                72.5,
+                108.75,
+                145.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                299.5,
+                599.0,
+                898.5,
+                1198
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "males_65_plus": [
+        [
+            "Population",
+            "Male 65+",
+            "N/A"
+        ],
+        [
+            "Population",
+            "males"
+        ],
+        "magma",
+        {
+            "max": 111,
+            "min": 0,
+            "mean": 5.9643,
+            "median": 5.0,
+            "98_percentile": 24.0,
+            "99_percentile": 32.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                1.0,
+                3.0,
+                4.0,
+                5.0,
+                6.0,
+                7.0,
+                9.0,
+                12.0,
+                111.0
+            ],
+            "style_stops_99": [
+                0.0,
+                8.0,
+                16.0,
+                24.0,
+                32.0
+            ],
+            "style_stops_98": [
+                0.0,
+                6.0,
+                12.0,
+                18.0,
+                24.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                27.75,
+                55.5,
+                83.25,
+                111
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pop_0_4": [
+        [
+            "Population",
+            "Children 0-4",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 2460,
+            "min": 0,
+            "mean": 61.4374,
+            "median": 45.0,
+            "98_percentile": 256.0,
+            "99_percentile": 379.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                3.0,
+                14.0,
+                25.0,
+                35.0,
+                45.0,
+                55.0,
+                67.0,
+                85.0,
+                120.0,
+                2460.0
+            ],
+            "style_stops_99": [
+                0.0,
+                94.75,
+                189.5,
+                284.25,
+                379.0
+            ],
+            "style_stops_98": [
+                0.0,
+                64.0,
+                128.0,
+                192.0,
+                256.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                615.0,
+                1230.0,
+                1845.0,
+                2460
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pop_0_9": [
+        [
+            "Population",
+            "Children 0-9",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 4854,
+            "min": 0,
+            "mean": 132.3317,
+            "median": 98.0,
+            "98_percentile": 540.34,
+            "99_percentile": 813.34,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                7.0,
+                30.0,
+                55.0,
+                77.0,
+                98.0,
+                120.0,
+                147.0,
+                184.0,
+                260.0,
+                4854.0
+            ],
+            "style_stops_99": [
+                0.0,
+                203.335,
+                406.67,
+                610.005,
+                813.34
+            ],
+            "style_stops_98": [
+                0.0,
+                135.085,
+                270.17,
+                405.255,
+                540.34
+            ],
+            "style_stops_maxmin": [
+                0,
+                1213.5,
+                2427.0,
+                3640.5,
+                4854
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pop_10_14": [
+        [
+            "Population",
+            "Youth 10-14",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 1976,
+            "min": 0,
+            "mean": 66.722,
+            "median": 50.0,
+            "98_percentile": 274.0,
+            "99_percentile": 396.17,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                4.0,
+                15.0,
+                28.0,
+                39.0,
+                50.0,
+                61.0,
+                74.0,
+                94.0,
+                133.0,
+                1976.0
+            ],
+            "style_stops_99": [
+                0.0,
+                99.0425,
+                198.085,
+                297.1275,
+                396.17
+            ],
+            "style_stops_98": [
+                0.0,
+                68.5,
+                137.0,
+                205.5,
+                274.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                494.0,
+                988.0,
+                1482.0,
+                1976
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pop_15_49": [
+        [
+            "Population",
+            "People 15-49",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 12929,
+            "min": 0,
+            "mean": 264.7553,
+            "median": 189.0,
+            "98_percentile": 1102.0,
+            "99_percentile": 1769.34,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                14.0,
+                57.0,
+                106.0,
+                149.0,
+                189.0,
+                230.0,
+                281.0,
+                351.0,
+                499.7,
+                12929.0
+            ],
+            "style_stops_99": [
+                0.0,
+                442.335,
+                884.67,
+                1327.005,
+                1769.34
+            ],
+            "style_stops_98": [
+                0.0,
+                275.5,
+                551.0,
+                826.5,
+                1102.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                3232.25,
+                6464.5,
+                9696.75,
+                12929
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pop_50_64": [
+        [
+            "Population",
+            "People 50-64",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 954,
+            "min": 0,
+            "mean": 38.0944,
+            "median": 29.0,
+            "98_percentile": 155.0,
+            "99_percentile": 217.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                2.0,
+                9.0,
+                16.0,
+                23.0,
+                29.0,
+                35.0,
+                43.0,
+                54.0,
+                76.0,
+                954.0
+            ],
+            "style_stops_99": [
+                0.0,
+                54.25,
+                108.5,
+                162.75,
+                217.0
+            ],
+            "style_stops_98": [
+                0.0,
+                38.75,
+                77.5,
+                116.25,
+                155.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                238.5,
+                477.0,
+                715.5,
+                954
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pop_5_9": [
+        [
+            "Population",
+            "Children 5-9",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 2394,
+            "min": 0,
+            "mean": 70.8865,
+            "median": 53.0,
+            "98_percentile": 286.0,
+            "99_percentile": 425.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                4.0,
+                16.0,
+                30.0,
+                42.0,
+                53.0,
+                65.0,
+                79.0,
+                100.0,
+                139.7,
+                2394.0
+            ],
+            "style_stops_99": [
+                0.0,
+                106.25,
+                212.5,
+                318.75,
+                425.0
+            ],
+            "style_stops_98": [
+                0.0,
+                71.5,
+                143.0,
+                214.5,
+                286.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                598.5,
+                1197.0,
+                1795.5,
+                2394
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pop_65_plus": [
+        [
+            "Population",
+            "People 65+",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 282,
+            "min": 0,
+            "mean": 13.8979,
+            "median": 11.0,
+            "98_percentile": 55.0,
+            "99_percentile": 75.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                1.0,
+                3.0,
+                6.0,
+                9.0,
+                11.0,
+                13.0,
+                16.0,
+                20.0,
+                28.0,
+                282.0
+            ],
+            "style_stops_99": [
+                0.0,
+                18.75,
+                37.5,
+                56.25,
+                75.0
+            ],
+            "style_stops_98": [
+                0.0,
+                13.75,
+                27.5,
+                41.25,
+                55.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                70.5,
+                141.0,
+                211.5,
+                282
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "population": [
+        [
+            "Population",
+            "All",
+            "N/A"
+        ],
+        [
+            "Population",
+            "people"
+        ],
+        "magma",
+        {
+            "max": 19933,
+            "min": 0,
+            "mean": 515.8003,
+            "median": 379.0,
+            "98_percentile": 2132.34,
+            "99_percentile": 3251.85,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                28.0,
+                115.0,
+                212.0,
+                301.0,
+                379.0,
+                463.0,
+                564.0,
+                704.0,
+                990.0,
+                19933.0
+            ],
+            "style_stops_99": [
+                0.0,
+                812.9625,
+                1625.925,
+                2438.8875,
+                3251.85
+            ],
+            "style_stops_98": [
+                0.0,
+                533.085,
+                1066.17,
+                1599.255,
+                2132.34
+            ],
+            "style_stops_maxmin": [
+                0,
+                4983.25,
+                9966.5,
+                14949.75,
+                19933
+            ]
+        },
+        [
+            "More People",
+            "Less People"
+        ]
+    ],
+    "pregnancies": [
+        [
+            "Demographics",
+            "Pregnancies",
+            "N/A"
+        ],
+        [
+            "Pregnancies"
+        ],
+        "magma",
+        {
+            "max": 1432,
+            "min": 0,
+            "mean": 19.0205,
+            "median": 16.0,
+            "98_percentile": 62.0,
+            "99_percentile": 92.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                1.0,
+                5.0,
+                10.0,
+                13.0,
+                16.0,
+                19.0,
+                22.0,
+                26.0,
+                34.0,
+                1432.0
+            ],
+            "style_stops_99": [
+                0.0,
+                23.0,
+                46.0,
+                69.0,
+                92.0
+            ],
+            "style_stops_98": [
+                0.0,
+                15.5,
+                31.0,
+                46.5,
+                62.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                358.0,
+                716.0,
+                1074.0,
+                1432
+            ]
+        },
+        [
+            "More Pregnancies",
+            "Less Pregnancies"
+        ]
+    ],
+    "births": [
+        [
+            "Demographics",
+            "Births",
+            "N/A"
+        ],
+        [
+            "Births"
+        ],
+        "magma",
+        {
+            "max": 1012,
+            "min": 0,
+            "mean": 13.4298,
+            "median": 11.0,
+            "98_percentile": 44.0,
+            "99_percentile": 65.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                1.0,
+                4.0,
+                7.0,
+                9.0,
+                11.0,
+                13.0,
+                15.0,
+                19.0,
+                24.0,
+                1012.0
+            ],
+            "style_stops_99": [
+                0.0,
+                16.25,
+                32.5,
+                48.75,
+                65.0
+            ],
+            "style_stops_98": [
+                0.0,
+                11.0,
+                22.0,
+                33.0,
+                44.0
+            ],
+            "style_stops_maxmin": [
+                0,
+                253.0,
+                506.0,
+                759.0,
+                1012
+            ]
+        },
+        [
+            "More Births",
+            "Less Births"
+        ]
+    ],
+    "rwi": [
+        [
+            "Demographics",
+            "Relative Wealth Index",
+            "N/A"
+        ],
+        [
+            "Relative Wealth Index"
+        ],
+        "rdylgn",
+        {
+            "max": 1.8395,
+            "min": -0.8172,
+            "mean": -0.0311,
+            "median": -0.0719,
+            "98_percentile": 0.7183,
+            "99_percentile": 0.99,
+            "2_percentile": -0.4495,
+            "1_percentile": -0.5112,
+            "quantiles": [
+                -0.8172,
+                -0.2992,
+                -0.2256,
+                -0.1707,
+                -0.1218,
+                -0.0719,
+                -0.0203,
+                0.0425,
+                0.1249,
+                0.2722,
+                1.8395
+            ],
+            "style_stops_99": [
+                -0.5112,
+                -0.1359,
+                0.2394,
+                0.6147,
+                0.99
+            ],
+            "style_stops_98": [
+                -0.4495,
+                -0.1575,
+                0.1344,
+                0.4263,
+                0.7183
+            ],
+            "style_stops_maxmin": [
+                -0.8172,
+                -0.153,
+                0.5111,
+                1.1753,
+                1.8395
+            ]
+        },
+        [
+            "Less Wealthy",
+            "More Wealthy"
+        ]
+    ],
+    "underweight": [
+        [
+            "Demographics",
+            "Underweight",
+            "N/A"
+        ],
+        [
+            "Underweight"
+        ],
+        "rdylgn",
+        {
+            "max": 0.2202,
+            "min": 0.047,
+            "mean": 0.0874,
+            "median": 0.0864,
+            "98_percentile": 0.129,
+            "99_percentile": 0.1482,
+            "2_percentile": 0.058,
+            "1_percentile": 0.0535,
+            "quantiles": [
+                0.047,
+                0.0714,
+                0.0757,
+                0.0794,
+                0.0826,
+                0.0864,
+                0.0893,
+                0.0926,
+                0.0969,
+                0.1041,
+                0.2202
+            ],
+            "style_stops_99": [
+                0.0535,
+                0.0772,
+                0.1009,
+                0.1245,
+                0.1482
+            ],
+            "style_stops_98": [
+                0.058,
+                0.0757,
+                0.0935,
+                0.1112,
+                0.129
+            ],
+            "style_stops_maxmin": [
+                0.047,
+                0.0903,
+                0.1336,
+                0.1769,
+                0.2202
+            ]
+        },
+        [
+            "More Underweight",
+            "Less Underweight"
+        ]
+    ],
+    "travel_time_all_education_facilities_fixed": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1717.0,
+            "min": 0.0,
+            "mean": 65.8358,
+            "median": 47.0,
+            "98_percentile": 292.0,
+            "99_percentile": 450.73,
+            "2_percentile": 12.0,
+            "1_percentile": 10.0,
+            "quantiles": [
+                0.0,
+                19.0,
+                27.0,
+                33.0,
+                40.0,
+                47.0,
+                54.0,
+                63.0,
+                76.0,
+                106.0,
+                1717.0
+            ],
+            "style_stops_99": [
+                10.0,
+                120.1825,
+                230.365,
+                340.5475,
+                450.73
+            ],
+            "style_stops_98": [
+                12.0,
+                82.0,
+                152.0,
+                222.0,
+                292.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                429.25,
+                858.5,
+                1287.75,
+                1717.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_all_health_facilities_optimal": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To Healthcare"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1676.0,
+            "min": 0.0,
+            "mean": 88.2921,
+            "median": 74.0,
+            "98_percentile": 255.54,
+            "99_percentile": 402.77,
+            "2_percentile": 15.0,
+            "1_percentile": 13.0,
+            "quantiles": [
+                0.0,
+                30.0,
+                43.0,
+                53.0,
+                63.0,
+                74.0,
+                84.0,
+                97.0,
+                113.0,
+                141.0,
+                1676.0
+            ],
+            "style_stops_99": [
+                13.0,
+                110.4425,
+                207.885,
+                305.3275,
+                402.77
+            ],
+            "style_stops_98": [
+                15.0,
+                75.135,
+                135.27,
+                195.405,
+                255.54
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                419.0,
+                838.0,
+                1257.0,
+                1676.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_all_education_facilities_fixed": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1717.0,
+            "min": 0.0,
+            "mean": 68.025,
+            "median": 47.0,
+            "98_percentile": 306.0,
+            "99_percentile": 468.12,
+            "2_percentile": 12.0,
+            "1_percentile": 10.0,
+            "quantiles": [
+                0.0,
+                19.0,
+                27.0,
+                34.0,
+                40.0,
+                47.0,
+                55.0,
+                65.0,
+                79.0,
+                112.0,
+                1717.0
+            ],
+            "style_stops_99": [
+                10.0,
+                124.53,
+                239.06,
+                353.59,
+                468.12
+            ],
+            "style_stops_98": [
+                12.0,
+                85.5,
+                159.0,
+                232.5,
+                306.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                429.25,
+                858.5,
+                1287.75,
+                1717.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_all_health_facilities_optimal": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To Healthcare"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1676.0,
+            "min": 0.0,
+            "mean": 89.1061,
+            "median": 74.0,
+            "98_percentile": 256.0,
+            "99_percentile": 403.0,
+            "2_percentile": 15.0,
+            "1_percentile": 13.0,
+            "quantiles": [
+                0.0,
+                30.0,
+                43.0,
+                54.0,
+                64.0,
+                74.0,
+                85.0,
+                98.0,
+                115.0,
+                142.0,
+                1676.0
+            ],
+            "style_stops_99": [
+                13.0,
+                110.5,
+                208.0,
+                305.5,
+                403.0
+            ],
+            "style_stops_98": [
+                15.0,
+                75.25,
+                135.5,
+                195.75,
+                256.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                419.0,
+                838.0,
+                1257.0,
+                1676.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_health_centers_optimal": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To Health Center"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1792.0,
+            "min": 5.0,
+            "mean": 123.6121,
+            "median": 105.0,
+            "98_percentile": 385.0,
+            "99_percentile": 514.5,
+            "2_percentile": 19.0,
+            "1_percentile": 15.0,
+            "quantiles": [
+                5.0,
+                42.0,
+                61.0,
+                77.0,
+                91.0,
+                105.0,
+                120.0,
+                137.0,
+                160.0,
+                201.0,
+                1792.0
+            ],
+            "style_stops_99": [
+                15.0,
+                139.875,
+                264.75,
+                389.625,
+                514.5
+            ],
+            "style_stops_98": [
+                19.0,
+                110.5,
+                202.0,
+                293.5,
+                385.0
+            ],
+            "style_stops_maxmin": [
+                5.0,
+                451.75,
+                898.5,
+                1345.25,
+                1792.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_health_posts_optimal": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To Health Post"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1676.0,
+            "min": 0.0,
+            "mean": 130.6206,
+            "median": 113.0,
+            "98_percentile": 350.0,
+            "99_percentile": 464.0,
+            "2_percentile": 19.0,
+            "1_percentile": 15.0,
+            "quantiles": [
+                0.0,
+                42.0,
+                62.0,
+                79.0,
+                96.0,
+                113.0,
+                131.0,
+                152.0,
+                179.0,
+                223.0,
+                1676.0
+            ],
+            "style_stops_99": [
+                15.0,
+                127.25,
+                239.5,
+                351.75,
+                464.0
+            ],
+            "style_stops_98": [
+                19.0,
+                101.75,
+                184.5,
+                267.25,
+                350.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                419.0,
+                838.0,
+                1257.0,
+                1676.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_major_hospitals_optimal": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To Hospital"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1774.0,
+            "min": 11.0,
+            "mean": 370.3242,
+            "median": 341.0,
+            "98_percentile": 976.0,
+            "99_percentile": 1120.77,
+            "2_percentile": 60.0,
+            "1_percentile": 41.0,
+            "quantiles": [
+                11.0,
+                141.0,
+                203.0,
+                253.0,
+                298.0,
+                341.0,
+                386.0,
+                435.0,
+                501.0,
+                613.0,
+                1774.0
+            ],
+            "style_stops_99": [
+                41.0,
+                310.9425,
+                580.885,
+                850.8275,
+                1120.77
+            ],
+            "style_stops_98": [
+                60.0,
+                289.0,
+                518.0,
+                747.0,
+                976.0
+            ],
+            "style_stops_maxmin": [
+                11.0,
+                451.75,
+                892.5,
+                1333.25,
+                1774.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_primary_schools_fixed": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To Primary School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1717.0,
+            "min": 0.0,
+            "mean": 72.2518,
+            "median": 51.0,
+            "98_percentile": 311.0,
+            "99_percentile": 469.0,
+            "2_percentile": 13.0,
+            "1_percentile": 11.0,
+            "quantiles": [
+                0.0,
+                21.0,
+                29.4,
+                37.0,
+                44.0,
+                51.0,
+                60.0,
+                70.0,
+                86.0,
+                121.0,
+                1717.0
+            ],
+            "style_stops_99": [
+                11.0,
+                125.5,
+                240.0,
+                354.5,
+                469.0
+            ],
+            "style_stops_98": [
+                13.0,
+                87.5,
+                162.0,
+                236.5,
+                311.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                429.25,
+                858.5,
+                1287.75,
+                1717.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_secondary_schools_fixed": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To Secondary School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1726.0,
+            "min": 5.0,
+            "mean": 99.2594,
+            "median": 75.0,
+            "98_percentile": 405.0,
+            "99_percentile": 535.0,
+            "2_percentile": 14.0,
+            "1_percentile": 12.0,
+            "quantiles": [
+                5.0,
+                28.0,
+                41.0,
+                53.0,
+                64.0,
+                75.0,
+                88.0,
+                104.0,
+                126.0,
+                170.0,
+                1726.0
+            ],
+            "style_stops_99": [
+                12.0,
+                142.75,
+                273.5,
+                404.25,
+                535.0
+            ],
+            "style_stops_98": [
+                14.0,
+                111.75,
+                209.5,
+                307.25,
+                405.0
+            ],
+            "style_stops_maxmin": [
+                5.0,
+                435.25,
+                865.5,
+                1295.75,
+                1726.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_constructed_sites_semi_dense_urban_optimal": [
+        [
+            "Travel Time",
+            "With Constructed Bridges",
+            "To Market"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1762.0,
+            "min": 10.0,
+            "mean": 378.1776,
+            "median": 331.0,
+            "98_percentile": 1014.0,
+            "99_percentile": 1107.65,
+            "2_percentile": 28.0,
+            "1_percentile": 22.0,
+            "quantiles": [
+                10.0,
+                91.0,
+                156.0,
+                216.0,
+                272.0,
+                331.0,
+                396.0,
+                475.0,
+                574.0,
+                736.0,
+                1762.0
+            ],
+            "style_stops_99": [
+                22.0,
+                293.4125,
+                564.825,
+                836.2375,
+                1107.65
+            ],
+            "style_stops_98": [
+                28.0,
+                274.5,
+                521.0,
+                767.5,
+                1014.0
+            ],
+            "style_stops_maxmin": [
+                10.0,
+                448.0,
+                886.0,
+                1324.0,
+                1762.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_health_centers_optimal": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To Health Center"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1792.0,
+            "min": 5.0,
+            "mean": 122.2315,
+            "median": 103.0,
+            "98_percentile": 383.08,
+            "99_percentile": 509.16,
+            "2_percentile": 19.0,
+            "1_percentile": 15.0,
+            "quantiles": [
+                5.0,
+                42.0,
+                60.0,
+                76.0,
+                90.0,
+                103.0,
+                118.0,
+                136.0,
+                158.0,
+                198.0,
+                1792.0
+            ],
+            "style_stops_99": [
+                15.0,
+                138.54,
+                262.08,
+                385.62,
+                509.16
+            ],
+            "style_stops_98": [
+                19.0,
+                110.02,
+                201.04,
+                292.06,
+                383.08
+            ],
+            "style_stops_maxmin": [
+                5.0,
+                451.75,
+                898.5,
+                1345.25,
+                1792.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_health_posts_optimal": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To Health Post"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1676.0,
+            "min": 0.0,
+            "mean": 129.016,
+            "median": 111.0,
+            "98_percentile": 344.84,
+            "99_percentile": 457.84,
+            "2_percentile": 19.0,
+            "1_percentile": 15.0,
+            "quantiles": [
+                0.0,
+                42.0,
+                61.0,
+                78.0,
+                95.0,
+                111.0,
+                129.0,
+                150.0,
+                177.0,
+                221.0,
+                1676.0
+            ],
+            "style_stops_99": [
+                15.0,
+                125.71,
+                236.42,
+                347.13,
+                457.84
+            ],
+            "style_stops_98": [
+                19.0,
+                100.46,
+                181.92,
+                263.38,
+                344.84
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                419.0,
+                838.0,
+                1257.0,
+                1676.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_major_hospitals_optimal": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To Hospital"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1774.0,
+            "min": 11.0,
+            "mean": 366.6844,
+            "median": 337.0,
+            "98_percentile": 960.0,
+            "99_percentile": 1094.55,
+            "2_percentile": 59.0,
+            "1_percentile": 41.0,
+            "quantiles": [
+                11.0,
+                140.0,
+                201.0,
+                250.0,
+                295.0,
+                337.0,
+                381.0,
+                431.0,
+                498.0,
+                610.0,
+                1774.0
+            ],
+            "style_stops_99": [
+                41.0,
+                304.3875,
+                567.775,
+                831.1625,
+                1094.55
+            ],
+            "style_stops_98": [
+                59.0,
+                284.25,
+                509.5,
+                734.75,
+                960.0
+            ],
+            "style_stops_maxmin": [
+                11.0,
+                451.75,
+                892.5,
+                1333.25,
+                1774.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_all_education_facilities_fixed": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1717.0,
+            "min": 0.0,
+            "mean": 68.3881,
+            "median": 48.0,
+            "98_percentile": 309.24,
+            "99_percentile": 469.0,
+            "2_percentile": 12.0,
+            "1_percentile": 10.0,
+            "quantiles": [
+                0.0,
+                19.0,
+                27.0,
+                34.0,
+                41.0,
+                48.0,
+                55.0,
+                65.0,
+                80.0,
+                113.0,
+                1717.0
+            ],
+            "style_stops_99": [
+                10.0,
+                124.75,
+                239.5,
+                354.25,
+                469.0
+            ],
+            "style_stops_98": [
+                12.0,
+                86.31,
+                160.62,
+                234.93,
+                309.24
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                429.25,
+                858.5,
+                1287.75,
+                1717.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_all_health_facilities_optimal": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To Healthcare"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1676.0,
+            "min": 0.0,
+            "mean": 89.2793,
+            "median": 75.0,
+            "98_percentile": 256.0,
+            "99_percentile": 403.0,
+            "2_percentile": 15.0,
+            "1_percentile": 13.0,
+            "quantiles": [
+                0.0,
+                30.0,
+                43.0,
+                54.0,
+                64.0,
+                75.0,
+                85.0,
+                98.0,
+                115.0,
+                143.0,
+                1676.0
+            ],
+            "style_stops_99": [
+                13.0,
+                110.5,
+                208.0,
+                305.5,
+                403.0
+            ],
+            "style_stops_98": [
+                15.0,
+                75.25,
+                135.5,
+                195.75,
+                256.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                419.0,
+                838.0,
+                1257.0,
+                1676.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_health_centers_optimal": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To Health Center"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1792.0,
+            "min": 5.0,
+            "mean": 123.8689,
+            "median": 105.0,
+            "98_percentile": 385.0,
+            "99_percentile": 514.5,
+            "2_percentile": 19.0,
+            "1_percentile": 15.0,
+            "quantiles": [
+                5.0,
+                42.0,
+                61.0,
+                77.0,
+                91.0,
+                105.0,
+                120.0,
+                138.0,
+                161.0,
+                201.0,
+                1792.0
+            ],
+            "style_stops_99": [
+                15.0,
+                139.875,
+                264.75,
+                389.625,
+                514.5
+            ],
+            "style_stops_98": [
+                19.0,
+                110.5,
+                202.0,
+                293.5,
+                385.0
+            ],
+            "style_stops_maxmin": [
+                5.0,
+                451.75,
+                898.5,
+                1345.25,
+                1792.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_health_posts_optimal": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To Health Post"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1676.0,
+            "min": 0.0,
+            "mean": 131.078,
+            "median": 113.0,
+            "98_percentile": 351.0,
+            "99_percentile": 464.0,
+            "2_percentile": 19.0,
+            "1_percentile": 15.0,
+            "quantiles": [
+                0.0,
+                42.0,
+                62.0,
+                80.0,
+                96.0,
+                113.0,
+                132.0,
+                153.0,
+                180.0,
+                224.0,
+                1676.0
+            ],
+            "style_stops_99": [
+                15.0,
+                127.25,
+                239.5,
+                351.75,
+                464.0
+            ],
+            "style_stops_98": [
+                19.0,
+                102.0,
+                185.0,
+                268.0,
+                351.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                419.0,
+                838.0,
+                1257.0,
+                1676.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_major_hospitals_optimal": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To Hospital"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1774.0,
+            "min": 11.0,
+            "mean": 371.0373,
+            "median": 342.0,
+            "98_percentile": 976.0,
+            "99_percentile": 1120.77,
+            "2_percentile": 61.0,
+            "1_percentile": 41.0,
+            "quantiles": [
+                11.0,
+                142.0,
+                204.0,
+                254.0,
+                299.0,
+                342.0,
+                386.0,
+                435.0,
+                501.0,
+                615.0,
+                1774.0
+            ],
+            "style_stops_99": [
+                41.0,
+                310.9425,
+                580.885,
+                850.8275,
+                1120.77
+            ],
+            "style_stops_98": [
+                61.0,
+                289.75,
+                518.5,
+                747.25,
+                976.0
+            ],
+            "style_stops_maxmin": [
+                11.0,
+                451.75,
+                892.5,
+                1333.25,
+                1774.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_primary_schools_fixed": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To Primary School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1717.0,
+            "min": 0.0,
+            "mean": 72.6061,
+            "median": 51.0,
+            "98_percentile": 312.0,
+            "99_percentile": 469.18,
+            "2_percentile": 13.0,
+            "1_percentile": 11.0,
+            "quantiles": [
+                0.0,
+                21.0,
+                30.0,
+                37.0,
+                44.0,
+                51.0,
+                60.0,
+                70.0,
+                87.0,
+                121.0,
+                1717.0
+            ],
+            "style_stops_99": [
+                11.0,
+                125.545,
+                240.09,
+                354.635,
+                469.18
+            ],
+            "style_stops_98": [
+                13.0,
+                87.75,
+                162.5,
+                237.25,
+                312.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                429.25,
+                858.5,
+                1287.75,
+                1717.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_secondary_schools_fixed": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To Secondary School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1726.0,
+            "min": 5.0,
+            "mean": 99.8067,
+            "median": 76.0,
+            "98_percentile": 407.0,
+            "99_percentile": 535.0,
+            "2_percentile": 14.0,
+            "1_percentile": 12.0,
+            "quantiles": [
+                5.0,
+                28.0,
+                41.0,
+                53.0,
+                64.0,
+                76.0,
+                88.0,
+                104.0,
+                127.0,
+                171.0,
+                1726.0
+            ],
+            "style_stops_99": [
+                12.0,
+                142.75,
+                273.5,
+                404.25,
+                535.0
+            ],
+            "style_stops_98": [
+                14.0,
+                112.25,
+                210.5,
+                308.75,
+                407.0
+            ],
+            "style_stops_maxmin": [
+                5.0,
+                435.25,
+                865.5,
+                1295.75,
+                1726.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_no_sites_semi_dense_urban_optimal": [
+        [
+            "Travel Time",
+            "Without Bridges",
+            "To Market"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1762.0,
+            "min": 10.0,
+            "mean": 378.9436,
+            "median": 331.0,
+            "98_percentile": 1015.0,
+            "99_percentile": 1107.65,
+            "2_percentile": 28.0,
+            "1_percentile": 22.0,
+            "quantiles": [
+                10.0,
+                91.0,
+                156.0,
+                216.0,
+                272.0,
+                331.0,
+                397.0,
+                476.0,
+                575.0,
+                736.0,
+                1762.0
+            ],
+            "style_stops_99": [
+                22.0,
+                293.4125,
+                564.825,
+                836.2375,
+                1107.65
+            ],
+            "style_stops_98": [
+                28.0,
+                274.75,
+                521.5,
+                768.25,
+                1015.0
+            ],
+            "style_stops_maxmin": [
+                10.0,
+                448.0,
+                886.0,
+                1324.0,
+                1762.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_primary_schools_fixed": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To Primary School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1717.0,
+            "min": 0.0,
+            "mean": 70.0128,
+            "median": 50.0,
+            "98_percentile": 295.0,
+            "99_percentile": 450.73,
+            "2_percentile": 13.0,
+            "1_percentile": 11.0,
+            "quantiles": [
+                0.0,
+                21.0,
+                29.0,
+                36.0,
+                43.0,
+                50.0,
+                58.0,
+                68.0,
+                83.0,
+                115.0,
+                1717.0
+            ],
+            "style_stops_99": [
+                11.0,
+                120.9325,
+                230.865,
+                340.7975,
+                450.73
+            ],
+            "style_stops_98": [
+                13.0,
+                83.5,
+                154.0,
+                224.5,
+                295.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                429.25,
+                858.5,
+                1287.75,
+                1717.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_secondary_schools_fixed": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To Secondary School"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1726.0,
+            "min": 5.0,
+            "mean": 96.1251,
+            "median": 74.0,
+            "98_percentile": 390.0,
+            "99_percentile": 522.99,
+            "2_percentile": 14.0,
+            "1_percentile": 12.0,
+            "quantiles": [
+                5.0,
+                28.0,
+                41.0,
+                52.0,
+                63.0,
+                74.0,
+                86.0,
+                101.0,
+                121.0,
+                161.0,
+                1726.0
+            ],
+            "style_stops_99": [
+                12.0,
+                139.7475,
+                267.495,
+                395.2425,
+                522.99
+            ],
+            "style_stops_98": [
+                14.0,
+                108.0,
+                202.0,
+                296.0,
+                390.0
+            ],
+            "style_stops_maxmin": [
+                5.0,
+                435.25,
+                865.5,
+                1295.75,
+                1726.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "travel_time_semi_dense_urban_optimal": [
+        [
+            "Travel Time",
+            "With All Bridges",
+            "To Market"
+        ],
+        [
+            "Travel Time",
+            "minutes"
+        ],
+        "rdylgn",
+        {
+            "max": 1762.0,
+            "min": 10.0,
+            "mean": 374.9638,
+            "median": 327.0,
+            "98_percentile": 1011.0,
+            "99_percentile": 1104.46,
+            "2_percentile": 28.0,
+            "1_percentile": 22.0,
+            "quantiles": [
+                10.0,
+                90.0,
+                155.0,
+                213.0,
+                268.0,
+                327.0,
+                392.0,
+                471.0,
+                569.0,
+                731.0,
+                1762.0
+            ],
+            "style_stops_99": [
+                22.0,
+                292.615,
+                563.23,
+                833.845,
+                1104.46
+            ],
+            "style_stops_98": [
+                28.0,
+                273.75,
+                519.5,
+                765.25,
+                1011.0
+            ],
+            "style_stops_maxmin": [
+                10.0,
+                448.0,
+                886.0,
+                1324.0,
+                1762.0
+            ]
+        },
+        [
+            "Longer",
+            "Shorter"
+        ]
+    ],
+    "all_education_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "School"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.1368,
+            "median": 0.0,
+            "98_percentile": 2.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "all_education_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "School"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.0221,
+            "median": 0.0,
+            "98_percentile": 0.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "all_health_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Healthcare"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.1227,
+            "median": 0.0,
+            "98_percentile": 2.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "all_health_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Healthcare"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 4.0,
+            "min": 0.0,
+            "mean": 0.0166,
+            "median": 0.0,
+            "98_percentile": 0.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                4.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "health_centers_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Health Center"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.1408,
+            "median": 0.0,
+            "98_percentile": 2.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "health_centers_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Health Center"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 4.0,
+            "min": 0.0,
+            "mean": 0.0189,
+            "median": 0.0,
+            "98_percentile": 0.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                4.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "health_posts_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Health Post"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.1524,
+            "median": 0.0,
+            "98_percentile": 2.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "health_posts_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Health Post"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 4.0,
+            "min": 0.0,
+            "mean": 0.0264,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                4.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "major_hospitals_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Hospital"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 4.0,
+            "min": 0.0,
+            "mean": 0.1632,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                4.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "major_hospitals_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Hospital"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 4.0,
+            "min": 0.0,
+            "mean": 0.0338,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                4.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "primary_schools_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Primary School"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.1385,
+            "median": 0.0,
+            "98_percentile": 2.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "primary_schools_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Primary School"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.0207,
+            "median": 0.0,
+            "98_percentile": 0.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "secondary_schools_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Secondary School"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.1341,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "secondary_schools_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Secondary School"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.0226,
+            "median": 0.0,
+            "98_percentile": 0.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "semi_dense_urban_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Market"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 4.0,
+            "min": 0.0,
+            "mean": 0.1522,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                4.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "semi_dense_urban_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Market"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 4.0,
+            "min": 0.0,
+            "mean": 0.0354,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 1.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                4.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "total_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "All"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 24.0,
+            "min": 0.0,
+            "mean": 0.8812,
+            "median": 0.0,
+            "98_percentile": 7.0,
+            "99_percentile": 8.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                3.0,
+                24.0
+            ],
+            "style_stops_99": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ],
+            "style_stops_98": [
+                0.0,
+                1.75,
+                3.5,
+                5.25,
+                7.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                6.0,
+                12.0,
+                18.0,
+                24.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "total_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "All"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 19.0,
+            "min": 0.0,
+            "mean": 0.1578,
+            "median": 0.0,
+            "98_percentile": 2.0,
+            "99_percentile": 4.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                19.0
+            ],
+            "style_stops_99": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                4.75,
+                9.5,
+                14.25,
+                19.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "total_school_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "School"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 12.0,
+            "min": 0.0,
+            "mean": 0.0433,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                12.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                3.0,
+                6.0,
+                9.0,
+                12.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "total_school_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "School"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 16.0,
+            "min": 0.0,
+            "mean": 0.2726,
+            "median": 0.0,
+            "98_percentile": 3.0,
+            "99_percentile": 4.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                16.0
+            ],
+            "style_stops_99": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.75,
+                1.5,
+                2.25,
+                3.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                4.0,
+                8.0,
+                12.0,
+                16.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "total_health_current_impact": [
+        [
+            "Impact",
+            "Current Impact",
+            "Healthcare"
+        ],
+        [
+            "Current Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 8.0,
+            "min": 0.0,
+            "mean": 0.0791,
+            "median": 0.0,
+            "98_percentile": 1.0,
+            "99_percentile": 2.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                8.0
+            ],
+            "style_stops_99": [
+                0.0,
+                0.5,
+                1.0,
+                1.5,
+                2.0
+            ],
+            "style_stops_98": [
+                0.0,
+                0.25,
+                0.5,
+                0.75,
+                1.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.0,
+                4.0,
+                6.0,
+                8.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ],
+    "total_health_potential_impact": [
+        [
+            "Impact",
+            "Potential Impact",
+            "Healthcare"
+        ],
+        [
+            "Potential Impact",
+            ""
+        ],
+        "impactScheme",
+        {
+            "max": 11.0,
+            "min": 0.0,
+            "mean": 0.4565,
+            "median": 0.0,
+            "98_percentile": 4.0,
+            "99_percentile": 4.0,
+            "2_percentile": 0.0,
+            "1_percentile": 0.0,
+            "quantiles": [
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0,
+                2.0,
+                11.0
+            ],
+            "style_stops_99": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ],
+            "style_stops_98": [
+                0.0,
+                1.0,
+                2.0,
+                3.0,
+                4.0
+            ],
+            "style_stops_maxmin": [
+                0.0,
+                2.75,
+                5.5,
+                8.25,
+                11.0
+            ]
+        },
+        [
+            "Less Impact",
+            "More Impact"
+        ]
+    ]
+}

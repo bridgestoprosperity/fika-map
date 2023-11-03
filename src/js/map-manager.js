@@ -9,7 +9,6 @@ transSlider.addEventListener("change", function () {
 });
 
 export function initializeMap(map) {
-
   map.addSource("hex-8-source", {
     type: "geojson",
     // data: "https://fikamap-web-app.s3.us-west-1.amazonaws.com/data/rwa_travel_time_hex-8-mini.geojson",
@@ -27,6 +26,8 @@ export function initializeMap(map) {
         "fill-opacity": 0.5,
         "fill-outline-color": "rgba(255, 255, 255, .1)",
       },
+      // add a filter to filter for only hexagons where travel_time_all_education_facilities_fixed is not null
+      filter: ["!=", ["get", "travel_time_all_education_facilities_fixed"], null],
     },
     "admin-0-boundary-disputed"
   );
@@ -75,6 +76,7 @@ export function updateHexStyling(currentMenuState) {
   let legend = document.querySelector(".legend-colors");
 
   map.setPaintProperty("hex-8-layer", "fill-color", mapStyles[styleKey]["fill-color"]);
+  map.setFilter("hex-8-layer", ["!=", ["get", styleKey], null]);
   legend.style.background = "linear-gradient(to right, " + legendColor + ")";
   document.getElementById("legend-type").innerHTML = dataMap[styleKey][1][0];
   document.getElementById("left-legend-label").innerHTML = dataMap[styleKey][4][0];

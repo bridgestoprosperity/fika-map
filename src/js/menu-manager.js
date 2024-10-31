@@ -35,24 +35,18 @@ export function updateMenu(choices, menu) {
 }
 export function updateBaselayer(selection) {
   console.log(selection);
-  if (selection == "Standard map") {
-    let hideLayers = ['satellite-base'];
-    let showLayers = ['land', 'national-park', 'landuse', 'pitch-outline', 'waterway', 'water', 'water-pattern', 'mapbox-mapbox-terrain-dem-v1', 'land-structure-polygon', 'land-structure-line', 'aeroway-polygon', 'aeroway-line', 'tunnel-simple', 'road-simple', 'bridge-case-simple', 'bridge-simple', 'building-extrusion', 'admin-1-boundary-bg', 'admin-0-boundary-bg', 'admin-1-boundary', 'admin-0-boundary', 'admin-0-boundary-disputed', 'satellite-light', 'building-entrance', 'building-number-label', 'block-number-label', 'road-label-simple' , 'waterway-label', 'natural-line-label', 'natural-point-label', 'water-line-label', 'water-point-label', 'poi-label', 'transit-label', 'airport-label', 'settlement-subdivision-label', 'settlement-minor-label', 'settlement-major-label', 'state-label'];
-    for (let i = 0; i < hideLayers.length; i++) {
-      map.setLayoutProperty(hideLayers[i], 'visibility', 'none');
+  const layers = {
+    "Standard map": {
+      hide: ['satellite-base'],
+      show: ['land', 'national-park', 'landuse', 'pitch-outline', 'waterway', 'water', 'water-pattern', 'mapbox-mapbox-terrain-dem-v1', 'land-structure-polygon', 'land-structure-line', 'aeroway-polygon', 'aeroway-line', 'tunnel-simple', 'road-simple', 'bridge-case-simple', 'bridge-simple', 'building-extrusion', 'admin-1-boundary-bg', 'admin-0-boundary-bg', 'admin-1-boundary', 'admin-0-boundary', 'admin-0-boundary-disputed', 'satellite-light', 'building-entrance', 'building-number-label', 'block-number-label', 'road-label-simple', 'waterway-label', 'natural-line-label', 'natural-point-label', 'water-line-label', 'water-point-label', 'poi-label', 'transit-label', 'airport-label', 'settlement-subdivision-label', 'settlement-minor-label', 'settlement-major-label', 'state-label']
+    },
+    "Other": {
+      hide: ['land', 'national-park', 'landuse', 'pitch-outline', 'waterway', 'water', 'water-pattern', 'mapbox-mapbox-terrain-dem-v1', 'land-structure-polygon', 'land-structure-line', 'aeroway-polygon', 'aeroway-line', 'tunnel-simple', 'road-simple', 'bridge-case-simple', 'bridge-simple', 'building-extrusion', 'admin-1-boundary-bg', 'admin-0-boundary-bg', 'admin-1-boundary', 'admin-0-boundary', 'admin-0-boundary-disputed', 'satellite-light', 'building-entrance', 'building-number-label', 'block-number-label', 'road-label-simple', 'waterway-label', 'natural-line-label', 'natural-point-label', 'water-line-label', 'water-point-label', 'poi-label', 'transit-label', 'airport-label', 'settlement-subdivision-label', 'settlement-minor-label', 'settlement-major-label', 'state-label'],
+      show: ['satellite-base']
     }
-    for (let i = 0; i < showLayers.length; i++) {
-      map.setLayoutProperty(showLayers[i], 'visibility', 'visible');
-    }
-  }
-  else {
-    let hideLayers = ['land', 'national-park', 'landuse', 'pitch-outline', 'waterway', 'water', 'water-pattern', 'mapbox-mapbox-terrain-dem-v1', 'land-structure-polygon', 'land-structure-line', 'aeroway-polygon', 'aeroway-line', 'tunnel-simple', 'road-simple', 'bridge-case-simple', 'bridge-simple', 'building-extrusion', 'admin-1-boundary-bg', 'admin-0-boundary-bg', 'admin-1-boundary', 'admin-0-boundary', 'admin-0-boundary-disputed', 'satellite-light', 'building-entrance', 'building-number-label', 'block-number-label', 'road-label-simple' , 'waterway-label', 'natural-line-label', 'natural-point-label', 'water-line-label', 'water-point-label', 'poi-label', 'transit-label', 'airport-label', 'settlement-subdivision-label', 'settlement-minor-label', 'settlement-major-label', 'state-label'];
-    let showLayers = ['satellite-base'];
-    for (let i = 0; i < hideLayers.length; i++) {
-      map.setLayoutProperty(hideLayers[i], 'visibility', 'none');
-    }
-    for (let i = 0; i < showLayers.length; i++) {
-      map.setLayoutProperty(showLayers[i], 'visibility', 'visible');
-    }
-  }
+  };
+
+  const {hide, show} = layers[selection] || layers["Other"];
+  hide.forEach(layer => map.setLayoutProperty(layer, 'visibility', 'none'));
+  show.forEach(layer => map.setLayoutProperty(layer, 'visibility', 'visible'));
 }

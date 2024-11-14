@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>PMTiles Viewer</title>
+    <title>WaterNet Vector Data</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
@@ -77,7 +77,7 @@
         mapboxgl.Style.setSourceType(mapboxPmTiles.SOURCE_TYPE, mapboxPmTiles.PmTilesSource);
 
         map.on('load', () => {
-            const PMTILES_URL = 'https://data.source.coop/fika/waternet/pmtiles/waterway_model_outputs_20m_vector.pmtiles';
+            const PMTILES_URL = 'https://public-b2p-geodata.s3.us-east-1.amazonaws.com/waternet-vector/waterway_model_outputs_20m_vector.pmtiles';
 
             // Add PMTiles source
             map.addSource('waterways', {

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WaterNet Vector Data</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.7.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mapbox-pmtiles@1/dist/mapbox-pmtiles.umd.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        #stream_order_container {
+            position: absolute;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            top: 10px;
+            left: 10px;
+            width: 200px;
+            height: 40px;
+            background-color: #fffcf9;
+            border-radius: 5px;
+
+        }
+
+        #stream_order_label {
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            margin: 10px;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+            /* make font family mono */
+            font-family: monospace;
+            
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="stream_order_container">
+        <div id="stream_order_label">Stream Order</div>
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYnJpZGdlc3RvcHJvc3Blcml0eSIsImEiOiJjajRpd2sxeGQwMjU5MnhxajJkNzZnODZtIn0.UrOwxq6A1Zl2yvwzYxBudQ';
+        const tab10 = ["#B8B0AC", "#5778A4", "#E49344", "#D1605D", "#85B6B2", "#6AA058", "#E7CA60", "#A87C9F", "#A87C9F", "#F1A2A9", "#967662"]
+        const purpleScale = ["#E9CAC2", "#EB9383", "#DC817F", "#CB6F7C", "#CB6F7C", "#5E3D5D", "#412B49", "#271C35", "#460848", "#C32A56"]
+        const tealScale = ["#E3EDBA", "#AFD8A9", "#7BC09F", "#49AB9F", "#339094", "#317680", "#325F6A", "#304954", "#284D74", "#439198"]
+        const violetOcean = ["#93ECDD", "#7DD6E0", "#6DC0DE", "#66A9DA", "#5493D9", "#507CD4", "#5E60C7", "#6043C0", "#6A11B1", "#9F237E"]
+
+        const scale = violetOcean
+
+        const map = new mapboxgl.Map({
+            style: 'mapbox://styles/bridgestoprosperity/cltoqnr9y01cg01oihr9d3yqh',
+            container: 'map',
+            center: [26.19, -0.21],
+            zoom: 4,
+            hash: true,
+        });
+
+        // Register PMTiles source type
+        mapboxgl.Style.setSourceType(mapboxPmTiles.SOURCE_TYPE, mapboxPmTiles.PmTilesSource);
+
+        map.on('load', () => {
+            const PMTILES_URL = 'https://public-b2p-geodata.s3.us-east-1.amazonaws.com/waternet-vector/waterway_model_outputs_20m_vector.pmtiles';
+
+            // Add PMTiles source
+            map.addSource('waterways', {
+                type: mapboxPmTiles.SOURCE_TYPE,
+                url: PMTILES_URL,
+            });
+
+            // Add layer for waterways
+            map.addLayer({
+                id: 'waterways-layer',
+                source: 'waterways',
+                'source-layer': 'waterways',
+                type: 'line',
+                // add filter 
+                filter: ["all", ["!=", ["get", "intersects_lake"], true]],
+                paint: {
+                    // 'line-color': [
+                    //     'case',
+                    //     ['==', ['get', 'from_tdx'], true],
+                    //     '#6d859c',
+                    //     'rgba(122, 197, 48, 100)'
+                    // ],
+                    'line-color': [ "match", ["get", "stream_order"], [0], scale[0], [1], scale[1], [2], scale[2], [3], scale[3], [4], scale[4], [5], scale[5], [6], scale[6], [7], scale[7], [8], scale[8], scale[9] ],
+                    'line-width': [ "interpolate", ["linear"], ["zoom"], 6, [ "match", ["get", "stream_order"], [1], 0.01, [2], 0.02, [3], 0.03, [4], 0.04, [5], 0.05, [6], 0.06, [7], 0.07, [8], 0.08, 0.01 ], 8, [ "match", ["get", "stream_order"], [1], 0.1, [2], 0.2, [3], 0.3, [4], 0.4, [5], 0.5, [6], 0.6, [7], 0.7, [8], 0.8, 1 ], 12, [ "match", ["get", "stream_order"], [1], 1, [2], 2, [3], 3, [4], 4, [5], 5, [6], 6, [7], 7, [8], 8, 9 ], 16, [ "match", ["get", "stream_order"], [1], 2, [2], 4, [3], 6, [4], 8, [5], 10, [6], 12, [7], 14, [8], 16, 18 ] ]
+                }
+            });
+            // on hover over waterways-layer get the stream order and display it in the console
+            map.on('mousemove', 'waterways-layer', (e) => {
+
+                map.getCanvas().style.cursor = 'crosshair';
+                const stream_order = e.features[0].properties.stream_order;
+                document.getElementById('stream_order_label').innerHTML = 'Stream Order: '+ stream_order;
+
+            });
+            // on mouse leave turn pointer back to default
+            map.on('mouseleave', 'waterways-layer', () => {
+                map.getCanvas().style.cursor = '';
+                document.getElementById('stream_order_label').innerHTML = 'Stream Order: ';
+            });
+        });
+    </script>
+</body>
+
+</html>

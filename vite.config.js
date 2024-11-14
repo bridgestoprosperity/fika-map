@@ -8,7 +8,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        waternetraster: resolve(__dirname, 'waternetraster.html')
+        waternetraster: resolve(__dirname, 'waternetraster.html'),
+        waternetvector: resolve(__dirname, 'waternetvector.html')
       }
     }
     
